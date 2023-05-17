@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link id="icon" rel="icon" type="image/x-icon" href="pictures/favicon.ico" sizes="32x32">
+    <link href='https://fonts.googleapis.com/css?family=Edu SA Beginner' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Edu NSW ACT Foundation' rel='stylesheet'>
+        
+        
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+        <script src="spotlight.bundle.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Helfert's Astrophotography</title>
+        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+        <link rel="stylesheet" href="main.css">
+                <link rel="stylesheet" href="localconditions.css">
+
+    </head>
+    
+    <!--START OF BODY-->  
+    <body>
+         <!--NAVBAR-->
+<header>
+    <img id="navicon" src="pictures/favicon_green_palette.png" >
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="localConditions.html">Local Conditions</a></li> 
+                <li><a href="equipment.html">Equipment</a></li>
+            </ul>
+        </nav>       
+</header>      
+        
+        <!--Main Header-->
+        <h1 class="mainHeader">Clayton Helfert's Astrophotography</h1>
+    
+    <!--WEATHER FORECAST WIDGET-->
+<a class="weatherwidget-io" href="https://forecast7.com/en/34d70n86d75/madison/?unit=us" data-label_1="MADISON" data-label_2="WEATHER" data-font="Helvetica" data-icons="Climacons Animated" data-theme="dark" >MADISON WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+        <a href=https://www.cleardarksky.com/c/HuntsvillALkey.html>
+<img src="https://www.cleardarksky.com/c/HuntsvillALcsk.gif?c=907212"></a>
+        
+        <!--Light Pollution Map-->
+        <div id="conditionscontainer">
+            <!--Moon phase widget-->
+      <!-- © wdisseny --><div id="contain_moon" style="text-align:center;padding-bottom:25px;"><div style="font-weight:bold"></div><div style="margin-bottom:-75px;padding:150px;filter:drop-shadow(0 0 150px hsl(0,100%,0%))"></div><div>.</div><div style="font-size:small">.</div></div><script>(function(){var d=new Date().getDate();var m=document.querySelectorAll("#contain_moon div");var a=new XMLHttpRequest();var url="https://www.icalendar37.net/lunar/api/?lang=en&month="+(new Date().getMonth()+1)+"&year="+(new Date().getFullYear())+"&size=500&lightColor=rgb(150,150,150)&shadeColor=rgb(17,17,17)&t&LDZ="+new Date(new Date().getFullYear(),new Date().getMonth(),1)/1000+"";m[1].style.height="500px";a.onreadystatechange=function(){if(a.readyState==4&&a.status==200){var b=JSON.parse(a.responseText);m[1].innerHTML=b.phase[d].svg;if(typeof moon_widget_loaded=="function")moon_widget_loaded(b);m[2].innerHTML=b.phase[d].npWidget;m[3].innerHTML="Next full moon<br>"+b.nextFullMoon}};a.open("GET",url,true);a.send()})()</script>
+
+        </div>
+        <br><br><br><br><br><br><br>
+           <div class="description">                    
+        <p>                           
+            Every picture has been taken in Southeast Madison, Alabama which is currently rated 6 on the Bortle light pollution scale.
+                                       
+            </p>
+        </div>
+    </body>
+</html>

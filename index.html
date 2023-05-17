@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+        
+        
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+        <script src="spotlight.bundle.js"></script>
+        <script src="./myscripts.js"></script>
+        
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+        
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Helfert's Astrophotography</title>
+        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="gallery.css">
+        <link rel="stylesheet" href="recentgallery.css">
+
+    </head>
+    
+    
+    <!--START OF BODY-->
+    <body>
+        
+        <!--NAVBAR-->
+<header>
+    <img id="navicon" src="Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" >
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="localConditions.html">Local Conditions</a></li> 
+                <li><a href="equipment.html">Equipment</a></li>
+            </ul>
+        </nav>       
+</header>      
+        
+        <!--TARGET--
+    <div class="target">
+
+        <h3 class="targetTitle">THE SAMPLE TARGET</h3>
+            
+        <picture>   
+            <a href="pictures/">
+            <img src="pictures/" alt="INFO HERE" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: 
+            </li>
+            <li>
+            Discovered: 
+            </li>
+            <li>
+            Distance from Earth:     
+            </li>
+            <li>
+            Diameter: 
+            </li>
+            <li>
+            Magnitude:     
+            </li>    
+            <li>
+            Best Visible: 
+            </li>
+            <p>
+                DESCRIPTION DESCRIPTION
+            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--Main Header-->
+        <h1 class="mainHeader">Helfert Astrophotography</h1>
+        
+        <!--Back to top button-->
+        <button onclick="topFunction()" id="backToTopButton" title="Go to top"></button>
+
+        
+        <script>
+//Get the button
+var mybutton = document.getElementById("backToTopButton");
+
+// When the user scrolls down 20px from t he top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+        
+        <!--CATEGORIES-->
+        
+        <h3 class="recentSubject">Quick Jump</h3>
+        
+ <div class="quickJump">
+        <nav>
+            <ul>
+                <li><a href="#nebulaJump">Nebula</a></li>
+                <li><a href="#clustersJump">Clusters</a></li> 
+                <li><a href="#lunarJump">Lunar</a></li> 
+                <li><a href="#galaxiesJump">Galaxies</a></li>
+            </ul>
+        </nav>       
+</div>    
+        
+        <!--Most Recent-->
+           <br><br>
+        <h2 class="subject">Most Recent</h2>
+        <h3 class="recentTitle">Triplet in Leo</h3>
+        <picture>   
+            <a href="pictures/Leo_triplet.png">
+            <img src="pictures/Leo_triplet.png" alt="Most Recent" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+       
+        <br><br>
+        
+        
+        
+        <!--Nebulas-->
+        <div id="nebulaJump"></div>
+        <h2 class="subject">Nebula</h2>
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Orion Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/OrionNebula.png">
+            <img src="pictures/OrionNebula.png" alt="Orion Nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: Messier 42. 
+            </li>
+            <li>
+            Discovered: November 26, 1610
+            </li>
+            <li>
+            Distance from Earth: 1,500 light-years.    
+            </li>
+            <li>
+            Diameter: 24 light-years.
+            </li>
+            <li>
+            Magnitude: 4.0    
+            </li>    
+            <li>
+            Best Visible: Winter.
+            </li>
+            <p>
+                M42 or the Orion Nebula is the closest stellar nursery to the earth, at around 1,500 light-years away with an apparent magnitude of 4. Given its close proximity to earth and its brightness, the Orion nebula is one of the few deep space objects that can be seen with the naked eye. The Mayan culture dubbed the Orion Nebula as “the cosmic fire of creation”. Which is surprisingly accurate. The Orion Nebula is a part of a much more grand cosmic network - the Orion Molecular Cloud Complex (A.K.A. The Orion Complex). The Orion complex consists of Orion A Cloud (The Orion Nebula), Orion B Cloud (Horsehead and Flame Nebula) and many others. Though the Orion Nebula is one of the most active star forming nebulae, not every star is a success. Blue giants comprise the majority of the Orion Nebula’s stars, but there are a few “failures” or brown dwarfs. The first observation of the Orion Nebula was with a telescope in the year 1610 by a French scholar named Nicolas=Claude Fabri de Peiresc. According to the European Space Agency, our own sun was most likely formed in a very similar cloud to the Orion Nebula, roughly 4.5 billion years ago.
+
+            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Cygnus Wall</h3>
+            
+        <picture>   
+            <a href="pictures/CygnusWallHubble-topaz.png">
+            <img src="pictures/CygnusWallHubble-topaz.png" alt="Cygnus Wall" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: NGC 7000.
+            </li>
+            <li>
+            Discovered: October 24th 1786, William Herschel.
+            </li>
+            <li>
+            Distance from Earth: 1,700 Lightyears.    
+            </li>    
+            <li>
+            Diameter: 20 Lightyears.
+            </li>
+            <li>
+            Magnitude: 4   
+            </li>   
+            <li>
+            Best Visible: Summer - Early Fall.
+            </li>
+            <p>
+                The Cygnus Wall is located in the North American Nebula (NGC 7000) and is roughly 15 light-years in diameter. This pocket of gas is the most active star forming region in the North American Nebula. The Cygnus wall lies about 1,700 light-years away in the constellation of Cygnus.
+            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The California Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/CaliforniaNebula.png">
+            <img src="pictures/CaliforniaNebula.png" alt="California Nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: NGC 1499.
+            </li>
+            <li>
+            Discovered: 1884, E. E. Barnard.
+            </li>
+            <li>
+            Distance from Earth: 1,000 light-years.    
+            </li>
+            <li>
+            Diameter: 100 light-years.
+            </li>
+            <li>
+            Magnitude: 6.0    
+            </li>    
+            <li>
+            Best Visible: Fall.
+            </li>
+            <p>
+            The California Nebula is an emission nebula located roughly 1,000 light-years away near the constellation of perseus. This nebula received its name due to its shape resembling the state of California. The California Nebula reaches about 100 light-years in diameter, and has a visual magnitude of 6.0. This makes it extremely hard to see with the unaided eye. This nebula is formed of gas that is ionized by a nearby massive blue star, Menkib, which is roughly 30 times more massive than the sun. Menkib is one of the hottest stars visible with the naked eye.
+            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Lobster Claw and Bubble Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/LobsterClawBubbleHB-clear.png">
+            <img src="pictures/LobsterClawBubbleHB-clear.png" alt="Lobster Claw" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: Sharpless 157 (Lobster Claw), NGC 7635 (Bubble Nebula).
+            </li>
+            <li>
+            Discovered: 1787, William Herschel.
+            </li>
+            <li>
+            Distance from Earth: 8,000 light-years.    
+            </li>
+            <li>
+            Diameter: 400 light-years.
+            </li>
+            <li>
+            Magnitude: 10    
+            </li>    
+            <li>
+            Best Visible: Late Summer - Early Fall.
+            </li>
+            <p>
+                The Lobster Claw nebula is an active star forming region located roughly 8,000 light-years away in the constellation of Scorpius. The Bubble Nebula is the result of a star (BD +60°2522) roughly 45 times more massive than our sun burning so hot that gas escapes and forms a stellar wind around the star. Due to the gas's extreme heat, it is moving at more than 4,000,000 mph. 
+            </p>
+    </div>
+        <!--end of target-->
+        
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">NGC 7822</h3>
+            
+        <picture>   
+            <a href="pictures/NGC7822.png">
+            <img src="pictures/NGC7822.png" alt="NGC 7822" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: NGC 7822.
+            </li>
+            <li>
+            Discovered: November 16th 1829, John Herschel.
+            </li>
+            <li>
+            Distance from Earth: 2,900 light-years    
+            </li>
+            <li>
+            Diameter: 300 light-years. 
+            </li>
+            <li>
+            Magnitude: 10    
+            </li>    
+            <li>
+            Best Visible: Fall.
+            </li>
+            <p>
+                NGC 7822 is a star forming complex located roughly 3,000 light-years away in the constellation Cepheus. The radiation from the stars being born here ionizes the gas and forms the nebula with stellar wind. Within the dark, dusty clouds, stars are more than likely going through a process of being created.
+            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Wizard Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/WizardNebula.png">
+            <img src="pictures/WizardNebula.png" alt="Wizard Nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: NGC 7380. 
+            </li>
+            <li>
+            Discovered: 1787, Caroline Herschel.
+            </li>
+            <li>
+            Distance from Earth: 7,000 Lightyears.    
+            </li>
+            <li>
+            Diameter: 40 Lightyears.
+            </li>
+            <li>
+            Magnitude: 7.2    
+            </li>    
+            <li>
+            Best Visible: Early - Late Fall.
+            </li>
+            <p>
+                NGC 7380 or more commonly referred to as the Wizard Nebula, is a cloud of dust around an open star cluster. The Wizard Nebula is located roughly 7,000 Lightyears away in the constellation Cepheus. The open cluster NGC 7380 is in an infantile state, as most of the stars had formed only 5 million years ago. NGC 7380 Is still an active star forming region, and the strong stellar wings coming from the stars within the cloud have given the Wizard Nebula its appearance.
+            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--Main Header-->
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Heart Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/Heart%20Nebula.png">
+            <img src="pictures/Heart%20Nebula.png" alt="Heart Nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: IC 1805
+            </li>
+            <li>
+            Discovered: November 3rd 1787, William Herschel.
+            </li>
+            <li>
+            Distance from Earth: 7,500 light-years.
+            </li>
+            <li>
+            Diameter: 200 light-years.
+            </li>
+            <li>
+            Magnitude: 18.3    
+            </li>    
+            <li>
+            Best Visible: Early - Late Fall.
+            </li>
+            <p>
+                The Heart Nebula is located about 7,500 light-years from Earth within the Perseus arm of the Milky Way in the constellation Cassiopeia. IC 1805 is an emission nebula, mainly consisting of ionized Sulfur, Hydrogen and Oxygen. The gas in this nebula is ionized from the group of stars in the middle of the nebula (known as Melotte 15 and Collinder 26). This cluster contains a few stars which are 50 times the mass of our own Sun, and plenty of stars that are only a fraction of the Sun. These brighter stars emit stellar wind that pushes the gas and dust away, giving the nebula its unique shape. If you could see the gas with your naked eye, it would cover 2 degrees in the sky which is about four times the diameter of a full moon.
+            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Soul Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/SoulNebula-final.png">
+            <img src="pictures/SoulNebula-final.png" alt="Soul Nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: IC1848
+            </li>
+            <li>
+            Discovered: November 3rd 1787, William Herschel.
+            </li>
+            <li>
+            Distance from Earth: 6,500 light-years.    
+            </li>
+            <li>
+            Diameter: 100 light-years.
+            </li>
+            <li>
+            Magnitude: 6.5    
+            </li>    
+            <li>
+            Best Visible: Early - Late Fall.
+            </li>
+            <p>
+                The Soul Nebula, or IC1848 is a star forming region roughly 6,500 light-years away in the constellation Cassiopeia. The Redness of this nebula is from the ionization of its Hydrogen gas. Located right next to the Heart Nebula, the Soul Nebula has a diameter of 100 light-years. For comparison, the Milky Way has a diameter of 100,000 light-years, while Andromeda has a diameter of 220,000 light-years. If you wanted to walk to the Soul Nebula with an average speed of 4mph, it would only take you 1,257,406,179,375 years to reach your destination.
+            </p>
+    </div>
+        <!--end of target-->
+
+        <h3 class="targetTitle">The Iris Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/IrisNebula.png">
+            <img src="pictures/IrisNebula.png" alt="Iris" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: NGC 7023
+            </li>
+            <li>
+            Discovered: October 18th 1794, William Herschel.
+            </li>
+            <li>
+            Distance from Earth: 1,300 light-years.    
+            </li>
+            <li>
+            Diameter: 6 light-years.
+            </li>
+            <li>
+            Magnitude: 6.8    
+            </li>    
+            <li>
+            Best Visible: Late Spring - Late Summer.
+            </li>
+            <p>
+                The Iris Nebula or NGC 7023, is a reflection nebula located in the Cepheus constellation. This nebula is unlike most nebulae because of the lack of ionized gasses. Reflection nebulae glow because of extremely tiny dust particles, 10 - 100 times smaller than dust here on earth. This dust diffuses light coming from a bright star which gives off a bluish hue. 
+            </p>
+    </div>
+        <!--end of target-->    
+        
+        <!--TARGET-->
+        <div class="target">
+
+        <h3 class="targetTitle">The Crescent Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/crescentNebulaResized.png">
+            <img src="pictures/crescentNebulaResized.png" alt="Crescent Nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: NGC 6888.
+            </li>
+            <li>
+            Discovered: 1792, William Herschel.
+            </li>
+            <li>
+            Distance from Earth: 5,000 Lightyears.    
+            </li>
+            <li>
+            Diameter: 25 Lightyears.
+            </li>
+            <li>
+            Magnitude: 7.4    
+            </li>    
+            <li>
+            Best Visible: August.
+            </li>
+            <p>
+               The Crescent Nebula, or NGC 6888 is an emission nebula that spans roughly 25 Light Years in diameter. NGC 6888 is located roughly 5000 Light Years away in the constellation Cygnus. The Crescent Nebula is the product of a type of star known as a “Wolf-Rayet”, which are massive objects that are aging and shed their mass at extreme rates. This Wolf-Rayet is shedding its outer layers at a pace of the mass of our Sun every 10,000 years. It is believed that the star in the center of NGC 6888 will eventually end its life in a violent explosion known as a Supernova.
+            </p>
+        </div>
+        <!--end of target-->
+            
+        <!--target-->
+        <div class="target">
+
+        <h3 class="targetTitle">The Eagle Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/EagleNebulaFinal.png">
+            <img src="pictures/EagleNebulaFinal.png" alt="Eagle nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: Messier 16.
+            </li>
+            <li>
+            Discovered: 1745, Jean-Phillipe de Cheseaux.
+            </li>
+            <li>
+            Distance from Earth: 7,000 Lightyears.    
+            </li>
+            <li>
+            Diameter: 70 Lightyears.
+            </li>
+            <li>
+            Magnitude: 6.4    
+            </li>    
+            <li>
+            Best Visible: August.
+            </li>
+            <p>
+                The Eagle's nebula is an active star forming region in the Serpens constellation. This nebula spans 70 x 50 Lightyears and is about 5.5 Million years old. Inside a nebula like this, gravity pulls gas inwards towards the center and if enough is present, nuclear fusion ignites and the compacted cloud becomes a new star. The Eagle nebula is also home to the famous Pillars of Creation.
+            </p>
+        </div>
+        
+        <!--END OF TARGET-->
+    
+    <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Pelican Nebula</h3>
+            
+        <picture>   
+            <a href="pictures/PelicanNebula.png">
+            <img src="pictures/PelicanNebula.png" alt="Pelican Nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: IC 5070.
+            </li>
+            <li>
+            Discovered: William Herschel, 1786.
+            </li>
+            <li>
+            Distance from Earth: 1,800 light-years.  
+            </li>
+            <li>
+            Diameter: 30 light-years.
+            </li>
+            <li>
+            Magnitude: 8.0    
+            </li>    
+            <li>
+            Best Visible: Summer.
+            </li>
+            <p>
+                Located near the tail of Cygnus, the Pelican Nebula is a region of ionized Hydrogen and Oxygen. IC 5070’s close proximity to the very large star Deneb gives the nebula its beautiful intricate dust lanes. The Pelican Nebula is an active star formation region that is heavily studied. The pulsating gasses from stars being born within this nebula push the interstellar dust, giving the nebula its overall shape.
+            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--TARGET-->
+        <div class="target">     
+        <h3 class="targetTitle">The North American and Pelican Nebula</h3>
+            
+        <picture class="targetPicture">
+            <a href="pictures/NorthAmericanFinal.png">
+            <img src="pictures/NorthAmericanFinal.png" alt="North american and Pelican nebula" style="width: auto" class="targetPicture"/>
+            </a>
+        </picture>
+            
+            <!--bullet points-->
+            <li>
+            Catalog: NGC 7000, IC 5070.
+            </li>
+            <li>
+            Discovered: October 24th 1786, William Herschel.
+            </li>
+            <li>
+            Distance from Earth: 1,700 Lightyears, 1800 Lightyears.    
+            </li>    
+            <li>
+            Diameter: 100 Lightyears, 30 Lightyears.
+            </li>
+            <li>
+            Magnitude: 4, 8   
+            </li>   
+            <li>
+            Best Visible: Late July.
+            </li>
+            
+            <p>
+            The North American Nebula is an ionized-hydrogen region within the Cygnus constellation. located about 1,700 Lightyears from the sun, this nebula lies in the Orion arm of the Milky Way. With a diameter of 100 Lightyears, the North American Nebula is roughly 587.86 Trillion miles wide. This nebula was given its name due to its resemblance to the continent of North America. If you could see this with your naked eye, it would cover the same area of 10 full moons in the night sky.
+            </p>
+        </div>
+        <!--end of target-->
+        
+        <!--target-->
+        <div class="target">
+        <h3 class="targetTitle">The Elephant's Trunk Nebula</h3>
+            
+             <picture>   
+            <a href="pictures/Elephant's%20Trunk%20Hubble.png">
+            <img src="pictures/Elephant's%20Trunk%20Hubble.png" alt="Elephant's trunk" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            <li style="list-style: none">Shot with Sky-Watcher 130PDS</li><br>
+            
+        <picture>   
+            <a href="pictures/Elephant's%20Trunk%20Nebula%20boostpng.png">
+            <img src="pictures/Elephant's%20Trunk%20Nebula%20boostpng.png" alt="Elephant's trunk nebula" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            <li style="list-style: none">Shot with Redcat51</li><br>
+            
+            <li>
+            Catalog: IC 1396.
+            </li>
+            <li>
+            Discovered: 1893, Edward Barnard.
+            </li>
+            <li>
+            Distance from Earth: 2,400 Lightyears.    
+            </li>
+            <li>
+            Diameter: 20 Lightyears
+            </li>
+            <li>
+            Magnitude: 3.5    
+            </li>    
+            <li>
+            Best Visible: Late Summer.
+            </li>
+            <p>
+                The Elephant's Trunk Nebula is located in the constellation Cepheus, within the giant interstellar gas cloud known as IC 1396. The Nebula is located at the bottom part of the cloud, reaching up towards the middle. The Elephant's trunk is 20 Lightyears long, while the gas cloud it is located in is roughly 100 Lightyears across, which makes IC 1396 one of the largest nebula in the North American sky. 
+            </p>
+            </div>
+        <!--end of target-->
+        
+        <!--target-->
+        <div class="target">
+        <h3 class="targetTitle">The Lagoon and Trifid Nebula</h3>
+            
+        <picture>
+
+            
+            <a href="pictures/Lagoon%20Nebula.png">
+            <img src="pictures/Lagoon%20Nebula.png" alt="Lagoon nebula" style="width: auto" class="targetPicture"/>    
+            </a>
+                
+        </picture>
+            <li>
+            Catalog: Messier 8, Messier 20.
+            </li>
+            <li>
+            Discovered: 1654, Giovanni Hodierna.
+            </li>
+            <li>
+            Distance from Earth: M8 - 4,077 Lightyears, M20 - 5,200 Lightyears.    
+            </li>
+            <li>
+            Diameter: M8 - 33 Lightyears, M20 - 42 Lightyears.
+            </li>
+            <li>
+            Magnitude: M8 - 6, M20 - 6.3    
+            </li>    
+            <li>
+            Best Visible: Summer to early Fall.
+            </li>
+            <p>
+The Lagoon (M8) and Trifid (M20) Nebula are located at the spout of the "teapot" in the Sagittarius constellation. Sagittarius is located in the densest part of the Milky Way core.The brighter ball on the left is the Trifid Nebula, which is a larger, but further nebula. The area the Lagoon nebula covers is 55 x 110 Lightyears, but does not appear this way to us since it is roughly 5,200 Lightyears from the Earth. With a magnitude of 6, this is the darkest a deep-sky object can be viewable with the naked eye, given you have exceptional eyesight. Looking at the night sky, the Lagoon nebula would be as large as two full moons. Both nebulas are comprised of mostly ionized Hydrogen gas. When the energy from new or dying stars passes through these giant clouds of Hydrogen, it ionizes the gas which makes it glow. When the energy is low, it will glow with a red tint. The darker parts of these nebula are where most of their stars are being formed.
+            </p>
+            </div>
+        <!--end of target-->
+        
+        <!--target-->
+        <div class="target">
+        <h3 class="targetTitle">The Veil Nebula</h3>
+            
+        <picture>
+            <a href="pictures/Veil%20Nebula.png">
+            <img src="pictures/Veil%20Nebula.png" alt="Veil nebula" style="width: auto" class="targetPicture"/>
+            </a>
+        </picture>
+            <li>
+            Catalog: NGC 6960, 6992.
+            </li>
+            <li>
+            Discovered: September 5th 1784, William Herschel.
+            </li>
+            <li>
+            Distance from Earth: 2,400 light-years.    
+            </li>
+            <li>
+            Diameter: 100 Lightyears.
+            </li>
+            <li>
+            Magnitude: 7   
+            </li>    
+            <li>
+            Best Visible: Early September.
+            </li>
+            <p>
+The Veil Nebula is a cloud of heated and ionized gas in the Cygnus constellation.
+This Nebula is a supernova remnant of a star 20 times the size of our sun roughly 2,400 Lightyears away, that exploded around 10,000 years ago. An explosion of this magnitude was visible in daylight, and would have been about the size of Venus. The bright colors you see (Red - Ionized Hydrogen, Blue - Ionized Oxygen) are a result of the extreme force of the explosion, moving debris to speeds of around 370,000 miles-per-hour which create shock-waves that heat the surrounding gas to millions of degrees. It is the subsequent cooling of the gas that creates such vibrant colors. Although only about one star per century in the milky way will end its life in such spectacular fashion, these explosions are responsible for make all elements heavier than Iron, as well as being the main producers of Oxygen in the Universe. Metal elements such as Copper, Mercury and Gold are forged in explosions like the one that created the Veil Nebula. The elements that created Earth, and that are inside every one of us, were created from and distributed by supernovas just like the one you see here. 
+            </p>
+            </div>
+        <!--end of target-->
+        
+        
+        
+        <!--Clusters-->
+        <br><br>
+        <div id="clustersJump"></div>
+        <h2 class="subject">Clusters</h2>
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">Pleiades</h3>
+            
+        <picture>   
+            <a href="pictures/M45.png">
+            <img src="pictures/M45.png" alt="The Pleiades" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: Messier 45.
+            </li>
+            <li>
+            Discovered: Officially, 1610 Galileo Galilei
+            </li>
+            <li>
+            Distance from Earth: 444 Lightyears.    
+            </li>
+            <li>
+            Diameter: Pictured, 8 Lightyears.
+            </li>
+            <li>
+            Magnitude: 1.6    
+            </li>    
+            <li>
+            Best Visible: Late Fall.
+            </li>
+            <p>
+M45, more commonly referred to as The Pleiades or the Seven Sisters, is an open star cluster located about 444 Lightyears away in the constellation of Taurus. The Pleiades name originates from Ancient Greece, where they (Pleiades) are the seven daughters of the Titan Atlas and the ocean Nymph Pleione. During a war, Atlas tried to rebel against Zeus, King of the Gods and was sentenced to forever hold up the heavens on his shoulders. Heartbroken, the seven daughters pleaded with Zeus, who then placed them in the sky to be closer to their Father. The Pleiades was used as an eye test for the Greek army’s rangers. Pleiades has been observed for thousands of years, but was only officially catalogued by Galileo Galilei in 1610. Most of the stars within the cluster were born near the same time. The brighter of the bunch formed within the last 100 million years, and only have a few more hundred million years to go, unlike the billions of years our sun has left. An easy way to find this target is to find Orion’s belt, follow the constellation to Orion’s bow, then find the super bright star Aldebaran and continue that path until you arrive at the Pleiades.            </p>
+    </div>
+        <!--end of target-->
+        
+        <!--target-->
+        <div class="target">
+        <h3 class="targetTitle">The Great Cluster of Hercules</h3>
+            
+        <picture>
+            <a href="pictures/M13%20Great%20Globular%20Cluster%20of%20Hercules.png">
+            <img src="pictures/M13 Great Globular Cluster of Hercules.png" alt="M13 Globular Cluster" style="width: auto" class="targetPicture"/>
+            </a>
+        </picture>
+            
+            <!--bullet points-->
+            <li>
+            Catalog: Messier 13.
+            </li>
+            <li>
+            Discovered: June 1st 1714, Edmond Halley.
+            </li>
+            <li>
+            Distance from Earth: 25,100 light-years.    
+            </li>    
+            <li>
+            Diameter: 145 Lightyears.
+            </li>
+            <li>
+            Magnitude: 5.8   
+            </li>   
+            <li>
+            Best Visible: July.
+            </li>
+            
+            <p>
+            M13 or the Great Cluster of Hercules is located 25,100 Lightyears away and contains roughly 300,000 stars. M13 is 145 Lightyears in diameter (or 852,400,679,111,622 miles wide) and is 11.65 billion years old. The cluster was discovered in 1714 by Edmond Halley, and was a recipient of an interstellar message (known as the Aricebo message) sent out in 1974. This area was picked as the probability of intelligent life living here is higher than other parts of the Milky Way.
+            </p>
+            
+            </div>
+        <!--end of target-->
+       <!--Planetary-->
+        <br><br>
+        <div id="lunarJump"></div>
+        <h2 class="subject">Lunar</h2>
+        
+        <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">Lunar Eclipse</h3>
+            
+        <picture>   
+            <a href="pictures/LunarEclipsefinished-denoise.png">
+            <img src="pictures/LunarEclipsefinished-denoise.png" alt="LunarEclipse" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: Natural Satellite.
+            </li>
+            <li>
+            Discovered: Beginning of Mankind.
+            </li>
+            <li>
+            Distance from Earth: 238,900 Miles.    
+            </li>    
+            <li>
+            Diameter: 2,159.1 Miles.
+            </li>
+            <li>
+            Magnitude: -12.6    
+            </li>   
+            <li>
+            Best Visible: Year round.
+            </li>
+            
+    </div>
+        <!--end of target-->
+    <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">Phases of the Lunar Eclipse</h3>
+            
+        <picture>   
+            <a href="pictures/EclipsePhases_Helfert.png">
+            <img src="pictures/EclipsePhases_Helfert.png" alt="LunarEclipsePhases" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: Natural Satellite.
+            </li>
+            <li>
+            Discovered: Beginning of Mankind.
+            </li>
+            <li>
+            Distance from Earth: 238,900 Miles.    
+            </li>    
+            <li>
+            Diameter: 2,159.1 Miles.
+            </li>
+            <li>
+            Magnitude: -12.6    
+            </li>   
+            <li>
+            Best Visible: Year round.
+            </li>
+            
+    </div>
+        <!--end of target-->
+    
+    
+    
+        <!--target-->
+        <div class="target">
+        <h3 class="targetTitle">The Moon</h3>
+            
+            <picture class="targetPicture">
+            <a href="pictures/fullMoonSHARPless.png">
+            <img src="pictures/fullMoonSHARPless.png" alt="FullMoon" style="width: auto" class="targetPicture"/>
+                </a>
+        </picture>
+        <picture class="targetPicture">
+            <a href="pictures/Full%20Moon.png">
+            <img src="pictures/Full%20Moon.png" alt="FullMoon" style="width: auto" class="targetPicture"/>
+                </a>
+        </picture>
+            <li style="list-style: none">Shot with Sky-Watcher 130PDS</li><br>
+            <!--bullet points-->
+            <li>
+            Catalog: Natural Satellite.
+            </li>
+            <li>
+            Discovered: Beginning of Mankind.
+            </li>
+            <li>
+            Distance from Earth: 238,900 Miles.    
+            </li>    
+            <li>
+            Diameter: 2,159.1 Miles.
+            </li>
+            <li>
+            Magnitude: -12.6    
+            </li>   
+            <li>
+            Best Visible: Year round.
+            </li>
+            
+            <p>
+           The Moon is the brightest object in the night sky with an apparent magnitude of -12.6 (negative numbers are the brightest). Earth’s moon is responsible for stabilizing the Earth’s axis wobble, which makes the planet’s climate relatively steady. The Moon is also responsible for the tides on earth, which have influenced life from its very beginning stages. Although it is not certain, it is theorized that the Moon formed after a Mars-sized body collides with the Earth billions of years ago. The Moon is the 5th largest moon out of a total of 200 in our solar system. Human’s named this moon “The Moon” because at the time they didn’t know any other moons existed. This changed in 1610 when Galileo Galilei discovered four moons orbiting Jupiter. The Moon is the only other planetary object that humans have ever stepped foot on.
+            </p>
+            </div>
+        <!--end of target-->
+        <!--Galaxies-->
+        <br><br>
+        <div id="galaxiesJump"></div>
+        <h2 class="subject">Galaxies</h2>
+    
+    
+    <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Leo Triplet</h3>
+            
+        <picture>   
+            <a href="pictures/Leo_triplet.png">
+            <img src="pictures/Leo_triplet.png" alt="Leo_triplet" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: M65, M66, NGC 3628.
+            </li>
+            <li>
+            Discovered: 1780, Charles Messier.
+            </li>
+            <li>
+            Distance from Earth: 30 Million Light-years.    
+            </li>
+            <li>
+            Diameter: 90,000; 95,000; 100,000 Light-years.
+            </li>
+            <li>
+            Magnitude: 9.3, 8.9, 9.5    
+            </li>    
+            <li>
+            Best Visible: Spring.
+            </li>
+            <p>
+                The Leo triplet is a group of galaxies M65, M66 and NGC 3628 (top-left, top-right and bottom respectively) located within the leg of the Leo constellation. NGC 3628 has earned the nickname “The Hamburger Galaxy” among astronomers. This group of galaxies lies at a distance of roughly 30 million Light-years, or 176,358,761,195,511,021,568 miles away. If the goal of the Apollo 10 Moon mission was to take a trip to one of the galaxies in the Leo triplet, it would only take them 812 Billion years to get there. It’s safe to say these galaxies are just out of reach, but are close enough that we can observe their beauty as they were 30 million years ago. Unfortunately, since these galaxies are so far away we don’t know too much about them.
+            </p>
+    </div>
+        <!--end of target-->
+    
+    <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Whirlpool Galaxy</h3>
+            
+        <picture>   
+            <a href="pictures/Whirlpool_Galaxy.png">
+            <img src="pictures/Whirlpool_Galaxy.png" alt="M51" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: Messier 51.
+            </li>
+            <li>
+            Discovered: Charles Messier, 1773.
+            </li>
+            <li>
+            Distance from Earth: 31 Million Light-years.    
+            </li>
+            <li>
+            Diameter: 60,000 Light-years.
+            </li>
+            <li>
+            Magnitude: 8.4    
+            </li>    
+            <li>
+            Best Visible: November - May
+            </li>
+            <p>
+                M51 or the Whirlpool Galaxy, is a two-armed spiral galaxy located in the Canes Venatici constellation roughly 31 million light-years away from Earth. Discovered and catalogued by Charles Messier in 1773, M51 was the first official spiral galaxy. M51’s companion galaxy, NGC 5195 was subsequently discovered in 1781 by Pierre Méchain, although at the time it was not known that they were interreacting or just a galaxy caught in the distance. NGC 5195 has a distinguishing characteristic most commonly referred to as “The Crown”. You can see this 3-pronged feature above the galaxy. NGC 5195’s influence on M51 has greatly exaggerated the overall spiral structure of the Whirlpool galaxy. The Whirlpool Galaxy is home to the first ever confirmed extragalactic planet, M51-ULS-1b. This planet is slightly smaller than Saturn, and orbits at about 10 Astronomical-Units. 
+            </p>
+    </div>
+        <!--end of target-->
+    
+    
+    
+        
+        <!--TARGET--
+        <div class="target">
+
+        <h3 class="targetTitle">Andromeda</h3>
+            
+        <picture>   
+            <a href="pictures/Andromeda_Final.png">
+            <img src="pictures/Andromeda_Final.png" alt="Andromeda" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            <li style="list-style: none">Shot with Redcat51</li><br>
+            -->
+            <picture>   
+            <a href="pictures/M31-130pds.png">
+            <img src="pictures/M31-130pds.png" alt="M31-130pds" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            <li style="list-style: none">Shot with Sky-Watcher 130PDS</li><br>
+            
+            <li>
+            Catalog: M31
+            </li>
+            <li>
+            Discovered: 964
+            </li>
+            <li>
+            Distance from Earth: 2.5 Million light-years. 
+            </li>
+            <li>
+            Diameter: 220,000 light-years.
+            </li>
+            <li>
+            Magnitude: 3.44     
+            </li>    
+            <li>
+            Best Visible: Fall
+            </li>
+            <p>
+                Andromeda, or M31 is a barred spiral galaxy located in the Andromeda constellation about 2.5 million light-years from earth. Discovered around the year 964 by Abd Al-Rahman Al Sufi, Abd recorded Andromeda in his book, “Book of Fixed Stars” as a “nebulous smear” or a “small cloud”. At this time, it was believed that everything was contained within the Milky Way. In the year 1885, a supernova named Nova 1885, was seen in Andromeda, and has been the only one seen in Andromeda since then.  It was only in 1920 did Edwin Hubble prove that this was in fact a galaxy, and that there are billions more just like it. So far, we have determined there are more than 1 trillion stars in the Andromeda galaxy, which beats out the Milky Way by roughly 200 billion, though as our abilities to detect matter more accurately improve over the years, this will change. Andromeda has two distinct satellite galaxies which can be seen directly above and below the galaxy known as M32 (above) and M110 (below). A study was done in 2006 by a team on scientists that determined the Andromeda galaxy was most likely formed 10 billion years ago by collisions of smaller protogalaxies. It is certain that in around 4.5 billion years, Andromeda and the Milky Way will collide. Since galaxies are mostly empty space, it is believed that our solar system won’t be affected and that no stars will collide. This collision will sling galactic matter outside of the galaxies, and will take a few billion years to fully combine. Andromeda and the Milky Way are located in what is called the “Local group”, which is a group of over 30 galaxies within the diameter of roughly 10 million light-years. M31 and the Milky Way are the two largest, with M33 (Triangulum Galaxy) coming in third. With an apparent magnitude of 3.44, M31 is just bright enough to be seen with the unaided eye.
+            </p>
+        </div>
+        <!--end of target-->
+        
+          <!--TARGET-->
+    <div class="target">
+
+        <h3 class="targetTitle">The Triangulum Galaxy</h3>
+            
+        <picture>   
+            <a href="pictures/M33_Final_resized.png">
+            <img src="pictures/M33_Final_resized.png" alt="M33" style="width: auto" class="targetPicture"/>    
+            </a>    
+        </picture>
+            
+            <li>
+            Catalog: M33
+            </li>
+            <li>
+            Discovered: 1654
+            </li>
+            <li>
+            Distance from Earth: 2.73 million light-years    
+            </li>
+            <li>
+            Diameter: 60,000 light-years
+            </li>
+            <li>
+            Magnitude: 5.72    
+            </li>    
+            <li>
+            Best Visible: Fall - Winter
+            </li>
+            <p>
+               Located 2.73 million light-years away, the Triangulum Galaxy or M33, is one of the larger galaxies in our Local Group. According to a survey done in 2015, “The star formation rate intensity is 10 times higher than the area surveyed in the Andromeda Galaxy”. The Triangulum galaxy is about 60% the diameter of the Milky Way, and contains far less stars, about 40 Billion, compared to the Milky Way’s 100 - 400 billion and Andromeda’s one trillion stars. M33 was likely discovered before 1654 by Giovanni Battista Hodierna. In his work, he listed it as a “cloud-like nebulosity”. The description and area most closely match the Triangulum galaxy, so it is most likely M33 is what he was referring to. When the night is exceptionally clear, the Triangulum galaxy is the furthest object you can see with your naked eye, given you have 20/20 vision.
+
+            </p>
+    </div>
+        <!--end of target-->
+        
+    </body>
+</html>

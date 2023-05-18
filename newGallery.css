@@ -84,11 +84,17 @@ img{
     }
 }
 h1{
-
-    font-size: 35px;
 font-family: 'Baumans';
     line-height: 3.5em;
     text-align: center;
-    font-size: 55px;
     color: #000000;
+}
+#airqualitymap{
+  width: 100%;
+  transition-duration: .3s;
+  max-width: 100%;
+  display:block;
+  overflow:auto;
+  cursor:pointer;
+  margin-top: 2em;
 }

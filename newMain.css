@@ -437,3 +437,6 @@ body {
   .ww-box{
     margin-bottom:1em;
   }
+  #equipmentdetails{
+    margin: -10%;
+  }

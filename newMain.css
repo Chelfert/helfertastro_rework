@@ -169,16 +169,13 @@ header li a{
     text-decoration: none;
 font-family: 'Baumans';
     margin: 1em;
-    padding-left: 20%;
-    padding-right: 20%;
     padding-bottom: 3px;
+    display: inline;
 }
 header li a:hover{
     text-decoration: underline;
 }
-header *{
-    margin: 15px;
-}
+
 
 #conditionscontainer{
     

@@ -2,15 +2,16 @@
 body, html{
   margin: 0;
   background: #181D32;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Baumans', sans-serif;
 }
 
 .container-all{
-  width: auto;
+  width: 100%;
   margin: 20px auto;
   height: auto;
     margin-bottom: 25px;
-    margin-left: 5px;
+    margin-left: .5%;
+
   
 }
 .container{

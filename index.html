@@ -7,7 +7,7 @@
 
 
             <meta charset="utf-8">
-            <body style="overflow: hidden;"></style>
+            <body style="overflow: auto;"></style>
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
@@ -63,28 +63,35 @@
         <div>
         <img id="mainlogo" src="Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png">
         </div>
-
-
+  
         </div>
+        
+        <h3 style="padding-bottom: 1.5em;">Most Recent</h3>
 
-        <!--HOMEPAGE CAROUSEL-->
+        <!--HOMEPAGE RECENT CAROUSEL-->
        <div id="slider"class="slider">
+    
         <!--image1-->
         <div class="slide">
-            <img src="pictures/OrionNebula.png" alt=""/>
+            <img src="pictures/M13_wtrmrk.jpg" alt="" onclick="target1()"/>
         </div>
         <!--image2-->
         <div class="slide">
-            <img src="pictures/M31-130pds.png" alt=""/>
+            <img src="pictures/Leo_triplet.png" alt="" onclick="target2()"/>
         </div>
         <!--image3-->
         <div class="slide">
-            <img src="pictures/CygnusWallHubble-topaz.png" alt=""/>
+            <img src="pictures/Whirlpool_Galaxy.png" alt="" onclick="target3()"/>
         </div>
         <!--control buttons-->
         <button id="btn-next" class="btn btn-next">></button>
         <button id="btn-prev" class="btn btn-prev"><</button>
        </div>
+            <script>
+                function target1(){ location.replace("/targetpages/m13.html") }
+                function target2(){ location.replace("/targetpages/leotriplet.html") }
+                function target3(){ location.replace("/targetpages/WhirlpoolGalaxy.html") }
+            </script>
 
        <script src="button.js"></script>
     </body>

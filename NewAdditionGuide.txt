@@ -1,0 +1,15 @@
+Things to change when adding new targets
+
+Index.html
+
+1. Change Most Recent Carousel image to new target image
+    a. change Carousel hover text
+2. Change Most Recent Onclick target change to new image
+    a. change target location on Target1, Target2 and Target3 within script.
+
+Gallery.html
+
+1. If new target, copy container template at beginning of file and add to the top of the gallery.
+    a. link new target image and targetpage. If you haven't created a target page, use "/targetpage/Template.html"
+1a. If old target, replace container image with new image.
+    a. add new image to targetpage and place it above the old image. Use a "<br>" between photos so they don't run together.

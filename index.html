@@ -73,15 +73,29 @@
     
         <!--image1-->
         <div class="slide">
+            <div class="tooltip">
+                <!--HOVER TEXT-->
+                <span class="tooltiptext">M13, Globular Cluster of Hercules</span>
             <img src="pictures/M13_wtrmrk.jpg" alt="" onclick="target1()"/>
         </div>
+        </div>
+
         <!--image2-->
         <div class="slide">
+            <div class="tooltip">
+                <!--HOVER TEXT-->
+                <span class="tooltiptext">Triplet in Leo</span>
             <img src="pictures/Leo_triplet.png" alt="" onclick="target2()"/>
+        </div>
         </div>
         <!--image3-->
         <div class="slide">
+            <div class="tooltip">
+                <!--HOVER TEXT-->
+                <span class="tooltiptext">Whirlpool Galaxy</span>
+              
             <img src="pictures/Whirlpool_Galaxy.png" alt="" onclick="target3()"/>
+        </div>
         </div>
         <!--control buttons-->
         <button id="btn-next" class="btn btn-next">></button>
@@ -94,5 +108,34 @@
             </script>
 
        <script src="button.js"></script>
+       <!--HoverToolTip-->
+       <style>
+        .tooltip {
+          position: relative;
+          display: inline-block;
+          border-bottom: 1px dotted black;
+        }
+        
+        .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 120px;
+          /*Transparent background for tooltip text*/
+          background-color:rgba(0, 0, 0, 0.0);
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px 0;
+          /* Position the tooltip */
+          position: absolute;
+          /*positioning is set to bottom center of photo*/
+          left: 40%;
+          top: 65%;
+          z-index: 1;
+        }
+        
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+        }
+        </style>
     </body>
 </html>

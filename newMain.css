@@ -65,6 +65,7 @@ h2, h3, h4, h5, h6 {
     float: left;
     padding-right: 5%;
     font-style: italic;
+    font-size: 1.5vw;
 }
 
 .target{
@@ -138,7 +139,7 @@ samp {
     display:block;
     overflow:auto;
     cursor:default;
-    margin-right: 10%;
+    /*margin-right: 10%;*/
     size-adjust: 225%;
   
   
@@ -380,12 +381,32 @@ padding-right: 2%;
     justify-content: space-between;
     max-width: 100%;
     position: relative; top: 15px;
+    align-items: center; 
+
 }
 a#Purpose{
     align-self: normal;
     margin-top: 5%;
     padding-top: 2em;
 }
+
+/* Base styles */ 
+#Purpose {
+    font-size: 1.3rem; 
+  }
+  
+  /* Make text larger on smaller screens */
+  @media (max-width: 800px) {
+    #Purpose {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    #Purpose {
+      font-size: 1.6rem;
+    } 
+  }
 
 /*CAROUSEL*/
 

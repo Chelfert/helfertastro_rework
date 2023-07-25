@@ -457,18 +457,7 @@ body {
     }
   }
 
-  /* Desktop screens */
-@media (min-width: 1024px) {
-
-    #slider {
-      max-width: 80%;
-    }
   
-    .slide img { 
-      width: 100%;
-    }
-  
-  }
   
   
   .btn {

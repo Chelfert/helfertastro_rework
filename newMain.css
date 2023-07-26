@@ -65,7 +65,6 @@ h2, h3, h4, h5, h6 {
     float: left;
     padding-right: 5%;
     font-style: italic;
-    font-size: 1.5vw;
 }
 
 .target{
@@ -139,7 +138,7 @@ samp {
     display:block;
     overflow:auto;
     cursor:default;
-    /*margin-right: 10%;*/
+    margin-right: 10%;
     size-adjust: 225%;
   
   
@@ -381,32 +380,12 @@ padding-right: 2%;
     justify-content: space-between;
     max-width: 100%;
     position: relative; top: 15px;
-    align-items: center; 
-
 }
 a#Purpose{
     align-self: normal;
     margin-top: 5%;
     padding-top: 2em;
 }
-
-/* Base styles */ 
-#Purpose {
-    font-size: 1.3rem; 
-  }
-  
-  /* Make text larger on smaller screens */
-  @media (max-width: 800px) {
-    #Purpose {
-      font-size: 1.4rem;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    #Purpose {
-      font-size: 1.6rem;
-    } 
-  }
 
 /*CAROUSEL*/
 
@@ -418,9 +397,9 @@ body {
   }
   
   .slider {
-    width: 80%;
-    max-width: 1000px;
-    height: 80vh;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
     position: relative; top: -3em;
     overflow: hidden; /* <===  */
     border-radius: 20px;
@@ -431,8 +410,8 @@ body {
   
   .slide {
     width: 100%;
-    max-width: 1200px;
-    height: 100%;
+    max-width: 800px;
+    height: 400px;
     position: absolute;
     transition: all 0.5s;
     padding-bottom: 5vh;
@@ -441,24 +420,8 @@ body {
   .slide img {
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
-
-  @media (max-width: 600px) {
-    #slider {
-      height: 90vh; 
-      padding: 10px;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    #slider {
-      height: 100vh;
-    }
-  }
-
-  
-  
   
   .btn {
     position: absolute;
@@ -491,5 +454,3 @@ body {
   #equipmentdetails{
     margin: -10%;
   }
-
-  

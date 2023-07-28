@@ -151,6 +151,7 @@ header {
     left: 0;
     right: 0;
     height: 10%;
+    max-height: 5.5vh;
     display: flex;
     align-items: center;
     margin-top: 0px;
@@ -167,7 +168,7 @@ header li a{
     color: #ffffff;
     white-space: nowrap;
     text-decoration: none;
-    font-size: 3.0vw;
+    font-size: 2.0vw;
 font-family: 'Baumans';
     margin: 1em;
     padding-bottom: 3px;

@@ -20,6 +20,37 @@
   color: white; /* white text */
   padding: 10px; /* add padding */
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
         </style>
 
 
@@ -72,6 +103,7 @@
               <a href="/TargetPages/VeilNebula.html">
               <img src="/jpgPictures/PickeringsTriangle.jpg" style="width:100%;border-radius: 3%;">
               <div class="title">Pickering's Triangle and Eastern Veil</div>
+              <div class="title" style="position: relative;">Click for details</div>
               </a>
             </div>
           
@@ -79,6 +111,8 @@
               <a href="/TargetPages/M13.html">
               <img src="/jpgPictures/M13_wtrmrk.jpg" style="width:100%;border-radius: 3%;">
               <div class="title">M13, Globular Cluster of Hercules</div>
+              <div class="title" style="position: relative;padding-bottom: 5px;">Click for details</div>
+
             </a>
             </div>
           
@@ -86,6 +120,8 @@
               <a href="/TargetPages/PelicanNebula.html">
               <img src="/jpgPictures/PelicanNebula.jpg" style="width:100%;border-radius: 3%;">
               <div class="title">Pelican Nebula</div> 
+              <div class="title" style="position: relative;">Click for details</div>
+
             </a>
             </div>
           

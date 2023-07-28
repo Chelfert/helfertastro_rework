@@ -14,7 +14,9 @@
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
+    <style>
 
+        </style>
         
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
@@ -50,18 +52,32 @@
 <!--target-->
 <div class="target">
     <h3 class="targetTitle">The Veil Nebula</h3>
-    
+    <div class="image-container">
      <picture>
-        <a href="/pictures/PickeringsTriangle.jpg">
-        <img src="/pictures/PickeringsTriangle.jpg" alt="Veil nebula" style="width: auto" class="targetPicture"/>
-        </a>
+        <img onclick="window.location.href='../pictures/PickeringsTriangle.jpg'" src="/pictures/PickeringsTriangle.jpg" alt="Veil nebula" style="width: auto" class="targetPicture"/>
     </picture>
+    <!-- Button Below the image -->
+    <a href="/pictures/PickeringsTriangle.jpg" download="PickeringsTriangle.jpg">
+    <button class="download">Download</button>
+  </a>
+</div>
+<li>
+    Acquisition: AT115EDT. February, 2023
+</li>
     <br>
     <picture>
-        <a href="/pictures/Veil%20Nebula.png">
-        <img src="/pictures/Veil%20Nebula.png" alt="Veil nebula" style="width: auto" class="targetPicture"/>
-        </a>
+        <div class="image-container">
+        <img onclick="window.location.href='../pictures/Veil%20Nebula.jpg'"  src="/pictures/Veil%20Nebula.png" alt="Veil nebula" style="width: auto" class="targetPicture"/>
+
+            <!-- Button Below the image -->
+    <a href="/pictures/veil%20nebula.png" download="VeilNebula.png">
+        <button class="download">Download</button>
+      </a>
+      </div>
     </picture>
+    <li>
+        Acquisition: Redcat 51. July, 2022
+    </li>
         <li>
         Catalog: NGC 6960, 6992.
         </li>

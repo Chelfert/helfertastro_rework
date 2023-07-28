@@ -7,19 +7,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
-    <!-- update the version number as needed -->
+
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
-
-
-        
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
 
@@ -29,8 +19,6 @@
         <link rel="stylesheet" href="../newMain.css">
         <link rel="stylesheet" href="../newGallery.css">
     </head>
-    
-    
     <!--START OF BODY-->
     <body>
  
@@ -50,13 +38,18 @@
 <!--TARGET-->
 <div class="target">     
     <h3 class="targetTitle">The North American and Pelican Nebula</h3>
-        
+        <div class="image-container">
     <picture class="targetPicture">
-        <a href="/pictures/NorthAmericanFinal.png">
-        <img src="/pictures/NorthAmericanFinal.png" alt="North american and Pelican nebula" style="width: auto" class="targetPicture"/>
-        </a>
+        <img  onclick="window.location.href='../pictures/NorthAmericanFinal.png'"  src="/pictures/NorthAmericanFinal.png" alt="North american and Pelican nebula" class="targetPicture" style="max-width: 80%;"/>
     </picture>
-        
+          <!-- Button Below the image -->
+          <a href="/pictures/NorthAmericanFinal.png" download="NorthAmericanNebula.png">
+            <button class="download">Download</button>
+        </a>    
+</div>
+    <li>
+        Acquisition: Redcat. July, 2022
+    </li>
         <!--bullet points-->
         <li>
         Catalog: NGC 7000, IC 5070.

@@ -153,7 +153,7 @@ header {
     left: 0;
     right: 0;
     height: 10%;
-    max-height: 150px;
+    max-height: 50px;
     display: flex;
     align-items: center;
     margin-top: 0px;

@@ -82,6 +82,7 @@ li{
     max-width: 60%;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 3%;
 }
 .equipmentPicture{
     max-height: 40%;
@@ -463,4 +464,24 @@ body {
   }
   #equipmentdetails{
     margin: -10%;
+  }
+  .download {
+    background: #636363;
+    color: #fff;
+    border: none;
+    padding: 4px 6px; 
+    border-radius: 4px;
+    cursor: pointer; 
+    font-family: 'Baumans';
+    
+  }
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    max-width: fit-content;
+  }
+  
+  .image-container img {
+    margin-bottom: 10px;
   }

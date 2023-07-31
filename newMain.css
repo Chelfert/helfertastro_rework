@@ -33,6 +33,7 @@ p{
     color: #ffffff;
     margin: 2%;
     line-height: 1.5em;
+    font-size: 2.5vh;
     text-align: center;
 }
 .subject{
@@ -72,10 +73,16 @@ h2, h3, h4, h5, h6 {
     align-items: center;
 }
 li{
-    line-height: 2em;
-    font-size: 20px;
+    line-height: 3em;
+    font-size: 2.5vh;
     color: #ffffff;
     text-align: center;    
+}
+.quickfacts{
+    line-height: 3vw;
+}
+.description li{
+    line-height: 3em;
 }
 .targetPicture{
     max-height: 50%;
@@ -206,7 +213,7 @@ header li a:hover{
     }
     li{
         line-height: 3em;
-        font-size: 12px;
+        font-size: 2.5vh;
         color: whitesmoke;   
     }
 .homeFlex{
@@ -237,13 +244,6 @@ nav li a{
     #btn-next, #btn-prev{
         top:35%;
     }
-        li{
-            line-height: 3em;
-            font-size: 12px;
-            margin: 0px;
-            color: whitesmoke;   
-            padding: 0px;
-        }
         #navicon{
             max-width: 50%;
         }

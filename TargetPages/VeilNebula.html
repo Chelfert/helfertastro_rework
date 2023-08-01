@@ -41,7 +41,7 @@
     <header>
         <img id="navicon" src="../Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png">
         <nav>
-            <ul class="navbar">
+            <ul class="navbar" style="padding-left: 10%;">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../Gallery.html">Gallery</a></li>
                 <li><a href="../localConditions.html">Local Conditions</a></li>
@@ -59,12 +59,9 @@
                     src="/pictures/PickeringsTriangle.jpg" alt="Veil nebula" style="width: auto"
                     class="targetPicture" />
             </picture>
-            <!-- Button Below the image -->
-            <a href="/pictures/PickeringsTriangle.jpg" download="PickeringsTriangle.jpg">
-                <button class="download">Download</button>
-            </a>
+            
         </div>
-        <p>
+        <p style="text-align: center;" id="acquisitionscope">
             Acquisition: AT115EDT. February, 2023
         </p>
         <br>
@@ -73,42 +70,39 @@
                 <img onclick="window.location.href='../pictures/Veil%20Nebula.png'" src="/pictures/Veil%20Nebula.png"
                     alt="Veil nebula" style="width: auto" class="targetPicture" />
 
-                <!-- Button Below the image -->
-                <a href="/pictures/veil nebula.png" download="VeilNebula.png">
-                    <button class="download">Download</button>
-                </a>
+                
             </div>
-            <p style="text-align: center;">
+            <p style="text-align: center;" id="acquisitionscope">
                 Acquisition: Redcat 51. July, 2022
             </p>
         </picture>
         <div class ="blurbbox">
             <h3 style="text-align: center;">Quick Facts</h3>
 
-        <div class="quickfacts">
+        <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
 
-        <li>
+        <li id="quickfactli"style="text-align: left;">
             Catalog: NGC 6960, 6992.
         </li>
-        <li>
+        <li id="quickfactli"style="text-align: left;">
             Discovered: September 5th 1784, William Herschel.
         </li>
-        <li>
+        <li id="quickfactli"style="text-align: left;">
             Distance from Earth: 2,400 light-years.
         </li>
-        <li>
+        <li id="quickfactli"style="text-align: left;">
             Diameter: 100 Lightyears.
         </li>
-        <li>
+        <li id="quickfactli"style="text-align: left;">
             Magnitude: 7
         </li>
-        <li>
+        <li id="quickfactli"style="text-align: left;">
             Best Visible: Early September.
         </li>
         </div>
-        <h3 style="text-align: center; grid-column: 2;">Description</h3>
+        <h3 style="text-align: center;">Description</h3>
 
-            <p class="description">
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
             The Veil Nebula is a cloud of heated and ionized gas in the Cygnus constellation.
             This Nebula is a supernova remnant of a star 20 times the size of our sun that exploded around 10,000 years ago.
             An explosion of this magnitude was visible in daylight, and would have been about the size of Venus.
@@ -126,7 +120,14 @@
             </p>
         </div>
     <!--end of target-->
-
+<!-- download button -->
+<a href="/pictures/PickeringsTriangle.jpg" download="PickeringsTriangle.jpg">
+    <button class="download">Download Pickering's Triangle</button>
+</a>
+    <!-- download button -->
+    <a href="/pictures/veil nebula.png" download="VeilNebula.png">
+        <button class="download"">Download Veil Nebula</button>
+    </a>
 </body>
 
 </html>

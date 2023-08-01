@@ -73,8 +73,8 @@ h2, h3, h4, h5, h6 {
     align-items: center;
 }
 li{
-    line-height: 3em;
-    font-size: 2.5vh;
+    line-height: 2.5em;
+    font-size: 20px;
     color: #ffffff;
     text-align: left;    
 }
@@ -153,7 +153,7 @@ samp {
 }
 
 #navicon{
-    height: 150px;
+    height: 100px;
     border-width: 0px;
     min-width: fit-content;
     margin: 0px;
@@ -198,7 +198,7 @@ header {
 }
 header li {
     display: inline;
-    padding: .4em;
+    padding: .2em;
 
         
 }
@@ -240,8 +240,8 @@ header li a:hover{
         top: -5%;
     }
     li{
-        line-height: 3em;
-        font-size: 2.5vh;
+        line-height: 2.5em;
+        font-size: 18px;
         color: whitesmoke;   
     }
 .homeFlex{
@@ -251,10 +251,10 @@ header li a:hover{
 header li a{
     margin: .2em;
     font-weight: 100;
-    font-size: larger;
+    font-size: 20px;
 }
 nav li a{
-    font-size:2em;
+    font-size:1em;
 }
 
 .btn-prev {
@@ -321,7 +321,8 @@ nav{
 
 ul.navbar{
     display: flex;
-    overflow:visible
+    overflow:visible;
+    padding-left:0;
 
 }
 .mostRecent{

@@ -29,11 +29,19 @@ body {
     
 }
 
+.targetTitle{
+    padding-top: 7%;
+}
+#acquisitionscope{
+    font-size: 12px;
+}
+
 p{
     color: #ffffff;
     margin: 2%;
     line-height: 1.5em;
-    text-align: center;
+    text-align: left;
+    align-items: center;
 }
 .subject{
     font-family: monospace;
@@ -122,7 +130,24 @@ samp {
     animation: colorize 0s cubic-bezier(0, 0, .78, .36) 1;
     
 }
-
+.blurbbox {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    grid-auto-flow: dense;
+    padding-left:5%;
+    padding-right: 5%;
+    margin-top: 3em;
+    padding-top:3em;
+    position: relative;
+  }
+  .blurbboxindex {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    grid-auto-flow: dense;
+    padding-top: 1em;
+  }
 #navicon{
     animation: colorize 1s cubic-bezier(0, 0, .78, .36) 1;
     background: transparent;
@@ -138,9 +163,8 @@ samp {
     background: transparent;
     background-color: #181D32;
     min-width: 220px;
-    max-height: 350px;
+    max-height: 650px;
     transition-duration: .3s;
-    max-width: 40%;
     display:block;
     margin: auto;
     overflow:auto;
@@ -218,7 +242,7 @@ header li a{
     font-weight: 100;
 }
 nav li a{
-    font-size:16px;
+    font-size:12px;
 }
 
 .btn-prev {
@@ -233,64 +257,10 @@ nav li a{
 }
 
 
-@media only screen and (max-width: 520px){
-    #btn-next, #btn-prev{
-        top:35%;
-    }
-        li{
-            line-height: 3em;
-            font-size: 12px;
-            margin: 0px;
-            color: whitesmoke;   
-            padding: 0px;
-        }
-        #navicon{
-            max-width: 50%;
-        }
-        
-    }
-
-@media only screen and (max-width: 395px){
-    .homeFlex{
-        padding-top: 2em;
-        padding-bottom: 3em;
-    }
-    #btn-next, #btn-prev{
-        top: 22%;
-    }
-    
-    }
-
- @media only screen and (max-width: 1000px){
-.homeFlex{
-    align-items: center;
-    padding-bottom: 10vh;
-    justify-content: space-between;
-    margin-top: 0%;
-    font-size: 16px;
-     }
-
-
-     #mainlogo{
-        width: 20vh;
-        padding-right: 0%;
-     }
-     .slide{
-        position:absolute;
-        min-height: 10vh;
-        min-width: 10vw;
-     }
-     .btn-next .btn-prev{
-        top: 60%;
-     }
-     #slider{
-        position: relative; top: -8vh;
-     }
-     
-}
 
 nav{
     margin: 0px;
+    width: 100%;
 
 }
 ul.navbar{
@@ -395,7 +365,8 @@ background-image: url ("pictures/button_hover.png");
 a#Purpose{
     align-self: normal;
     align-items: center;
-    font-size:2.5vh;
+    font-size:2vh;
+    padding-top: 10%;
 }
 
 /*CAROUSEL*/
@@ -485,3 +456,78 @@ body {
   .image-container img {
     margin-bottom: 10px;
   }
+
+  @media only screen and (max-width: 520px)
+{
+    #btn-next, #btn-prev{
+        top:35%;
+    }
+        li{
+            line-height: 3em;
+            font-size: 12px;
+            margin: 0px;
+            color: whitesmoke;   
+            padding: 0px;
+        }
+        #navicon{
+            max-width: 50%;
+        }
+        .blurbbox{
+            padding-top: 15%;
+            margin-top: 15%;
+        }
+        #Purpose{
+            font-size: 2vh;
+        }
+        
+    }
+
+@media only screen and (max-width: 395px){
+    .homeFlex{
+        padding-top: 2em;
+        padding-bottom: 3em;
+    }
+    #btn-next, #btn-prev{
+        top: 22%;
+    }
+    
+    }
+
+ @media only screen and (max-width: 1000px){
+.homeFlex{
+    align-items: center;
+    padding-bottom: 10vh;
+    justify-content: space-between;
+    margin-top: 0%;
+    font-size: 16px;
+     }
+
+
+     #mainlogo{
+        width: 20vh;
+        padding-right: 0%;
+     }
+     .slide{
+        position:absolute;
+        min-height: 10vh;
+        min-width: 10vw;
+     }
+     .btn-next .btn-prev{
+        top: 60%;
+     }
+     #slider{
+        position: relative; top: -8vh;
+     }
+     
+}
+@media only screen and (max-width: 410px){
+    #quickfactli{
+        font-size: 16px;
+    }
+    body p {
+        font-size:16px;
+    }
+    a#Purpose{
+        font-size: 20px;
+    }
+}

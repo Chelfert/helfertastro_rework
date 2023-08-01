@@ -34,34 +34,38 @@
     
     <!--START OF BODY-->  
     <body>
-        <header>
-            <img id="navicon" src="Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" >
-                <nav>
-                    <ul class="navbar">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Gallery.html">Gallery</a></li>
-                        <li><a href="localConditions.html">Local Conditions</a></li> 
-                        <li><a href="equipment.html">Equipment</a></li>
-                    </ul>
-                </nav>       
-        </header>      
+        <header style="max-height: 150px;">
+
+      <img style="height: 35px;width: fit-content;margin: 1.5%;" id="navicon" src="Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png">
+
+      <nav>
+
+        <ul class="navbar" style="padding-left: 10%;">
+          <li><a href="index.html" style="font-size: 30px;">Home</a></li>
+          <li><a href="Gallery.html" style="font-size: 30px;">Gallery</a></li>
+          <li><a href="localConditions.html" style="font-size: 30px;">Local Conditions</a></li>
+          <li><a href="equipment.html" style="font-size: 30px;">Equipment</a></li>
+        </ul>
+      </nav>
+    </header>
         
         <!--Main Header-->
-        <h1 class="mainHeader">Local Conditions in Huntsville, Alabama</h1>
+        <h1 class="mainHeader">Local Conditions in Huntsville, Alabama</h1><br>
     
     <!--WEATHER FORECAST WIDGET-->
 <div class="weatherWidget" id="ww_285c3de210dbc" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl4314"],"font":"Arial","sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>More forecasts: <a href="https://oneweather.org/london/" id="ww_285c3de210dbc_u" target="_blank">Weather tomorrow</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_285c3de210dbc"></script>
         <a href=https://www.cleardarksky.com/c/HuntsvillALkey.html>
             
-<img id="airqualitymap" src="https://www.cleardarksky.com/c/HuntsvillALcsk.gif?c=907212"></a>
 
         
         <!--Light Pollution Map-->
         <div id="conditionscontainer">
             <!--Moon phase widget-->
-      <!-- © wdisseny --><div id="contain_moon" style="text-align:center;padding-bottom:25px;"><div style="font-weight:bold"></div><div style="margin-bottom:-75px;padding:150px;filter:drop-shadow(0 0 150px hsl(0,100%,0%))"></div><div>.</div><div style="font-size:small">.</div></div><script>(function(){var d=new Date().getDate();var m=document.querySelectorAll("#contain_moon div");var a=new XMLHttpRequest();var url="https://www.icalendar37.net/lunar/api/?lang=en&month="+(new Date().getMonth()+1)+"&year="+(new Date().getFullYear())+"&size=500&lightColor=rgb(150,150,150)&shadeColor=rgb(17,17,17)&t&LDZ="+new Date(new Date().getFullYear(),new Date().getMonth(),1)/1000+"";m[1].style.height="500px";a.onreadystatechange=function(){if(a.readyState==4&&a.status==200){var b=JSON.parse(a.responseText);m[1].innerHTML=b.phase[d].svg;if(typeof moon_widget_loaded=="function")moon_widget_loaded(b);m[2].innerHTML=b.phase[d].npWidget;m[3].innerHTML="Next full moon<br>"+b.nextFullMoon}};a.open("GET",url,true);a.send()})()</script>
+      <!-- © wdisseny --><div id="contain_moon" style="text-align:center;padding-bottom:25px;"><div style="font-weight:bold"></div>
+      <div style="margin-bottom:-75px;padding:150px;filter:drop-shadow(0 0 150px hsl(0,100%,0%))"></div><div>.</div><div style="font-size:small">.</div></div><script>(function(){var d=new Date().getDate();var m=document.querySelectorAll("#contain_moon div");var a=new XMLHttpRequest();var url="https://www.icalendar37.net/lunar/api/?lang=en&month="+(new Date().getMonth()+1)+"&year="+(new Date().getFullYear())+"&size=500&lightColor=rgb(150,150,150)&shadeColor=rgb(17,17,17)&t&LDZ="+new Date(new Date().getFullYear(),new Date().getMonth(),1)/1000+"";m[1].style.height="500px";a.onreadystatechange=function(){if(a.readyState==4&&a.status==200){var b=JSON.parse(a.responseText);m[1].innerHTML=b.phase[d].svg;if(typeof moon_widget_loaded=="function")moon_widget_loaded(b);m[2].innerHTML=b.phase[d].npWidget;m[3].innerHTML="Next full moon<br>"+b.nextFullMoon}};a.open("GET",url,true);a.send()})()</script>
 
         </div>
+
         <br><br><br><br><br><br><br>
            <div class="description">                    
         </div>

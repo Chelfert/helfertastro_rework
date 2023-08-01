@@ -7,10 +7,10 @@ body, html{
 
 .container-all{
   width: 100%;
-  margin: 20px auto;
   height: auto;
-    margin-bottom: 25px;
+    margin-bottom: 5%;
     margin-left: .5%;
+    margin-right: .5%;
 
   
 }
@@ -18,7 +18,6 @@ body, html{
   width: calc(33% - 6px);
   overflow:hidden;
   height: 15em;
-  margin:3px;
   padding: 0px;
   display:block;
   position:relative;

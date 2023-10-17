@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+            <meta charset="utf-8">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+        
+        
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+
+
+        
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Helfert Astrophotography</title>
+        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+        <link rel="stylesheet" href="../newMain.css">
+        <link rel="stylesheet" href="../newGallery.css">
+    </head>
+    
+    
+    <!--START OF BODY-->
+    <body>
+ 
+        <!--NAVBAR-->
+<header>
+    <img id="navicon" src="../Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" >
+        <nav>
+            <ul class="navbar" style="padding-left: 10%;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li> 
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
+        </nav>       
+</header>      
+
+<!--target-->
+<div class="target">
+    <h3 class="targetTitle">Double Cluster in Perseus</h3>
+        <div class="image-container">
+    <picture>
+        <img onclick="window.location.href='../pictures/PerseusCluster.jpg'"   src="/pictures/PerseusCluster.jpg" alt="Double Cluster in Perseus" style="width: auto" class="targetPicture"/>
+    </picture>
+    <!-- Button Below the image -->
+    <a href="/pictures/PerseusCluster.jpg" download="PerseusCluster.jpg">
+        <button class="download">Download</button>
+    </a>    
+
+    <p style="text-align: center;" id="acquisitionscope">
+                Acquisition: AT115EDT. October, 2023.
+            </p>
+        </picture>
+        <div class ="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+        <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+        <li id="quickfactli"style="text-align: left;">
+            Catalog: NGC 869, 884.
+        </li>
+        <li id="quickfactli"style="text-align: left;">
+            Discovered: 130 BCE, Hipparchus.
+        </li>
+        <li id="quickfactli"style="text-align: left;">
+            Distance from Earth: 7,500 light-years. 
+        </li>
+        <li id="quickfactli"style="text-align: left;">
+            Solar-Masses: NGC 869 - 4,700. NGC 884 - 3,700. Total of 20,000 in the complex.
+        </li>
+        <li id="quickfactli"style="text-align: left;">
+            Magnitude: 3.7.
+        </li>
+        <li id="quickfactli"style="text-align: left;">
+            Best Visible: Fall.
+        </li>
+        </div>
+        <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+            NGC 869 and 884 is a double cluster located in the Perseus Arm of the Milky Way Galaxy. 
+            Each cluster is surrounded by a halo of stars, which give each cluster its impressive Solar-Mass count. 
+            Each cluster contains roughly 300-400 stars, with NGC 869 being the more dense of the two.
+            At an age of 14 Million years old, this is considered quite young compared to the much older and closer Pleiades star cluster (1500 light-years away and 75-150 Million years old.).
+            If the Perseus double cluster was that close, the stars from the clusters would occupy a quarter of the sky, and would contain some of the sky's brightest stars.
+            </p>
+        </div>
+    <!--end of target-->
+       
+    </body>
+</html>

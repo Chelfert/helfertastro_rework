@@ -55,7 +55,7 @@ p{
 .mainHeader{
     text-align: center;
     color: #ffffff;
-    padding-top: 180px;
+    padding-top: 10%;
     font-size: 40px;;
         font-family: "Baumans";
         letter-spacing: .19em;
@@ -134,7 +134,7 @@ samp {
 .blurbbox {
     display: grid; 
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 3px;
     grid-auto-flow: dense;
     padding-left:5%;
     padding-right: 5%;
@@ -196,7 +196,7 @@ header li a{
     color: #ffffff;
     white-space: nowrap;
     text-decoration: none;
-    font-size: 2.4vw;
+
 font-family: 'Baumans';
     margin: 1em;
     padding-bottom: 3px;
@@ -243,7 +243,7 @@ header li a{
     font-weight: 100;
 }
 nav li a{
-    font-size:12px;
+
 }
 
 .btn-prev {
@@ -292,7 +292,7 @@ ul.navbar{
     color: #ffffff;
     text-decoration: none;
 font-family: 'Baumans';
-    font-size: 40px;
+
     margin: 1em;
     padding-left: 5px;
     padding-right: 5px;

@@ -435,7 +435,7 @@ body {
     margin-bottom:1em;
   }
   #equipmentdetails{
-    margin: -10%;
+    padding-bottom: 5%;
   }
   .download {
     background: #636363;
@@ -452,6 +452,7 @@ body {
     flex-direction: column;
     align-items: center;  
     max-width: fit-content;
+    margin: auto;
   }
   
   .image-container img {

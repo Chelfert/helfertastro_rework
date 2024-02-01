@@ -1,89 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
         <nav>
-  <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-          <li><a href="../index.html" >Home</a></li>
-            <li><a href="../Gallery.html" >Gallery</a></li>
-            <li><a href="../localConditions.html">Local Conditions</a></li>
-            <li><a href="../equipment.html">Equipment</a></li>
-          </ul>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
         </nav>
-      </header>    
+    </header>
 
-<!--target-->
-<div class="target">
-    <h3 class="targetTitle">The Lagoon and Trifid Nebula</h3>
-        <div class="image-container">
-    <picture>
-        <img  onclick="window.location.href='../pictures/Lagoon%20Nebula.png'"  src="/pictures/Lagoon%20Nebula.png" alt="Lagoon nebula" style="width: auto" class="targetPicture"/>    
-    </picture>
-    <!-- Button Below the image -->
-    <a href="/pictures/Lagoon%20Nebula.png" download="LagoonNebula.png">
-        <button class="download">Download</button>
-    </a>    
-</div>
-<li>
-    Acquisition: Redcat 51. August, 2022
-</li>
-        <li>
-        Catalog: Messier 8, Messier 20.
-        </li>
-        <li>
-        Discovered: 1654, Giovanni Hodierna.
-        </li>
-        <li>
-        Distance from Earth: M8 - 4,077 Lightyears, M20 - 5,200 Lightyears.    
-        </li>
-        <li>
-        Diameter: M8 - 33 Lightyears, M20 - 42 Lightyears.
-        </li>
-        <li>
-        Magnitude: M8 - 6, M20 - 6.3    
-        </li>    
-        <li>
-        Best Visible: Summer to early Fall.
-        </li>
-        <p>
-The Lagoon (M8) and Trifid (M20) Nebula are located at the spout of the "teapot" in the Sagittarius constellation. Sagittarius is located in the densest part of the Milky Way core.The brighter ball on the left is the Trifid Nebula, which is a larger, but further nebula. The area the Lagoon nebula covers is 55 x 110 Lightyears, but does not appear this way to us since it is roughly 5,200 Lightyears from the Earth. With a magnitude of 6, this is the darkest a deep-sky object can be viewable with the naked eye, given you have exceptional eyesight. Looking at the night sky, the Lagoon nebula would be as large as two full moons. Both nebulas are comprised of mostly ionized Hydrogen gas. When the energy from new or dying stars passes through these giant clouds of Hydrogen, it ionizes the gas which makes it glow. When the energy is low, it will glow with a red tint. The darker parts of these nebula are where most of their stars are being formed.
-        </p>
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Lagoon and Trifid Nebula</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/Lagoon%20Nebula.png'" src="/pictures/Lagoon%20Nebula.png"
+                    alt="Lagoon nebula" style="width: auto" class="targetPicture" />
+            </picture>
         </div>
-    <!--end of target-->
-       
-    </body>
+
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/LagoonNebula.png'" src="/Locations/LagoonNebula.png"
+                    alt="Lagoon nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: Redcat 51. August, 2022
+            <a href="/pictures/Lagoon%20Nebula.png" download="Lagoon%20Nebula.png">
+                <br>
+                <button class="download">Download Lagoon Nebula</button>
+            </a>
+        </p>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: Messier 8, Messier 20.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: 1654, Giovanni Hodierna.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: M8 - 4,077 Lightyears, M20 - 5,200 Lightyears.    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: M8 - 33 Lightyears, M20 - 42 Lightyears.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: M8 - 6, M20 - 6.3    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Late Summer.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                The Lagoon (M8) and Trifid (M20) Nebula are located at the spout of the "teapot" in the Sagittarius constellation. 
+                Sagittarius is located in the densest part of the Milky Way core.The brighter ball on the left is the Trifid Nebula, which is a larger, but further nebula. 
+                The area the Lagoon nebula covers is 55 x 110 Lightyears, but does not appear this way to us since it is roughly 5,200 Lightyears from the Earth. With a magnitude of 6, this is the darkest a deep-sky object can be viewable with the naked eye, given you have exceptional eyesight. 
+                Looking at the night sky, the Lagoon nebula would be as large as two full moons. Both nebulas are comprised of mostly ionized Hydrogen gas. When the energy from new or dying stars passes through these giant clouds of Hydrogen, it ionizes the gas which makes it glow. When the energy is low, it will glow with a red tint. 
+                The darker parts of these nebula are where most of their stars are being formed.
+
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
 </html>

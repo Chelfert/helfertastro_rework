@@ -1,91 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
         <nav>
-  <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-          <li><a href="../index.html" >Home</a></li>
-            <li><a href="../Gallery.html" >Gallery</a></li>
-            <li><a href="../localConditions.html">Local Conditions</a></li>
-            <li><a href="../equipment.html">Equipment</a></li>
-          </ul>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
         </nav>
-      </header>    
+    </header>
 
-<!--TARGET-->
+    <!--target-->
     <div class="target">
+        <h3 class="targetTitle">M33, The Triangulum Galaxy</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/M33_Final_resized.png'" src="/pictures/M33_Final_resized.png"
+                    alt="M33" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
 
-        <h1 class="targetTitle">M33, The Triangulum Galaxy</h1>
-            <div class="image-container">
-        <picture class="targetPicture"> 
-            <img onclick="window.location.href='../pictures/M33_Final_resized.png'"   src="/pictures/M33_Final_resized.png" alt="M31" style="width: auto;max-width: 100%;" class="targetPicture"/>
-        </picture>
-            <!-- Button Below the image -->
-        <a href="/pictures/M33_Final_resized.png" download="Triangulum.png">
-            <button class="download">Download</button>
-        </a>    
-</div>
-    <li>
-        Acquisition: SkyWatcher 130-PDS. November, 2022
-    </li>
-        <li>
-            Catalog: M33
-            </li>
-            <li>
-            Discovered: 1654
-            </li>
-            <li>
-            Distance from Earth: 2.73 million light-years    
-            </li>
-            <li>
-            Diameter: 60,000 light-years
-            </li>
-            <li>
-            Magnitude: 5.72    
-            </li>    
-            <li>
-            Best Visible: Fall - Winter
-            </li>
-            <p>
-               Located 2.73 million light-years away, the Triangulum Galaxy or M33, is one of the larger galaxies in our Local Group. According to a survey done in 2015, “The star formation rate intensity is 10 times higher than the area surveyed in the Andromeda Galaxy”. The Triangulum galaxy is about 60% the diameter of the Milky Way, and contains far less stars, about 40 Billion, compared to the Milky Way’s 100 - 400 billion and Andromeda’s one trillion stars. M33 was likely discovered before 1654 by Giovanni Battista Hodierna. In his work, he listed it as a “cloud-like nebulosity”. The description and area most closely match the Triangulum galaxy, so it is most likely M33 is what he was referring to. When the night is exceptionally clear, the Triangulum galaxy is the furthest object you can see with your naked eye, given you have 20/20 vision.
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/m33.png'" src="/Locations/m33.png"
+                    alt="M33" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: SkyWatcher 130-PDS. November, 2022
+            <a href="/pictures/M33_Final_resized.png" download="M33.png">
+                <br>
+                <button class="download">Download M33</button>
+            </a>
+        </p>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: Messier 33
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: 1654
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 2.73 million light-years    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 60,000 light-years
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 5.72    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Late Fall.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                Located 2.73 million light-years away, the Triangulum Galaxy or M33, is one of the larger galaxies in our Local Group. According to a survey done in 2015, “The star formation rate intensity is 10 times higher than the area surveyed in the Andromeda Galaxy”. The Triangulum galaxy is about 60% the diameter of the Milky Way, and contains far less stars, about 40 Billion, compared to the Milky Way’s 100 - 400 billion and Andromeda’s one trillion stars. M33 was likely discovered before 1654 by Giovanni Battista Hodierna. In his work, he listed it as a “cloud-like nebulosity”. The description and area most closely match the Triangulum galaxy, so it is most likely M33 is what he was referring to. When the night is exceptionally clear, the Triangulum galaxy is the furthest object you can see with your naked eye, given you have 20/20 vision.
 
             </p>
-    </div>
+        </div>
         <!--end of target-->
-       
-    </body>
+        <!-- download button -->
+
+
+</body>
+
 </html>

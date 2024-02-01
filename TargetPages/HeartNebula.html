@@ -1,90 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
         <nav>
-  <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-          <li><a href="../index.html" >Home</a></li>
-            <li><a href="../Gallery.html" >Gallery</a></li>
-            <li><a href="../localConditions.html">Local Conditions</a></li>
-            <li><a href="../equipment.html">Equipment</a></li>
-          </ul>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
         </nav>
-      </header>    
+    </header>
 
-<!--TARGET-->
-<div class="target">
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Heart Nebula</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/Heart%20Nebula.png'" src="/pictures/Heart%20Nebula.png"
+                    alt="Heart nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
 
-    <h3 class="targetTitle">The Heart Nebula</h3>
-        <div class="image-container">
-    <picture>   
-        <img onclick="window.location.href='../pictures/Heart%20Nebula.png'"  src="/pictures/Heart%20Nebula.png" alt="Heart Nebula" style="width: auto" class="targetPicture"/>    
-    </picture>
-        <!-- Button Below the image -->
-        <a href="/pictures/Heart%20Nebula.png" download="HeartNebula.png">
-            <button class="download">Download</button>
-        </a>    
-</div>
-    <li>
-        Acquisition: SkyWatcher 130-PDS. December, 2022
-    </li>
-        <li>
-        Catalog: IC 1805
-        </li>
-        <li>
-        Discovered: November 3rd 1787, William Herschel.
-        </li>
-        <li>
-        Distance from Earth: 7,500 light-years.
-        </li>
-        <li>
-        Diameter: 200 light-years.
-        </li>
-        <li>
-        Magnitude: 18.3    
-        </li>    
-        <li>
-        Best Visible: Early - Late Fall.
-        </li>
-        <p>
-            The Heart Nebula is located about 7,500 light-years from Earth within the Perseus arm of the Milky Way in the constellation Cassiopeia. IC 1805 is an emission nebula, mainly consisting of ionized Sulfur, Hydrogen and Oxygen. The gas in this nebula is ionized from the group of stars in the middle of the nebula (known as Melotte 15 and Collinder 26). This cluster contains a few stars which are 50 times the mass of our own Sun, and plenty of stars that are only a fraction of the Sun. These brighter stars emit stellar wind that pushes the gas and dust away, giving the nebula its unique shape. If you could see the gas with your naked eye, it would cover 2 degrees in the sky which is about four times the diameter of a full moon.
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/HeartNebula.png'" src="/Locations/HeartNebula.png"
+                    alt="Heart nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: SkyWatcher 130-PDS. December, 2022
+            <a href="/pictures/Heart%20Nebula.png" download="Heart%20Nebula.png">
+                <br>
+                <button class="download">Download Heart Nebula</button>
+            </a>
         </p>
-</div>
-    <!--end of target-->
-       
-    </body>
+        <br>
+
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: IC 1805.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: November 3rd 1787, William Herschel.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 7,500 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 200 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 18.3
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Fall.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                The Heart Nebula is located about 7,500 light-years from Earth within the Perseus arm of the Milky Way
+                in the constellation Cassiopeia.
+                IC 1805 is an emission nebula, mainly consisting of ionized Sulfur, Hydrogen and Oxygen.
+                The gas in this nebula is ionized from the group of stars in the middle of the nebula (known as Melotte
+                15 and Collinder 26).
+                This cluster contains a few stars which are 50 times the mass of our own Sun, and plenty of stars that
+                are only a fraction of the Sun. These brighter stars emit stellar wind that pushes the gas and dust
+                away, giving the nebula its unique shape.
+                If you could see the gas with your naked eye, it would cover 2 degrees in the sky which is about four
+                times the diameter of a full moon.
+
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
 </html>

@@ -1,89 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
         <nav>
-  <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-          <li><a href="../index.html" >Home</a></li>
-            <li><a href="../Gallery.html" >Gallery</a></li>
-            <li><a href="../localConditions.html">Local Conditions</a></li>
-            <li><a href="../equipment.html">Equipment</a></li>
-          </ul>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
         </nav>
-      </header>    
+    </header>
 
-<!--TARGET-->
-<div class="target">
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Pelican Nebula</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/PelicanNebula.png'" src="/pictures/PelicanNebula.png"
+                    alt="Pelican nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
 
-    <h3 class="targetTitle">The Pelican Nebula</h3>
-        <div class="image-container">
-    <picture>   
-        <img onclick="window.location.href='../pictures/PelicanNebula.png'"  src="/pictures/PelicanNebula.png" alt="Pelican Nebula" style="width: auto" class="targetPicture"/>    
-    </picture>
-        <!-- Button Below the image -->
-        <a href="/pictures/PelicanNebula.png" download="PelicanNebula.png">
-            <button class="download">Download</button>
-        </a>    
-</div>
-    <li>
-        Acquisition: SkyWatcher 130-PDS. September, 2022
-    </li>
-        <li>
-        Catalog: IC 5070.
-        </li>
-        <li>
-        Discovered: William Herschel, 1786.
-        </li>
-        <li>
-        Distance from Earth: 1,800 light-years.  
-        </li>
-        <li>
-        Diameter: 30 light-years.
-        </li>
-        <li>
-        Magnitude: 8.0    
-        </li>    
-        <li>
-        Best Visible: Summer.
-        </li>
-        <p>
-            Located near the tail of Cygnus, the Pelican Nebula is a region of ionized Hydrogen and Oxygen. IC 5070’s close proximity to the very large star Deneb gives the nebula its beautiful intricate dust lanes. The Pelican Nebula is an active star formation region that is heavily studied. The pulsating gasses from stars being born within this nebula push the interstellar dust, giving the nebula its overall shape.
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/PelicanNebula.png'" src="/Locations/PelicanNebula.png"
+                    alt="Pelican nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: SkyWatcher 130-PDS. September, 2022
+            <a href="/pictures/PelicanNebula.png" download="PelicanNebula.png">
+                <br>
+                <button class="download">Download Pelican Nebula</button>
+            </a>
         </p>
-</div>
-    <!--end of target-->
-    </body>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: IC 5070.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: William Herschel, 1786.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 1,800 light-years.  
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 30 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 8.0    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Summer.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                Located near the tail of Cygnus, the Pelican Nebula is a region of ionized Hydrogen and Oxygen. IC 5070’s close proximity to the very large star Deneb gives the nebula its beautiful intricate dust lanes. 
+                The Pelican Nebula is an active star formation region that is heavily studied. The pulsating gasses from stars being born within this nebula push the interstellar dust, giving the nebula its overall shape.
+
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
 </html>

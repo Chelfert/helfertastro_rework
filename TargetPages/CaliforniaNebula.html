@@ -1,91 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
-      <nav>
-        <header style="max-height: 150px;">
-            <nav>
-      <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-              <li><a href="../index.html" >Home</a></li>
-                <li><a href="../Gallery.html" >Gallery</a></li>
+        <nav>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
                 <li><a href="../localConditions.html">Local Conditions</a></li>
                 <li><a href="../equipment.html">Equipment</a></li>
-              </ul>
-            </nav>
-          </header>    
+            </ul>
+        </nav>
+    </header>
 
-<!--TARGET-->
-<div class="target">
 
+   <!--target-->
+   <div class="target">
     <h3 class="targetTitle">The California Nebula</h3>
-        <div class="image-container">
-    <picture>   
-        <img onclick="window.location.href='../pictures/CaliforniaNebula.png'"  src="/pictures/CaliforniaNebula.png" alt="California Nebula" style="width: auto" class="targetPicture"/>    
-    </picture>
+    <div class="image-containerz">
+        <picture>
+            <img onclick="window.location.href='../pictures/CaliforniaNebulaVis.png'" src="/pictures/CaliforniaNebulaVis.png"
+                alt="California nebula" style="width: auto" class="targetPicture" />
+        </picture>
+    </div>
+
+    <h3 style="text-align: center;">Location in Sky</h3>
+    <div class="image-containerz">
+        <picture>
+            <img onclick="window.location.href='../Locations/CaliforniaNebula.png'" src="/Locations/CaliforniaNebula.png"
+                alt="California nebula" style="width: auto" class="targetPicture" />
+        </picture>
+    </div>
+
+
+    <p style="text-align: center;" id="acquisitionscope">
+        Acquisition: SkyWatcher 130-PDS. November, 2022
         <!-- Button Below the image -->
         <a href="/pictures/CaliforniaNebula.png" download="CaliforniaNebula.png">
+            <br>
             <button class="download">Download</button>
         </a>    
-</div>
-    <li>
-        Acquisition: SkyWatcher 130-PDS. November, 2022
-    </li>
-        <li>
-        Catalog: NGC 1499.
-        </li>
-        <li>
-        Discovered: 1884, E. E. Barnard.
-        </li>
-        <li>
-        Distance from Earth: 1,000 light-years.    
-        </li>
-        <li>
-        Diameter: 100 light-years.
-        </li>
-        <li>
-        Magnitude: 6.0    
-        </li>    
-        <li>
-        Best Visible: Fall.
-        </li>
-        <p>
-        The California Nebula is an emission nebula located roughly 1,000 light-years away near the constellation of perseus. This nebula received its name due to its shape resembling the state of California. The California Nebula reaches about 100 light-years in diameter, and has a visual magnitude of 6.0. This makes it extremely hard to see with the unaided eye. This nebula is formed of gas that is ionized by a nearby massive blue star, Menkib, which is roughly 30 times more massive than the sun. Menkib is one of the hottest stars visible with the naked eye.
+    </p>
+    <br>
+
+    <div class="blurbbox">
+        <h3 style="text-align: center;">Quick Facts</h3>
+
+        <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+            <li id="quickfactli" style="text-align: left;">
+                Catalog: NGC 1499.
+            </li>
+            <li id="quickfactli" style="text-align: left;">
+                Discovered: 1884, E. E. Barnard.
+            </li>
+            <li id="quickfactli" style="text-align: left;">
+                Distance from Earth: 1,000 light-years.    
+            </li>
+            <li id="quickfactli" style="text-align: left;">
+                Diameter: 100 light-years.
+            </li>
+            <li id="quickfactli" style="text-align: left;">
+                Magnitude: 6.0    
+            </li>
+            <li id="quickfactli" style="text-align: left;">
+                Best Visible: Fall.
+            </li>
+        </div>
+        <h3 style="text-align: center;">Description</h3>
+
+        <p class="description" style="text-align: left;grid-column: 2 /2;">
+            The California Nebula is an emission nebula located roughly 1,000 light-years away near the constellation of perseus. 
+            This nebula received its name due to its shape resembling the state of California. The California Nebula reaches about 100 light-years in diameter, and has a visual magnitude of 6.0. 
+            This makes it extremely hard to see with the unaided eye. This nebula is formed of gas that is ionized by a nearby massive blue star, Menkib, which is roughly 30 times more massive than the sun. 
+            Menkib is one of the hottest stars visible with the naked eye.
+
         </p>
-</div>
+    </div>
     <!--end of target-->
-    </body>
+    <!-- download button -->
+
+
+</body>
+
 </html>

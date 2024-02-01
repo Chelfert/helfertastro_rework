@@ -1,101 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
         <nav>
-  <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-          <li><a href="../index.html" >Home</a></li>
-            <li><a href="../Gallery.html" >Gallery</a></li>
-            <li><a href="../localConditions.html">Local Conditions</a></li>
-            <li><a href="../equipment.html">Equipment</a></li>
-          </ul>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
         </nav>
-      </header>    
+    </header>
 
-<!--target-->
-<div class="target">
-    <h3 class="targetTitle">The Moon</h3>
-        <div class="image-container">
-        <picture class="targetPicture">
-        <img onclick="window.location.href='../pictures/fullMoonSHARPless.png'"  src="/pictures/fullMoonSHARPless.png" alt="FullMoon" style="width: auto;max-width: 90%;" class="targetPicture"/>
-    </picture>
-    <!-- Button Below the image -->
-    <a href="/pictures/fullMoonSHARPless.png" download="fullMoon.png">
-        <button class="download">Download</button>
-    </a>    
-<li>
-    Acquisition: SkyWatcher 130-PDS. October, 2022
-</li>
-    <picture class="targetPicture">
-        <img  onclick="window.location.href='../pictures/Waxing_Gibbous_12_2023.jpg'" src="/pictures/Waxing_Gibbous_12_2023.jpg" alt="WaxingGibbous" style="width: auto;max-width: 90%;" class="targetPicture"/>
-    </picture>
-    <!-- Button Below the image -->
-    <a href="/pictures/Waxing_Gibbous_12_2023.jpg" download="WaxingGibbous.jpg">
-        <button class="download">Download</button>
-    </a>    
-</div>
-<li>
-    Acquisition: AT115EDT. December, 2023
-</li>
-        <!--bullet points-->
-        <li>
-        Catalog: Natural Satellite.
-        </li>
-        <li>
-        Discovered: Beginning of Mankind.
-        </li>
-        <li>
-        Distance from Earth: 238,900 Miles.    
-        </li>    
-        <li>
-        Diameter: 2,159.1 Miles.
-        </li>
-        <li>
-        Magnitude: -12.6    
-        </li>   
-        <li>
-        Best Visible: Year round.
-        </li>
-        
-        <p>
-       The Moon is the brightest object in the night sky with an apparent magnitude of -12.6 (negative numbers are the brightest). Earth’s moon is responsible for stabilizing the Earth’s axis wobble, which makes the planet’s climate relatively steady. The Moon is also responsible for the tides on earth, which have influenced life from its very beginning stages. Although it is not certain, it is theorized that the Moon formed after a Mars-sized body collides with the Earth billions of years ago. The Moon is the 5th largest moon out of a total of 200 in our solar system. Human’s named this moon “The Moon” because at the time they didn’t know any other moons existed. This changed in 1610 when Galileo Galilei discovered four moons orbiting Jupiter. The Moon is the only other planetary object that humans have ever stepped foot on.
-        </p>
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Moon</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/fullMoonSHARPless.png'" src="/pictures/fullMoonSHARPless.png"
+                    alt="Full Moon" style="width: auto" class="targetPicture" />
+            </picture>
         </div>
-    <!--end of target-->
-       
-    </body>
+
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: SkyWatcher 130-PDS. October, 2022
+            <a href="/pictures/fullMoonSHARPless.png" download="fullmoon.png">
+                <br>
+                <button class="download">Download Full Moon</button>
+            </a>
+        </p>
+        <br>
+
+            <div class="target">
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/Waxing_Gibbous_12_2023.jpg'" src="/pictures/Waxing_Gibbous_12_2023.jpg"
+                    alt="waxing gibbous" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: AT115EDT. December, 2023
+            <a href="/pictures/Waxing_Gibbous_12_2023.jpg" download="Waxing_Gibbous_12_2023.jpg">
+                <br>
+                <button class="download">Download Waxing Gibbous</button>
+            </a>
+        </p>
+        <br>
+ 
+
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: Natural Satellite.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: Beginning of Mankind.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 238,900 Miles.    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 2,159.1 Miles.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: -12.6    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Year round.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                The Moon is the brightest object in the night sky with an apparent magnitude of -12.6 (negative numbers are the brightest). 
+                Earth’s moon is responsible for stabilizing the Earth’s axis wobble, which makes the planet’s climate relatively steady. The Moon is also responsible for the tides on earth, which have influenced life from its very beginning stages. 
+                Although it is not certain, it is theorized that the Moon formed after a Mars-sized body collides with the Earth billions of years ago. The Moon is the 5th largest moon out of a total of 200 in our solar system. Human’s named this moon “The Moon” because at the time they didn’t know any other moons existed. 
+                This changed in 1610 when Galileo Galilei discovered four moons orbiting Jupiter. The Moon is the only other planetary object that humans have ever stepped foot on.
+
+
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
 </html>
+

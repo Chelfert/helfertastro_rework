@@ -1,89 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
         <nav>
-  <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-          <li><a href="../index.html" >Home</a></li>
-            <li><a href="../Gallery.html" >Gallery</a></li>
-            <li><a href="../localConditions.html">Local Conditions</a></li>
-            <li><a href="../equipment.html">Equipment</a></li>
-          </ul>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
         </nav>
-      </header>    
+    </header>
 
-<!--TARGET-->
-        <div class="target">
-<div class="image-container">
+    <!--target-->
+    <div class="target">
         <h3 class="targetTitle">Andromeda</h3>
-            
-            <picture>   
-                <img onclick="window.location.href='../pictures/M31-130pds.png'"  src="/pictures/M31-130pds.png" alt="M31-130pds" style="width: auto" class="targetPicture"/>    
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/M31-130pds.png'" src="/pictures/M31-130pds.png"
+                    alt="Andromeda" style="width: auto" class="targetPicture" />
             </picture>
-                <!-- Button Below the image -->
-        <a href="/pictures/M31-130pds.png" download="Andromeda.png">
-            <button class="download">Download</button>
-        </a>    
-</div>
-    <li>
-        Acquisition: SkyWatcher 130-PDS. November, 2022
-    </li>
-                <li>
-                Catalog: M31
+        </div>
+
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/M31.png'" src="/Locations/M31.png"
+                    alt="Andromeda" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: SkyWatcher 130-PDS. November, 2022
+            <a href="/pictures/M31-130pds.png" download="M31.png">
+                <br>
+                <button class="download">Download Andromeda</button>
+            </a>
+        </p>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: M31
                 </li>
-                <li>
-                Discovered: 964
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: 964
                 </li>
-                <li>
-                Distance from Earth: 2.5 Million light-years. 
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 2.5 Million light-years. 
                 </li>
-                <li>
-                Diameter: 220,000 light-years.
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 220,000 light-years.
                 </li>
-                <li>
-                Magnitude: 3.44     
-                </li>    
-                <li>
-                Best Visible: Fall
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 3.44     
                 </li>
-                <p>
-                    Andromeda, or M31 is a barred spiral galaxy located in the Andromeda constellation about 2.5 million light-years from earth. Discovered around the year 964 by Abd Al-Rahman Al Sufi, Abd recorded Andromeda in his book, “Book of Fixed Stars” as a “nebulous smear” or a “small cloud”. At this time, it was believed that everything was contained within the Milky Way. In the year 1885, a supernova named Nova 1885, was seen in Andromeda, and has been the only one seen in Andromeda since then.  It was only in 1920 did Edwin Hubble prove that this was in fact a galaxy, and that there are billions more just like it. So far, we have determined there are more than 1 trillion stars in the Andromeda galaxy, which beats out the Milky Way by roughly 200 billion, though as our abilities to detect matter more accurately improve over the years, this will change. Andromeda has two distinct satellite galaxies which can be seen directly above and below the galaxy known as M32 (above) and M110 (below). A study was done in 2006 by a team on scientists that determined the Andromeda galaxy was most likely formed 10 billion years ago by collisions of smaller protogalaxies. It is certain that in around 4.5 billion years, Andromeda and the Milky Way will collide. Since galaxies are mostly empty space, it is believed that our solar system won’t be affected and that no stars will collide. This collision will sling galactic matter outside of the galaxies, and will take a few billion years to fully combine. Andromeda and the Milky Way are located in what is called the “Local group”, which is a group of over 30 galaxies within the diameter of roughly 10 million light-years. M31 and the Milky Way are the two largest, with M33 (Triangulum Galaxy) coming in third. With an apparent magnitude of 3.44, M31 is just bright enough to be seen with the unaided eye.
-                </p>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Fall
+                </li>
             </div>
-            <!--end of target-->
-    </body>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                Andromeda, or M31 is a barred spiral galaxy located in the Andromeda constellation about 2.5 million light-years from earth. 
+                Discovered around the year 964 by Abd Al-Rahman Al Sufi. Abd recorded Andromeda in his book, “Book of Fixed Stars” as a “nebulous smear” or a “small cloud”. 
+                At this time, it was believed that everything was contained within the Milky Way. In the year 1885, a supernova named Nova 1885, was seen in Andromeda, and has been the only one seen in Andromeda since then.  
+                It was only in 1920 did Edwin Hubble prove that this was in fact a galaxy, and that there are billions more just like it. So far, we have determined there are more than 1 trillion stars in the Andromeda galaxy, which beats out the Milky Way by roughly 200 billion, though as our abilities to detect matter more accurately improve over the years, this will change. 
+                Andromeda has two distinct satellite galaxies which can be seen directly above and below the galaxy known as M32 (above) and M110 (below). A study was done in 2006 by a team on scientists that determined the Andromeda galaxy was most likely formed 10 billion years ago by collisions of smaller protogalaxies. It is certain that in around 4.5 billion years, Andromeda and the Milky Way will collide. 
+                Since galaxies are mostly empty space, it is believed that our solar system won’t be affected and that no stars will collide. This collision will sling galactic matter outside of the galaxies, and will take a few billion years to fully combine. 
+                Andromeda and the Milky Way are located in what is called the “Local group”, which is a group of over 30 galaxies within the diameter of roughly 10 million light-years. 
+                M31 and the Milky Way are the two largest, with M33 (Triangulum Galaxy) coming in third. With an apparent magnitude of 3.44, M31 is just bright enough to be seen with the unaided eye.
+
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
 </html>

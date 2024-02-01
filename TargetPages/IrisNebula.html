@@ -1,88 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
         <nav>
-  <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-          <li><a href="../index.html" >Home</a></li>
-            <li><a href="../Gallery.html" >Gallery</a></li>
-            <li><a href="../localConditions.html">Local Conditions</a></li>
-            <li><a href="../equipment.html">Equipment</a></li>
-          </ul>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
         </nav>
-      </header>    
+    </header>
 
-<!--TARGET-->
-<h3 class="targetTitle">The Iris Nebula</h3>
-            <div class="image-container">
-<picture>   
-    <img onclick="window.location.href='../pictures/IrisNebula.png'"   src="/pictures/IrisNebula.png" alt="Iris" style="width: auto;" class="targetPicture"/>    
-</picture>
-    <!-- Button Below the image -->
-    <a href="/pictures/IrisNebula.png" download="IrisNebula.png">
-        <button class="download">Download</button>
-    </a>    
-</div>
-<li>
-    Acquisition: SkyWatcher 130-PDS. September, 2022
-</li>
-    <li>
-    Catalog: NGC 7023
-    </li>
-    <li>
-    Discovered: October 18th 1794, William Herschel.
-    </li>
-    <li>
-    Distance from Earth: 1,300 light-years.    
-    </li>
-    <li>
-    Diameter: 6 light-years.
-    </li>
-    <li>
-    Magnitude: 6.8    
-    </li>    
-    <li>
-    Best Visible: Late Spring - Late Summer.
-    </li>
-    <p>
-        The Iris Nebula or NGC 7023, is a reflection nebula located in the Cepheus constellation. This nebula is unlike most nebulae because of the lack of ionized gasses. Reflection nebulae glow because of extremely tiny dust particles, 10 - 100 times smaller than dust here on earth. This dust diffuses light coming from a bright star which gives off a bluish hue. 
-    </p>
-</div>
-<!--end of target-->    
-       
-    </body>
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Iris Nebula</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/IrisNebula.png'" src="/pictures/IrisNebula.png"
+                    alt="Iris nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/IrisNebula.png'" src="/Locations/IrisNebula.png"
+                    alt="Iris nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: SkyWatcher 130-PDS. September, 2022
+            <a href="/pictures/IrisNebula.png" download="IrisNebula.png">
+                <br>
+                <button class="download">Download Iris Nebula</button>
+            </a>
+        </p>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: NGC 7023
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: October 18th 1794, William Herschel.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 1,300 light-years.    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 6 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 6.8    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Summer.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                The Iris Nebula or NGC 7023, is a reflection nebula located in the Cepheus constellation. This nebula is unlike most nebulae because of the lack of ionized gasses. 
+                Reflection nebulae glow because of extremely tiny dust particles, 10 - 100 times smaller than dust here on earth. This dust diffuses light coming from a bright star which gives off a bluish hue. 
+
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
 </html>

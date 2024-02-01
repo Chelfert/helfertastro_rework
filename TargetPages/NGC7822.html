@@ -1,90 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-            <meta charset="utf-8">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-        
-        
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
 
 
-        
+
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Helfert Astrophotography</title>
-        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
-        <link rel="stylesheet" href="../newMain.css">
-        <link rel="stylesheet" href="../newGallery.css">
-    </head>
-    
-    
-    <!--START OF BODY-->
-    <body>
- 
-        <!--NAVBAR-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
     <header style="max-height: 150px;">
-      <nav>
-<ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
-        <li><a href="../index.html" >Home</a></li>
-          <li><a href="../Gallery.html" >Gallery</a></li>
-          <li><a href="../localConditions.html">Local Conditions</a></li>
-          <li><a href="../equipment.html">Equipment</a></li>
-        </ul>
-      </nav>
-    </header>      
+        <nav>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!--TARGET-->
-<div class="target">
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">NGC 7822</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/NGC7822.jpg'" src="/pictures/NGC7822.jpg"
+                    alt="NGC 7822" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
 
-    <h3 class="targetTitle">NGC 7822</h3>
-        <div class="image-container">
-    <picture>   
-        <img onclick="window.location.href='../pictures/NGC7822.jpg'"  src="/pictures/NGC7822.jpg" alt="NGC 7822" style="width: auto" class="targetPicture"/>    
-    </picture>
-        <!-- Button Below the image -->
-        <a href="/pictures/NGC7822.jpg" download="NGC7822.jpg">
-            <button class="download">Download</button>
-        </a>    
-</div>
-    <li>
-        Acquisition: SkyWatcher 130-PDS. September, 2022
-    </li>
-        <li>
-        Catalog: NGC 7822.
-        </li>
-        <li>
-        Discovered: November 16th 1829, John Herschel.
-        </li>
-        <li>
-        Distance from Earth: 2,900 light-years    
-        </li>
-        <li>
-        Diameter: 300 light-years. 
-        </li>
-        <li>
-        Magnitude: 10    
-        </li>    
-        <li>
-        Best Visible: Fall.
-        </li>
-        <p>
-            NGC 7822 is a star forming complex located roughly 3,000 light-years away in the constellation Cepheus. The radiation from the stars being born here ionizes the gas and forms the nebula with stellar wind. Within the dark, dusty clouds, stars are more than likely going through a process of being created.
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/NGC7822.png'" src="/Locations/NGC7822.png"
+                    alt="NGC 7822" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: SkyWatcher 130-PDS. September, 2022
+            <a href="/pictures/NGC7822.jpg" download="NGC7822.jpg">
+                <br>
+                <button class="download">Download NGC 7822</button>
+            </a>
         </p>
-</div>
-    <!--end of target-->
-       
-    </body>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: NGC 7822.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: November 16th 1829, John Herschel.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 2,900 light-years    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 300 light-years. 
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 10    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Fall.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                NGC 7822 is a star forming complex located roughly 3,000 light-years away in the constellation Cepheus. 
+                The radiation from the stars being born here ionizes the gas and forms the nebula with stellar wind. Within the dark, dusty clouds, stars are more than likely going through a process of being created.
+
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
 </html>

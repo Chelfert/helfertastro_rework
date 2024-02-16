@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+
+
+
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
+    <header style="max-height: 150px;">
+        <nav>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Jellyfish Nebula</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/jellyfishNebula.jpg'" src="/pictures/jellyfishNebula.jpg"
+                    alt="jellyfish nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+            <h6 class="targetTitle"> Pulsar located in Jellyfish Nebula</h6>
+            <div class="image-containerz">
+                <picture>
+                    <img onclick="window.location.href='../pictures/jellyfishpulsar.jpg'" src="/pictures/jellyfishPulsar.jpg"
+                        alt="pulsar in jellyfish nebula" style="width: auto" class="targetPicture" />
+                </picture>
+            </div>
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/JellyfishNebula.png'" src="/Locations/JellyfishNebula.png"
+                    alt="jellyfish nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: AT115EDT. February, 2024
+            <a href="/pictures/jellyfishNebula.jpg" download="jellyfishNebula.jpg">
+                <br>
+                <button class="download">Download Jellyfish Nebula</button>
+            </a>
+        </p>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: IC 443.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: 1912, John Dreyer.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 5,000 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 70 Lightyears.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 12
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Winter.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                The Jellyfish Nebula is a supernova remnant from an explosion that happened around 30,000 - 35,000 years ago. This explosion very likely gave birth to the neutron star and Pulsar CXOU J061705.3+222127, which can be seen by the arrow in the second picture. A Pulsar is created when a star goes supernova and all of the outer layers are blown away. The iron core of a massive star (much larger than our sun)
+                 remains and is then crushed down to a size around 12 or less miles.
+                 This creates gravity so strong that it crushes protons and electrons together, leaving the remaining mass to be comprised of roughly 95% neutrons. 
+                 This makes the material EXTREMELY heavy. So heavy, that a single teaspoon of neutron star material would weigh roughly 4 billion tons. 
+                 After the explosion, the neutrons at the stars surface then decay into protons and electrons. As they are released from the surface, they enter the star's intense magnetic field and rotate along with it. These protons and Electrons accelerate to near the speed of light, and give off electromagnetic radiation which is released via beams from the pulsars magnetic poles.
+                 The magnetic poles do not match the rotational poles, so the rotation of the pulsar actually swings the radiation beams around. As the beams are swept past Earth's trajectory, they can be recorded in regular steady intervals, or pulses which is how the name Pulsar was created. 
+                 Pulsars spin insanely fast, with the slowest pulsar rotation being recorded at 11.8 seconds, while the quickest ever recorded completes a full rotation every 1.396 millisends, or 716 times per second. 
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
+</html>

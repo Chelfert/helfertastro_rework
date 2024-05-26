@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+
+
+
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
+    <header style="max-height: 150px;">
+        <nav>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">Bodes and the Cigar Galaxy</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/BodesandCigar.jpg'" src="/pictures/Bodesandcigar.jpg"
+                    alt="Bodes Galaxy" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/Bodesgalaxy.png'" src="/Locations/bodesgalaxy.png"
+                    alt="bode's galaxy" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: AT115EDT. March, 2024
+            <a href="/pictures/Bodesandcigar.jpg" download="Bodesandcigar.jpg">
+                <br>
+                <button class="download">Download Bode's Galaxy</button>
+            </a>
+        </p>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: Messier 81 (Bode's), Messier 82 (Cigar).
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: December 31, 1774. Johann Elert Bode.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 11.7 Million light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 90,000 Lightyears.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 6.94
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Spring.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                Bode's Galaxy is a grand design spiral galaxy located in our galaxtic neighborhood at around 11.7 million light-years away. This galaxy is home to a supermassive black hole so large it is estimated to be around 70 million solar masses.
+                This galaxy is the most remote blueshifted large galaxy, which means it is actually moving towards us. Bode's Galaxy is home to around 250 billion stars, which is over twice as many than are in our own Milky Way.
+                The Cigar Galaxy, also known as The Starburst Galaxy is home to some really unique objects such as a Pulsar and Magnetar star. A magnetar star is a neutron star with an
+                extremely strong magnetic field. Compared to Earth, a magnetar's magnetic field is about 100 Million times stronger. Magnetars are extremely rare, and roughly only 30 have been discovered so far.
+                M82 was also recently home to a supernova explosion in 2014. The brightest pulsar star was also discovered inside the Cigar Galaxy. Though small, this galaxy is extremely luminous
+                at about 5 times brighter than our own Milky Way, making it one of the most observed galaxies.
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
+</html>

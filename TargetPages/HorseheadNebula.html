@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+
+
+
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
+    <header style="max-height: 150px;">
+        <nav>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Horsehead Nebula</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/Horsehead.jpg'" src="/pictures/Horsehead.jpg"
+                    alt="Horsehead nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/HorseheadNebula.png'" src="/Locations/HorseheadNebula.png"
+                    alt="Horsehead nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: Skywatcher-130PDS. December, 2022
+            <a href="/pictures/Horsehead.jpg" download="Horsehead.jpg">
+                <br>
+                <button class="download">Download Horsehead Nebula</button>
+            </a>
+        </p>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: Barnard 33.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: 1888, Williamina Fleming.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 1,375 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 3.5 Lightyears.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 6.8
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Winter.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                The Horsehead Nebula, located in the constellation Orion just south of the star Alnitak, is approximately 1,375 light-years away from Earth. 
+                This dark nebula, part of the Orion Molecular Cloud Complex, is a dense region of gas and dust that blocks the light from stars behind it, giving it a distinctive shape resembling a horse’s head. The nebula spans about 3.5 light-years in height and 2.5 light-years in width. 
+                Known for its active star formation, the Horsehead Nebula is a fascinating site where new stars are being born, contributing to the dynamic processes within our galaxy.
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
+</html>

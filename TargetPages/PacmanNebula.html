@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+
+
+
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
+    <header style="max-height: 150px;">
+        <nav>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Pacman Nebula</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/PacmanNebula.jpg'" src="/pictures/PacmanNebula.jpg"
+                    alt="Pacman nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Location in Sky-->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/PacmanNebula.jpg'" src="/Locations/PacmanNebula.jpg"
+                    alt="Pacman nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+<!--Download Button-->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: Skywatcher-130PDS. October, 2022
+            <a href="/pictures/PacmanNebula.jpg" download="PacmanNebula.jpg">
+                <br>
+                <button class="download">Download Pacman Nebula</button>
+            </a>
+        </p>
+        <br>
+
+        <!--blurb-->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: NGC 281.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: 1883, Edward Emerson Barnard.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 9,200 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 96 Lightyears.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 7.4
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Fall.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                The Pacman Nebula (NGC 281) is a cosmic cloud of space gas located in the constellation Cassiopeia. 
+                It gets its name from the classic video game character it resembles. 
+                It features a dark dust lane that forms the Pac-Man's mouth. This Nebula is located within the Perseus arm of the Milky Way galaxy. In infrared imagery, the dust lane in the mouth of the nebula glows brightly.
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
+</html>

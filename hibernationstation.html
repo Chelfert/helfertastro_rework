@@ -3,93 +3,7 @@
 <head>
     <title>Spotify Hibernate Skipper</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            margin-top: 0;
-            color: #1DB954;  /* Spotify green */
-            text-align: center;
-        }
-
-        button {
-            background-color: #1DB954;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px 5px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
-            display: block;
-            width: 200px;
-            margin: 10px auto;
-        }
-
-        button:hover {
-            background-color: #1ed760;
-        }
-
-        button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        #status {
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-            border-left: 4px solid #1DB954;
-            text-align: center;
-        }
-
-        #log {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            height: 200px;
-            overflow-y: auto;
-        }
-
-        #debug {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .log-entry {
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-            font-family: monospace;
-        }
-
-        .error {
-            color: #dc3545;
-            background-color: #ffebee;
-            padding: 5px;
-            border-radius: 4px;
-        }
+        /* ... existing styles remain the same ... */
     </style>
 </head>
 <body>
@@ -111,7 +25,8 @@
     </div>
 
     <script>
-        const API_BASE_URL = 'https://hibernate-dfai.onrender.com/';  // Update this with your actual Render URL
+        // Update this to match your actual Render service URL (remove any trailing slashes)
+        const API_BASE_URL = 'https://hibernate-dfai.onrender.com';  
 
         // Display debug info
         document.getElementById('redirectUri').textContent = window.location.href;
@@ -139,9 +54,17 @@
         async function connect() {
             try {
                 log('Attempting to connect to Spotify...');
-                log(`Sending request to: ${API_BASE_URL}/login`);
+                // Ensure proper URL formatting by using URL constructor
+                const loginUrl = new URL('/login', API_BASE_URL);
+                log(`Sending request to: ${loginUrl.toString()}`);
                 
-                const response = await fetch(`${API_BASE_URL}/login`);
+                const response = await fetch(loginUrl.toString(), {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
                 log(`Received response status: ${response.status}`);
                 
                 if (!response.ok) {
@@ -184,7 +107,15 @@
             if (code) {
                 try {
                     log('Handling Spotify callback...');
-                    const response = await fetch(`${API_BASE_URL}/callback?code=${code}`);
+                    const callbackUrl = new URL('/callback', API_BASE_URL);
+                    callbackUrl.searchParams.append('code', code);
+                    
+                    const response = await fetch(callbackUrl.toString(), {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
                     
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);

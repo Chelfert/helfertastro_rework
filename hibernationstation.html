@@ -3,22 +3,74 @@
 <head>
     <title>Spotify Hibernate Skipper</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
         }
-        .button {
+
+        h1 {
+            margin-top: 0;
+            color: #1DB954;  /* Spotify green */
+        }
+
+        button {
+            background-color: #1DB954;
+            color: white;
+            border: none;
             padding: 10px 20px;
             margin: 10px 0;
+            border-radius: 20px;
             cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
         }
+
+        button:hover {
+            background-color: #1ed760;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #status {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+            border-left: 4px solid #1DB954;
+        }
+
         #log {
             margin-top: 20px;
             padding: 10px;
-            border: 1px solid #ccc;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
             height: 200px;
             overflow-y: auto;
+        }
+
+        #debug {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .log-entry {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
         }
     </style>
 </head>
@@ -26,22 +78,30 @@
     <div class="container">
         <h1>Spotify Hibernate Skipper</h1>
         
-        <button id="connectBtn" class="button">Connect to Spotify</button>
-        <button id="startBtn" class="button" disabled>Start Monitoring</button>
-        <button id="stopBtn" class="button" disabled>Stop Monitoring</button>
+        <button id="connectBtn">Connect to Spotify</button>
+        <button id="startBtn" disabled>Start Monitoring</button>
+        <button id="stopBtn" disabled>Stop Monitoring</button>
         
         <div id="status">Status: Not connected</div>
+        
+        <div id="debug">
+            Redirect URI: <span id="redirectUri"></span>
+        </div>
+        
         <div id="log"></div>
     </div>
 
     <script>
-        const API_BASE_URL = 'https://hibernate-dfai.onrender.com/';  // Replace with your Render URL
+        const API_BASE_URL = 'https://hibernate-dfai.onrender.com/';  // Update this with your actual Render URL
         let monitoring = false;
         let accessToken = null;
 
         function log(message) {
             const logDiv = document.getElementById('log');
-            logDiv.innerHTML += `<div>${new Date().toLocaleTimeString()}: ${message}</div>`;
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+            logDiv.appendChild(entry);
             logDiv.scrollTop = logDiv.scrollHeight;
         }
 
@@ -51,21 +111,43 @@
 
         async function connect() {
             try {
+                log('Attempting to connect to Spotify...');
                 const response = await fetch(`${API_BASE_URL}/login`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json();
-                window.location.href = data.auth_url;
+                if (data.auth_url) {
+                    log('Redirecting to Spotify login...');
+                    window.location.href = data.auth_url;
+                } else {
+                    throw new Error('No auth URL received');
+                }
             } catch (error) {
                 log(`Error connecting: ${error.message}`);
+                updateStatus('Connection failed');
+                console.error('Connection error:', error);
             }
         }
 
         async function handleCallback() {
             const urlParams = new URLSearchParams(window.location.search);
             const code = urlParams.get('code');
+            const error = urlParams.get('error');
+            
+            if (error) {
+                log(`Authorization error: ${error}`);
+                updateStatus('Authorization failed');
+                return;
+            }
             
             if (code) {
                 try {
+                    log('Receiving callback from Spotify...');
                     const response = await fetch(`${API_BASE_URL}/callback?code=${code}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
                     const data = await response.json();
                     accessToken = data.access_token;
                     
@@ -73,13 +155,23 @@
                     document.getElementById('startBtn').disabled = false;
                     updateStatus('Connected');
                     log('Successfully connected to Spotify');
+                    
+                    // Clean up the URL
+                    window.history.replaceState({}, document.title, window.location.pathname);
                 } catch (error) {
                     log(`Error handling callback: ${error.message}`);
+                    updateStatus('Connection failed');
+                    console.error('Callback error:', error);
                 }
             }
         }
 
+        // Display the redirect URI
+        document.getElementById('redirectUri').textContent = window.location.href;
+
+        // Event Listeners
         document.getElementById('connectBtn').addEventListener('click', connect);
+        
         document.getElementById('startBtn').addEventListener('click', () => {
             monitoring = true;
             document.getElementById('startBtn').disabled = true;
@@ -97,7 +189,16 @@
         });
 
         // Check for callback when page loads
-        window.addEventListener('load', handleCallback);
+        window.addEventListener('load', () => {
+            log('Page loaded');
+            handleCallback();
+        });
+
+        // Add error handling for fetch requests
+        window.addEventListener('unhandledrejection', event => {
+            log(`Network error: ${event.reason}`);
+            console.error('Network error:', event.reason);
+        });
     </script>
 </body>
 </html>

@@ -8,19 +8,22 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
+            background-color: #f0f0f0;
         }
         
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #fff;
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         h1 {
             margin-top: 0;
             color: #1DB954;  /* Spotify green */
+            text-align: center;
         }
 
         button {
@@ -28,11 +31,14 @@
             color: white;
             border: none;
             padding: 10px 20px;
-            margin: 10px 0;
+            margin: 10px 5px;
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
             transition: background-color 0.3s;
+            display: block;
+            width: 200px;
+            margin: 10px auto;
         }
 
         button:hover {
@@ -47,15 +53,16 @@
         #status {
             margin: 20px 0;
             padding: 10px;
-            background-color: #fff;
+            background-color: #f8f9fa;
             border-radius: 4px;
             border-left: 4px solid #1DB954;
+            text-align: center;
         }
 
         #log {
             margin-top: 20px;
             padding: 10px;
-            background-color: #fff;
+            background-color: #f8f9fa;
             border: 1px solid #ddd;
             border-radius: 4px;
             height: 200px;
@@ -64,6 +71,9 @@
 
         #debug {
             margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
             font-size: 12px;
             color: #666;
         }
@@ -71,6 +81,14 @@
         .log-entry {
             padding: 5px 0;
             border-bottom: 1px solid #eee;
+            font-family: monospace;
+        }
+
+        .error {
+            color: #dc3545;
+            background-color: #ffebee;
+            padding: 5px;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -85,24 +103,33 @@
         <div id="status">Status: Not connected</div>
         
         <div id="debug">
-            Redirect URI: <span id="redirectUri"></span>
+            <div>Redirect URI: <span id="redirectUri"></span></div>
+            <div>API Base URL: <span id="apiBaseUrl"></span></div>
         </div>
         
         <div id="log"></div>
     </div>
 
     <script>
-        const API_BASE_URL = 'https://hibernate-dfai.onrender.com/';  // Update this with your actual Render URL
-        let monitoring = false;
-        let accessToken = null;
+        const API_BASE_URL = 'https://spotify-hibernate.onrender.com';  // Update this with your actual Render URL
 
-        function log(message) {
+        // Display debug info
+        document.getElementById('redirectUri').textContent = window.location.href;
+        document.getElementById('apiBaseUrl').textContent = API_BASE_URL;
+
+        function log(message, isError = false) {
             const logDiv = document.getElementById('log');
             const entry = document.createElement('div');
-            entry.className = 'log-entry';
+            entry.className = isError ? 'log-entry error' : 'log-entry';
             entry.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
             logDiv.appendChild(entry);
             logDiv.scrollTop = logDiv.scrollHeight;
+            
+            if (isError) {
+                console.error(message);
+            } else {
+                console.log(message);
+            }
         }
 
         function updateStatus(message) {
@@ -112,21 +139,34 @@
         async function connect() {
             try {
                 log('Attempting to connect to Spotify...');
+                log(`Sending request to: ${API_BASE_URL}/login`);
+                
                 const response = await fetch(`${API_BASE_URL}/login`);
+                log(`Received response status: ${response.status}`);
+                
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
+                
                 const data = await response.json();
+                log(`Received data: ${JSON.stringify(data)}`);
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
                 if (data.auth_url) {
-                    log('Redirecting to Spotify login...');
-                    window.location.href = data.auth_url;
+                    log(`Redirecting to Spotify auth URL: ${data.auth_url}`);
+                    // Small delay to ensure log message is visible
+                    setTimeout(() => {
+                        window.location.href = data.auth_url;
+                    }, 1000);
                 } else {
-                    throw new Error('No auth URL received');
+                    throw new Error('No auth URL received from server');
                 }
             } catch (error) {
-                log(`Error connecting: ${error.message}`);
+                log(`Error connecting: ${error.message}`, true);
                 updateStatus('Connection failed');
-                console.error('Connection error:', error);
             }
         }
 
@@ -136,44 +176,40 @@
             const error = urlParams.get('error');
             
             if (error) {
-                log(`Authorization error: ${error}`);
+                log(`Authorization error: ${error}`, true);
                 updateStatus('Authorization failed');
                 return;
             }
             
             if (code) {
                 try {
-                    log('Receiving callback from Spotify...');
+                    log('Handling Spotify callback...');
                     const response = await fetch(`${API_BASE_URL}/callback?code=${code}`);
+                    
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
+                    
                     const data = await response.json();
-                    accessToken = data.access_token;
+                    log('Successfully received token info');
                     
                     document.getElementById('connectBtn').disabled = true;
                     document.getElementById('startBtn').disabled = false;
                     updateStatus('Connected');
-                    log('Successfully connected to Spotify');
                     
                     // Clean up the URL
                     window.history.replaceState({}, document.title, window.location.pathname);
                 } catch (error) {
-                    log(`Error handling callback: ${error.message}`);
+                    log(`Error handling callback: ${error.message}`, true);
                     updateStatus('Connection failed');
-                    console.error('Callback error:', error);
                 }
             }
         }
-
-        // Display the redirect URI
-        document.getElementById('redirectUri').textContent = window.location.href;
 
         // Event Listeners
         document.getElementById('connectBtn').addEventListener('click', connect);
         
         document.getElementById('startBtn').addEventListener('click', () => {
-            monitoring = true;
             document.getElementById('startBtn').disabled = true;
             document.getElementById('stopBtn').disabled = false;
             updateStatus('Monitoring');
@@ -181,7 +217,6 @@
         });
 
         document.getElementById('stopBtn').addEventListener('click', () => {
-            monitoring = false;
             document.getElementById('startBtn').disabled = false;
             document.getElementById('stopBtn').disabled = true;
             updateStatus('Connected (not monitoring)');
@@ -196,7 +231,7 @@
 
         // Add error handling for fetch requests
         window.addEventListener('unhandledrejection', event => {
-            log(`Network error: ${event.reason}`);
+            log(`Network error: ${event.reason}`, true);
             console.error('Network error:', event.reason);
         });
     </script>

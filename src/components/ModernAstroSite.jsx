@@ -68,10 +68,10 @@ export const ModernAstroSite = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90">
-              <a href="index.html" className="block px-3 py-2 hover:bg-gray-800 rounded-md">Home</a>
-              <a href="Gallery.html" className="block px-3 py-2 hover:bg-gray-800 rounded-md">Gallery</a>
-              <a href="localConditions.html" className="block px-3 py-2 hover:bg-gray-800 rounded-md">Local Conditions</a>
-              <a href="equipment.html" className="block px-3 py-2 hover:bg-gray-800 rounded-md">Equipment</a>
+              <a href="/" className="block px-3 py-2 hover:bg-gray-800 rounded-md">Home</a>
+              <a href="/Gallery.html" className="block px-3 py-2 hover:bg-gray-800 rounded-md">Gallery</a>
+              <a href="/localConditions.html" className="block px-3 py-2 hover:bg-gray-800 rounded-md">Local Conditions</a>
+              <a href="/equipment.html" className="block px-3 py-2 hover:bg-gray-800 rounded-md">Equipment</a>
             </div>
           </div>
         )}

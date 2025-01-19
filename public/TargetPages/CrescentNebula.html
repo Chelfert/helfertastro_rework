@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+
+
+
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<!--START OF BODY-->
+
+<body>
+
+    <!--NAVBAR-->
+    <header style="max-height: 150px;">
+        <nav>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">The Crescent Nebula</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/crescentNebula.jpg'" src="/pictures/crescentNebula.jpg"
+                    alt="Crescent nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+        
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: AT115EDT. July, 2023
+            <a href="/pictures/crescentNebula.jpg" download="CrescentNebula.jpg">
+                <br>
+                <button class="download">Download Crescent Nebula</button>
+            </a>
+        </p>
+        <br>
+    <div class="target">
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/crescentNebulaResized.png'" src="/pictures/crescentNebulaResized.png"
+                    alt="Crescent nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+        
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: Redcat. August, 2022
+            <a href="/pictures/crescentNebulaResized.png" download="CrescentNebula.png">
+                <br>
+                <button class="download">Download Crescent Nebula</button>
+            </a>
+        </p>
+
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/CrescentNebula.png'" src="/Locations/CrescentNebula.png"
+                    alt="Crescent nebula" style="width: auto" class="targetPicture" />
+            </picture>
+        </div>
+
+        <br>
+
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: NGC 6888.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: 1792, William Herschel.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 5,000 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: 25 Lightyears.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 7.4    
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Summer.
+                </li>
+            </div>
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+                The Crescent Nebula, or NGC 6888 is an emission nebula that spans roughly 25 Light Years in diameter. 
+                NGC 6888 is located roughly 5000 Light Years away in the constellation Cygnus. The Crescent Nebula is the product of a type of star known as a “Wolf-Rayet”, which are massive objects that are aging and shed their mass at extreme rates. 
+                This Wolf-Rayet is shedding its outer layers at a pace of the mass of our Sun every 10,000 years. It is believed that the star in the center of NGC 6888 will eventually end its life in a violent explosion known as a Supernova.
+
+            </p>
+        </div>
+        <!--end of target-->
+        <!-- download button -->
+
+
+</body>
+
+</html>
+

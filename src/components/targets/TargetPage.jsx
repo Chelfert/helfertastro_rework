@@ -3,34 +3,39 @@ import React, { useState } from 'react';
 import { Menu, X, ZoomIn } from 'lucide-react';  // Add ZoomIn icon
 import { Link } from 'react-router-dom';
 
+
 // Add ImageModal component
+// Add this to TargetPage.jsx
 const ImageModal = ({ image, title, onClose }) => {
+  // Add ESC key handler
+  React.useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [onClose]);
+
   return (
     <div 
-      className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center cursor-zoom-out"
       onClick={onClose}
     >
       <button 
         onClick={onClose}
-        className="absolute top-4 right-4 text-white hover:text-gray-300"
+        className="absolute top-4 right-4 text-white hover:text-gray-300 z-[101]"
       >
-        <X size={24} />
+        <X size={32} />
       </button>
-      <div 
-        className="max-w-[90vw] max-h-[90vh] relative"
+      <img 
+        src={image} 
+        alt={title}
+        className="max-w-[95vw] max-h-[95vh] object-contain cursor-default"
         onClick={e => e.stopPropagation()}
-      >
-        <img 
-          src={image} 
-          alt={title}
-          className="max-w-full max-h-[90vh] object-contain"
-        />
-        <p className="text-white text-center mt-2">{title}</p>
-      </div>
+      />
     </div>
   );
 };
-
 const TargetPage = ({ 
   title,
   images,
@@ -112,5 +117,6 @@ const TargetPage = ({
     </div>
   );
 };
+
 
 export default TargetPage;

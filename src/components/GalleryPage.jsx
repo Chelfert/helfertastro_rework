@@ -1,8 +1,5 @@
-
-
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import styles from './GalleryPage.module.css';
 
 const GalleryPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -181,75 +178,47 @@ const GalleryPage = () => {
   ];
 
   return (
-    <div className={styles.galleryContainer}>
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex-shrink-0">
-              <a href="/">
-                <img 
-                  src="/Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" 
-                  alt="Helfert Astrophotography"
-                  className="h-8"
-                />
-              </a>
-            </div>
-            
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button 
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-
-            {/* Desktop menu */}
-            <div className="hidden md:flex space-x-8">
-              <a href="/" className="text-white hover:text-blue-400 transition-colors">Home</a>
-              <a href="/gallery" className="text-white hover:text-blue-400 transition-colors">Gallery</a>
-              <a href="/localConditions.html" className="text-white hover:text-blue-400 transition-colors">Local Conditions</a>
-              <a href="/equipment.html" className="text-white hover:text-blue-400 transition-colors">Equipment</a>
-            </div>
-          </div>
-
-          {/* Mobile menu panel */}
-          {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90">
-                <a href="/" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Home</a>
-                <a href="/gallery" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Gallery</a>
-                <a href="/localConditions.html" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Local Conditions</a>
-                <a href="/equipment.html" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Equipment</a>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-
-      {/* Gallery Header */}
-      <div className="pt-24 pb-12">
-        <h1 className="text-4xl md:text-5xl text-white font-bold text-center">
-          Astrophotography Gallery
-        </h1>
-      </div>
-
-{/* Gallery Grid */}
-      <div className={styles.gridContainer}>
+    <div style={{ backgroundColor: '#111827', minHeight: '100vh', padding: '20px' }}>
+      <h1 style={{ color: 'white', textAlign: 'center', fontSize: '2rem', marginBottom: '20px' }}>
+        Gallery
+      </h1>
+      
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+        gap: '20px',
+        maxWidth: '1200px',
+        margin: '0 auto'
+      }}>
         {galleryItems.map((item, index) => (
-          <div key={index} className={styles.imageCard}>
-            <a href={item.link} className="block w-full h-full">
+          <div key={index} style={{ 
+            position: 'relative',
+            aspectRatio: '1',
+            overflow: 'hidden',
+            borderRadius: '8px',
+            backgroundColor: 'rgba(0,0,0,0.2)'
+          }}>
+            <a href={item.link}>
               <img
                 src={item.image}
                 alt={item.title}
-                className={styles.image}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
               />
-              <div className={styles.imageOverlay}>
-                <h3 className={styles.imageTitle}>
-                  {item.title}
-                </h3>
+              <div style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                padding: '20px',
+                background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                color: 'white',
+                textAlign: 'center'
+              }}>
+                <h3 style={{ margin: 0 }}>{item.title}</h3>
               </div>
             </a>
           </div>

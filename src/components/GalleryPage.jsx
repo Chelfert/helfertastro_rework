@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import styles from './GalleryPage.module.css';
 
 const GalleryPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -180,7 +181,7 @@ const GalleryPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className={styles.galleryContainer}>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-4">
@@ -235,31 +236,24 @@ const GalleryPage = () => {
         </h1>
       </div>
 
-      {/* Gallery Grid */}
-      <div className="container mx-auto px-4 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryItems.map((item, index) => (
-            <div 
-              key={index} 
-              className="group relative aspect-square overflow-hidden rounded-lg bg-black/20"
-            >
-              <a href={item.link} className="block w-full h-full">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white text-xl font-semibold text-center">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-          ))}
-        </div>
+{/* Gallery Grid */}
+      <div className={styles.gridContainer}>
+        {galleryItems.map((item, index) => (
+          <div key={index} className={styles.imageCard}>
+            <a href={item.link} className="block w-full h-full">
+              <img
+                src={item.image}
+                alt={item.title}
+                className={styles.image}
+              />
+              <div className={styles.imageOverlay}>
+                <h3 className={styles.imageTitle}>
+                  {item.title}
+                </h3>
+              </div>
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );

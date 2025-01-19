@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ModernAstroSite } from './components/ModernAstroSite';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import ModernAstroSite from './components/ModernAstroSite';
 import GalleryPage from './components/GalleryPage';
 
 function App() {

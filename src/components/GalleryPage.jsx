@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const GalleryPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -179,78 +180,86 @@ const GalleryPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 p-4">
+    <div className="min-h-screen bg-gray-900 text-white">
+      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <a href="/">
+              <Link to="/">
                 <img 
                   src="/Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" 
                   alt="Helfert Astrophotography"
                   className="h-8"
                 />
-              </a>
+              </Link>
             </div>
             
+            {/* Mobile menu button */}
             <div className="md:hidden">
               <button 
-                onClick={() => setIsMenuOpen(!isMenuOpen)} 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white p-2"
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
 
+            {/* Desktop menu */}
             <div className="hidden md:flex space-x-8">
-              <a href="/" className="text-white hover:text-blue-400 transition-colors">Home</a>
-              <a href="/gallery" className="text-white hover:text-blue-400 transition-colors">Gallery</a>
-              <a href="/localConditions.html" className="text-white hover:text-blue-400 transition-colors">Local Conditions</a>
-              <a href="/equipment.html" className="text-white hover:text-blue-400 transition-colors">Equipment</a>
+              <Link to="/" className="text-white hover:text-blue-400 transition-colors">Home</Link>
+              <Link to="/gallery" className="text-white hover:text-blue-400 transition-colors">Gallery</Link>
+              <Link to="/local-conditions" className="text-white hover:text-blue-400 transition-colors">Local Conditions</Link>
+              <Link to="/equipment" className="text-white hover:text-blue-400 transition-colors">Equipment</Link>
             </div>
           </div>
 
+          {/* Mobile menu panel */}
           {isMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90">
-                <a href="/" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Home</a>
-                <a href="/gallery" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Gallery</a>
-                <a href="/localConditions.html" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Local Conditions</a>
-                <a href="/equipment.html" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Equipment</a>
+                <Link to="/" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Home</Link>
+                <Link to="/gallery" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Gallery</Link>
+                <Link to="/local-conditions" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Local Conditions</Link>
+                <Link to="/equipment" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Equipment</Link>
               </div>
             </div>
           )}
         </div>
       </nav>
 
+      {/* Gallery Header */}
       <div className="pt-24 pb-12">
         <h1 className="text-4xl md:text-5xl text-white font-bold text-center">
           Astrophotography Gallery
         </h1>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {galleryItems.map((item, index) => (
-          <div 
-            key={index} 
-            className="group relative aspect-square overflow-hidden rounded-lg bg-black/20"
-          >
-            <a href={item.link} className="block w-full h-full">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-white text-xl font-semibold text-center">
-                    {item.title}
-                  </h3>
+      {/* Gallery Grid */}
+      <div className="container mx-auto px-4 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryItems.map((item, index) => (
+            <div 
+              key={index} 
+              className="group relative aspect-square overflow-hidden rounded-lg bg-black/20"
+            >
+              <a href={item.link} className="block w-full h-full">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white text-xl font-semibold text-center">
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-        ))}
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

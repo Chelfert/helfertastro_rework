@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ModernAstroSite from './components/ModernAstroSite';
 import GalleryPage from './components/GalleryPage';
-import DumbbellNebulaPage from './components/targets/DumbbellNebula';
-import EagleNebulaPage from './components/targets/EagleNebula';
+import DumbbellNebulaPage from './components/targets/DumbbellNebula.jsx';
+import EagleNebulaPage from './components/targets/EagleNebula.jsx';
 
 function App() {
   return (

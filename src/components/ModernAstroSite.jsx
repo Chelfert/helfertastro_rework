@@ -41,7 +41,7 @@ export const ModernAstroSite = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
               <img 
-                src="Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" 
+                src="/Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" 
                 alt="Helfert Astrophotography"
                 className="h-8"
               />
@@ -56,10 +56,10 @@ export const ModernAstroSite = () => {
 
             {/* Desktop menu */}
             <div className="hidden md:flex space-x-8">
-              <a href="index.html" className="hover:text-blue-400 transition-colors">Home</a>
-              <a href="Gallery.html" className="hover:text-blue-400 transition-colors">Gallery</a>
-              <a href="localConditions.html" className="hover:text-blue-400 transition-colors">Local Conditions</a>
-              <a href="equipment.html" className="hover:text-blue-400 transition-colors">Equipment</a>
+              <a href="/" className="hover:text-blue-400 transition-colors">Home</a>
+              <a href="/Gallery.html" className="hover:text-blue-400 transition-colors">Gallery</a>
+              <a href="/localConditions.html" className="hover:text-blue-400 transition-colors">Local Conditions</a>
+              <a href="/equipment.html" className="hover:text-blue-400 transition-colors">Equipment</a>
             </div>
           </div>
         </div>

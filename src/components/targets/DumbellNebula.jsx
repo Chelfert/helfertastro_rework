@@ -1,5 +1,5 @@
 import React from 'react';
-import TargetPage from '../TargetPage';  // We'll create this base component
+import TargetPage from './TargetPage';  // We'll create this base component
 
 const DumbbellNebulaPage = () => {
   return (

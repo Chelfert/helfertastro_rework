@@ -1,5 +1,5 @@
 import React from 'react';
-import TargetPage from '../TargetPage';
+import TargetPage from './TargetPage';
 
 const EagleNebulaPage = () => {
   return (

@@ -90,7 +90,7 @@ export const ModernAstroSite = () => {
                 <h1 className="text-5xl font-bold mb-6">Explore the Universe</h1>
                 <p className="mt-4 text-lg">
                   The purpose of this website is to share my love of the Universe with as many people as I can. 
-                  Every picture was taken from Madison, Alabama which is rated 6 on the Bortle scale.
+                  Every picture was taken from Madison, Alabama.
                 </p>
               </div>
             </div>

@@ -1,6 +1,11 @@
-import React from 'react';
+
+
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const GalleryPage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const galleryItems = [
     {
       image: "/jpgPictures/IC63.jpg",
@@ -66,23 +71,141 @@ const GalleryPage = () => {
       image: "/jpgPictures/M45.jpg",
       title: "The Pleiades",
       link: "/TargetPages/Pleiades.html"
+    },
+    {
+      image: "/jpgPictures/PerseusCluster.jpg",
+      title: "Double Cluster in Perseus",
+      link: "/TargetPages/PerseusCluster.html"
+    },
+    {
+      image: "/jpgPictures/PickeringsTriangle.jpg",
+      title: "Pickering's Triangle",
+      link: "/TargetPages/VeilNebula.html"
+    },
+    {
+      image: "/jpgPictures/Leo_triplet.jpg",
+      title: "Leo Triplet",
+      link: "/TargetPages/LeoTriplet.html"
+    },
+    {
+      image: "/jpgPictures/PacmanNebula.jpg",
+      title: "The Pacman Nebula",
+      link: "/TargetPages/PacmanNebula.html"
+    },
+    {
+      image: "/jpgPictures/Whirlpool_Galaxy.jpg",
+      title: "The Whirlpool Galaxy",
+      link: "/TargetPages/WhirlpoolGalaxy.html"
+    },
+    {
+      image: "/jpgPictures/HorseheadNebula.jpg",
+      title: "The Horsehead Nebula",
+      link: "/TargetPages/HorseheadNebula.html"
+    },
+    {
+      image: "/jpgPictures/OrionNebula.jpg",
+      title: "The Orion Nebula",
+      link: "/TargetPages/OrionNebula.html"
+    },
+    {
+      image: "/jpgPictures/NGC7822.jpg",
+      title: "NGC 7822",
+      link: "/TargetPages/NGC7822.html"
+    },
+    {
+      image: "/jpgPictures/LobsterClawBubbleHB-clear.jpg",
+      title: "The Lobster Claw and Bubble Nebula",
+      link: "/TargetPages/LobsterClawbubble.html"
+    },
+    {
+      image: "/jpgPictures/CaliforniaNebula.jpg",
+      title: "The California Nebula",
+      link: "/TargetPages/CaliforniaNebula.html"
+    },
+    {
+      image: "/jpgPictures/CygnusWallHubble-topaz.jpg",
+      title: "The Cygnus Wall",
+      link: "/TargetPages/CygnusWall.html"
+    },
+    {
+      image: "/jpgPictures/PelicanNebula.jpg",
+      title: "The Pelican Nebula",
+      link: "/TargetPages/PelicanNebula.html"
+    },
+    {
+      image: "/jpgPictures/Heart%20Nebula.jpg",
+      title: "The Heart Nebula",
+      link: "/TargetPages/HeartNebula.html"
+    },
+    {
+      image: "/jpgPictures/crescentNebula.jpg",
+      title: "Crescent Nebula",
+      link: "/TargetPages/CrescentNebula.html"
+    },
+    {
+      image: "/jpgPictures/Pillars_core.jpg",
+      title: "Eagle Nebula",
+      link: "/TargetPages/EagleNebula.html"
+    },
+    {
+      image: "/jpgPictures/Veil%20Nebula.jpg",
+      title: "The Veil Nebula",
+      link: "/TargetPages/VeilNebula.html"
+    },
+    {
+      image: "/jpgPictures/M13_wtrmrk.jpg",
+      title: "M13, Hercules Cluster",
+      link: "/TargetPages/M13.html"
+    },
+    {
+      image: "/jpgPictures/M31-130pds.jpg",
+      title: "Andromeda",
+      link: "/TargetPages/M31.html"
+    },
+    {
+      image: "/jpgPictures/M33.jpg",
+      title: "M33, The Triangulum Galaxy",
+      link: "/TargetPages/M33.html"
+    },
+    {
+      image: "/jpgPictures/IrisNebula.jpg",
+      title: "The Iris Nebula",
+      link: "/TargetPages/IrisNebula.html"
+    },
+    {
+      image: "/jpgPictures/elephants_trunk.jpg",
+      title: "The Elephant's Trunk",
+      link: "/TargetPages/ElephantsTrunk.html"
     }
-    // Add more gallery items here
   ];
 
   return (
     <div className="min-h-screen bg-gray-900">
-      {/* Navigation - reusing from ModernAstroSite */}
+      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <img 
-                src="/Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" 
-                alt="Helfert Astrophotography"
-                className="h-8"
-              />
+              <a href="/">
+                <img 
+                  src="/Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" 
+                  alt="Helfert Astrophotography"
+                  className="h-8"
+                />
+              </a>
             </div>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white p-2"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+
+            {/* Desktop menu */}
             <div className="hidden md:flex space-x-8">
               <a href="/" className="text-white hover:text-blue-400 transition-colors">Home</a>
               <a href="/gallery" className="text-white hover:text-blue-400 transition-colors">Gallery</a>
@@ -90,6 +213,18 @@ const GalleryPage = () => {
               <a href="/equipment.html" className="text-white hover:text-blue-400 transition-colors">Equipment</a>
             </div>
           </div>
+
+          {/* Mobile menu panel */}
+          {isMenuOpen && (
+            <div className="md:hidden">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90">
+                <a href="/" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Home</a>
+                <a href="/gallery" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Gallery</a>
+                <a href="/localConditions.html" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Local Conditions</a>
+                <a href="/equipment.html" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Equipment</a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 

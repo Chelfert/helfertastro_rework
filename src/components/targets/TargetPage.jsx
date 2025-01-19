@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,6 +11,8 @@ const TargetPage = ({
   quickFacts,
   description
 }) => {
+  console.log('TargetPage rendering with props:', { title, images, locationImage, quickFacts });
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

@@ -238,27 +238,27 @@ const GalleryPage = () => {
       {/* Gallery Grid */}
       <div className="container mx-auto px-4 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryItems.map((item, index) => (
-            <div 
-              key={index} 
-              className="group relative aspect-square overflow-hidden rounded-lg bg-black/20"
-            >
-              <a href={item.link} className="block w-full h-full">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white text-xl font-semibold text-center">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-          ))}
+        {galleryItems.map((item, index) => (
+  <div 
+    key={index} 
+    className="group relative aspect-square overflow-hidden rounded-lg bg-black/20"
+  >
+    <Link to={item.link} className="block w-full h-full">  {/* Change <a> to <Link> */}
+      <img
+        src={item.image}
+        alt={item.title}
+        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <h3 className="text-white text-xl font-semibold text-center">
+            {item.title}
+          </h3>
+        </div>
+      </div>
+    </Link>  {/* Change </a> to </Link> */}
+  </div>
+))}
         </div>
       </div>
     </div>

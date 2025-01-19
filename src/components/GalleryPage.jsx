@@ -25,7 +25,7 @@ const GalleryPage = () => {
     {
       image: "/jpgPictures/DumbbellNebula.jpg",
       title: "The Dumbbell Nebula",
-      link: "/TargetPages/DumbbellNebula.html"
+      link: "/targets/dumbbell-nebula"  // Updated from HTML path to React route
     },
     {
       image: "/jpgPictures/LagoonNebula.jpg",
@@ -145,7 +145,7 @@ const GalleryPage = () => {
     {
       image: "/jpgPictures/Pillars_core.jpg",
       title: "Eagle Nebula",
-      link: "/TargetPages/EagleNebula.html"
+      link: "/TargetPages/eagle-nebula"
     },
     {
       image: "/jpgPictures/Veil%20Nebula.jpg",

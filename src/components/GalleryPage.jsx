@@ -145,7 +145,7 @@ const GalleryPage = () => {
     {
       image: "/jpgPictures/Pillars_core.jpg",
       title: "Eagle Nebula",
-      link: "/TargetPages/eagle-nebula"
+      link: "/targets/eagle-nebula"
     },
     {
       image: "/jpgPictures/Veil%20Nebula.jpg",

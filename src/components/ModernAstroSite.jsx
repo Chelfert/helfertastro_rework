@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Camera, Telescope, Map, Menu, X } from 'lucide-react';
+import { 
+  ChevronLeft, 
+  ChevronRight, 
+  Camera, 
+  Star, // Replace Telescope with Star
+  Compass, // Replace Map with Compass
+  Menu, 
+  X 
+} from 'lucide-react';
 
 export const ModernAstroSite = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -125,7 +133,7 @@ export const ModernAstroSite = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Equipment</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-900 p-6 rounded-lg">
-              <Telescope className="w-12 h-12 mb-4 mx-auto text-blue-400" />
+              <Star className="w-12 h-12 mb-4 mx-auto text-blue-400" />
               <h3 className="text-xl font-semibold mb-4 text-center">Telescope</h3>
               <ul className="space-y-2">
                 <li>Astro-Tech 115EDT</li>
@@ -137,13 +145,13 @@ export const ModernAstroSite = () => {
               <Camera className="w-12 h-12 mb-4 mx-auto text-blue-400" />
               <h3 className="text-xl font-semibold mb-4 text-center">Camera</h3>
               <ul className="space-y-2">
-                <li>ZWO ASI1600MM Pro</li>
+                <li>ZWO ASI294MM Pro</li>
                 <li>ASI220MM Guide Camera</li>
                 <li>Antlia Filters</li>
               </ul>
             </div>
             <div className="bg-gray-900 p-6 rounded-lg">
-              <Map className="w-12 h-12 mb-4 mx-auto text-blue-400" />
+              <Compass className="w-12 h-12 mb-4 mx-auto text-blue-400" />
               <h3 className="text-xl font-semibold mb-4 text-center">Software</h3>
               <ul className="space-y-2">
                 <li>NINA Sequencing</li>

@@ -1,19 +1,14 @@
-// DumbbellNebula.jsx
 import React from 'react';
-import TargetPage from './TargetPage.jsx';
+import TargetPage from './TargetPage';
 
 const DumbbellNebulaPage = () => {
   return (
     <TargetPage 
       title="The Dumbbell Nebula"
-      images={[{  // Change to match TargetPage's expected props
-        title: "The Dumbbell Nebula",
-        image: "/pictures/DumbbellNebula.jpg",
-        acquisitionDate: "August, 2024",
-        acquisitionScope: "AT115EDT",
-        downloadText: "Download Dumbbell Nebula"
-      }]}
+      mainImage="/pictures/DumbbellNebula.jpg"
       locationImage="/Locations/DumbbellNebula.jpg"
+      acquisitionDate="August, 2024"
+      acquisitionScope="AT115EDT"
       quickFacts={[
         "Catalog: Messier 27",
         "Discovered: 1764, Charles Messier",

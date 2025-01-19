@@ -1,22 +1,21 @@
-// TargetPage.jsx
 import React, { useState } from 'react';
-import { Menu, X, ZoomIn } from 'lucide-react';  // Add ZoomIn icon
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const TargetPage = ({ 
+  title,
+  mainImage,  // Changed from images array to single mainImage
+  locationImage,
+  acquisitionDate,
+  acquisitionScope,
+  quickFacts,
+  description
+}) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-// Add ImageModal component
-// Add this to TargetPage.jsx
-const ImageModal = ({ image, title, onClose }) => {
-  // Add ESC key handler
-  React.useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, [onClose]);
-
-  return (
+  // Image Modal component
+  const ImageModal = ({ image, title, onClose }) => (
     <div 
       className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center cursor-zoom-out"
       onClick={onClose}
@@ -35,75 +34,80 @@ const ImageModal = ({ image, title, onClose }) => {
       />
     </div>
   );
-};
-const TargetPage = ({ 
-  title,
-  images,
-  locationImage,
-  quickFacts,
-  description
-}) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navigation remains the same */}
-      
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50">
+        {/* ... navigation code stays the same ... */}
+      </nav>
+
       {/* Main Content */}
       <div className="pt-24 pb-12 container mx-auto px-4">
-        {/* Main Images Section */}
-        {images.map((imageData, index) => (
-          <div key={index} className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-              {imageData.title}
-            </h2>
-            
-            <div className="max-w-4xl mx-auto mb-8 relative group">
-              <img 
-                src={imageData.image} 
-                alt={imageData.title}
-                className="w-full rounded-lg shadow-xl cursor-pointer transition-transform hover:opacity-95"
-                onClick={() => setSelectedImage(imageData)}
-              />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ZoomIn className="text-white w-12 h-12" />
-              </div>
-            </div>
+        {/* Title */}
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
+          {title}
+        </h1>
 
-            {/* Acquisition Info */}
-            <div className="text-center mb-8">
-              <p className="text-lg text-gray-300">
-                Acquisition: {imageData.acquisitionScope}, {imageData.acquisitionDate}
-              </p>
-              <a href={imageData.image} download className="inline-block mt-4">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
-                  {imageData.downloadText}
-                </button>
-              </a>
-            </div>
-          </div>
-        ))}
+        {/* Main Image */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <img 
+            src={mainImage} 
+            alt={title}
+            className="w-full rounded-lg shadow-xl cursor-pointer"
+            onClick={() => setSelectedImage({ image: mainImage, title })}
+          />
+        </div>
 
-        {/* Location Image */}
+        {/* Location in Sky Section */}
         {locationImage && (
-          <>
+          <div className="mt-12">
             <h2 className="text-2xl font-bold text-center mb-6">Location in Sky</h2>
-            <div className="max-w-4xl mx-auto mb-12 relative group">
+            <div className="max-w-4xl mx-auto mb-8">
               <img 
                 src={locationImage} 
                 alt={`Sky location of ${title}`}
-                className="w-full rounded-lg shadow-xl cursor-pointer transition-transform hover:opacity-95"
+                className="w-full rounded-lg shadow-xl cursor-pointer"
                 onClick={() => setSelectedImage({ image: locationImage, title: 'Location in Sky' })}
               />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ZoomIn className="text-white w-12 h-12" />
-              </div>
             </div>
-          </>
+          </div>
         )}
 
-        {/* Info Grid remains the same */}
+        {/* Acquisition Info */}
+        <div className="text-center mb-12">
+          <p className="text-lg text-gray-300" id="acquisitionscope">
+            Acquisition: {acquisitionScope}, {acquisitionDate}
+          </p>
+          <a href={mainImage} download className="inline-block mt-4">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+              Download {title}
+            </button>
+          </a>
+        </div>
+
+        {/* Info Grid */}
+        <div className="blurbbox grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Quick Facts */}
+          <div>
+            <h3 className="text-2xl font-bold text-center mb-6">Quick Facts</h3>
+            <ul className="space-y-3 text-left">
+              {quickFacts.map((fact, index) => (
+                <li key={index} id="quickfactli" className="text-gray-300">
+                  {fact}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Description */}
+          <div>
+            <h3 className="text-2xl font-bold text-center mb-6">Description</h3>
+            <p className="text-gray-300 leading-relaxed text-left">
+              {description}
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Image Modal */}
@@ -117,6 +121,5 @@ const TargetPage = ({
     </div>
   );
 };
-
 
 export default TargetPage;

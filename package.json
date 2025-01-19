@@ -1,22 +1,25 @@
 {
-  "name": "helfert-astrophotography",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "lucide-react": "^0.263.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.0",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "vite": "^5.0.0"
+    "name": "helfert-astrophotography",
+    "version": "1.0.0",
+    "private": true,
+    "engines": {
+      "node": ">=18.0.0"
+    },
+    "scripts": {
+      "build": "vite build",
+      "dev": "vite",
+      "preview": "vite preview"
+    },
+    "dependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "lucide-react": "^0.263.1"
+    },
+    "devDependencies": {
+      "@vitejs/plugin-react": "^4.2.0",
+      "autoprefixer": "^10.4.16",
+      "postcss": "^8.4.31",
+      "tailwindcss": "^3.3.5",
+      "vite": "^5.0.0"
+    }
   }
-}

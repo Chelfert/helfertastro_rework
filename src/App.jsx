@@ -1,9 +1,8 @@
-import ModernAstroSite from './components/ModernAstroSite'
+import React from 'react';
+import { ModernAstroSite } from './components/ModernAstroSite';
 
 function App() {
-  return (
-    <ModernAstroSite />
-  )
+  return <ModernAstroSite />;
 }
 
-export default App
+export default App;

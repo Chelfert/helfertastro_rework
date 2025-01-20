@@ -16,7 +16,7 @@ const ModernAstroSite = () => {
       image: "/Pictures/m33.jpg", 
       title: "The Triangulum Galaxy",
       link: "/TargetPages/m33.html"
-    ,
+},
 
     { 
       image: "/pictures/NorthAmericanNebula.jpg", 

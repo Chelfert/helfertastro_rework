@@ -21,88 +21,100 @@ const escapeDescription = (description) => {
 };
 
 async function updateCarousel(targetData, urlName) {
-  const modernAstroSitePath = join(__dirname, '..', 'src', 'components', 'ModernAstroSite.jsx');
+    const modernAstroSitePath = join(__dirname, '..', 'src', 'components', 'ModernAstroSite.jsx');
+    
+    try {
+      console.log('\nUpdating carousel...');
+      
+      // Verify file exists
+      try {
+        await fs.access(modernAstroSitePath);
+        console.log('Found ModernAstroSite.jsx');
+      } catch {
+        throw new Error(`ModernAstroSite.jsx not found at: ${modernAstroSitePath}`);
+      }
   
-  try {
-    console.log('\nUpdating carousel...');
-    
-    // Verify file exists
-    try {
-      await fs.access(modernAstroSitePath);
-      console.log('Found ModernAstroSite.jsx');
-    } catch {
-      throw new Error(`ModernAstroSite.jsx not found at: ${modernAstroSitePath}`);
-    }
-
-    // Create backup
-    const backupPath = `${modernAstroSitePath}.backup`;
-    await fs.copyFile(modernAstroSitePath, backupPath);
-    console.log('Created backup file');
-
-    let content = await fs.readFile(modernAstroSitePath, 'utf8');
-    
-    // Find slides array
-    const slidesRegex = /const\s+slides\s*=\s*\[([\s\S]*?)\];/;
-    const slidesMatch = content.match(slidesRegex);
-    
-    if (!slidesMatch) {
-      throw new Error('Could not find slides array in ModernAstroSite.jsx');
-    }
-
-    console.log('Found slides array. Creating new slide...');
-
-    // Create new slide
-    const newSlide = `    {
-      image: "/pictures/${urlName}.jpg",
-      title: "${targetData.title}",
-      link: "/targets/${urlName}"
-    }`;
-
-    // Parse existing slides
-    let slidesContent = slidesMatch[1].trim();
-    let slides = slidesContent.split('},').filter(s => s.trim());
-    
-    console.log('Current number of slides:', slides.length);
-    
-    // Add new slide and maintain 3 maximum
-    slides.unshift(newSlide);
-    slides = slides.slice(0, 3);
-    
-    console.log('New number of slides:', slides.length);
-
-    // Format slides with proper closing braces
-    const newSlidesContent = slides.join(',\n') + (slides.length ? '}' : '');
-    
-    // Replace slides in content
-    const newContent = content.replace(
-      slidesRegex,
-      `const slides = [\n${newSlidesContent}\n  ];`
-    );
-
-    // Verify changes were made
-    if (newContent === content) {
-      throw new Error('Failed to update slides array - content unchanged');
-    }
-
-    await fs.writeFile(modernAstroSitePath, newContent, 'utf8');
-    console.log('Successfully updated carousel');
-
-  } catch (error) {
-    console.error('\nError updating carousel:', error.message);
-    console.error('Please manually add this slide to the carousel in ModernAstroSite.jsx:');
-    console.error(newSlide);
-
-    // Restore from backup if it exists
-    try {
+      // Create backup
       const backupPath = `${modernAstroSitePath}.backup`;
-      await fs.access(backupPath);
-      await fs.copyFile(backupPath, modernAstroSitePath);
-      console.log('Restored from backup file');
-    } catch (backupError) {
-      console.error('Failed to restore from backup:', backupError.message);
+      await fs.copyFile(modernAstroSitePath, backupPath);
+      console.log('Created backup file');
+  
+      let content = await fs.readFile(modernAstroSitePath, 'utf8');
+      
+      // Find slides array
+      const slidesRegex = /const\s+slides\s*=\s*\[([\s\S]*?)\];/;
+      const slidesMatch = content.match(slidesRegex);
+      
+      if (!slidesMatch) {
+        throw new Error('Could not find slides array in ModernAstroSite.jsx');
+      }
+  
+      console.log('Found slides array. Creating new slide...');
+  
+      // Create new slide with proper formatting
+      const newSlide = `    {
+        image: "/pictures/${urlName}.jpg",
+        title: "${targetData.title}",
+        link: "/targets/${urlName}"
+      }`;
+  
+      // Parse existing slides
+      let slidesContent = slidesMatch[1].trim();
+      
+      // Split slides while preserving closing braces
+      let slides = slidesContent
+        .split('{')
+        .filter(s => s.trim())
+        .map(s => '{' + s)
+        .map(s => s.trim())
+        .map(s => s.endsWith('}') ? s : s + '}');
+      
+      console.log('Current number of slides:', slides.length);
+      
+      // Add new slide and maintain 3 maximum
+      slides.unshift(newSlide);
+      slides = slides.slice(0, 3);
+      
+      console.log('New number of slides:', slides.length);
+  
+      // Join slides with proper formatting
+      const newSlidesContent = slides.join(',\n');
+      
+      // Replace slides in content
+      const newContent = content.replace(
+        slidesRegex,
+        `const slides = [\n${newSlidesContent}\n  ];`
+      );
+  
+      // Verify changes were made
+      if (newContent === content) {
+        throw new Error('Failed to update slides array - content unchanged');
+      }
+  
+      // Verify proper formatting
+      if (!newContent.includes('};')) {
+        throw new Error('Invalid slide format detected');
+      }
+  
+      await fs.writeFile(modernAstroSitePath, newContent, 'utf8');
+      console.log('Successfully updated carousel');
+  
+    } catch (error) {
+      console.error('\nError updating carousel:', error.message);
+      console.error('Please manually add this slide to the carousel in ModernAstroSite.jsx:');
+      console.error(newSlide);
+  
+      // Restore from backup if it exists
+      try {
+        const backupPath = `${modernAstroSitePath}.backup`;
+        await fs.access(backupPath);
+        await fs.copyFile(backupPath, modernAstroSitePath);
+        console.log('Restored from backup file');
+      } catch (backupError) {
+        console.error('Failed to restore from backup:', backupError.message);
+      }
     }
   }
-}
 
 async function createTarget() {
   try {

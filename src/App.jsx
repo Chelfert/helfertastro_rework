@@ -4,6 +4,7 @@ import ModernAstroSite from './components/ModernAstroSite';
 import GalleryPage from './components/GalleryPage';
 import DumbbellNebulaPage from './components/targets/DumbbellNebula.jsx';
 import EagleNebulaPage from './components/targets/EagleNebula.jsx';
+import TestNebulaPage from './components/targets/TestNebulaPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/targets/dumbbell-nebula" element={<DumbbellNebulaPage />} />
         <Route path="/targets/eagle-nebula" element={<EagleNebulaPage />} />
+        <Route path="/targets/test-nebula" element={<TestNebulaPage />} />
         {/* Add more routes for other target pages */}
       </Routes>
     </BrowserRouter>

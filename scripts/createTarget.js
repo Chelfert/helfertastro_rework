@@ -1,89 +1,104 @@
-const fs = require('fs').promises;
-const path = require('path');
-const readline = require('readline').createInterface({
+// createTarget.js
+import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import readline from 'readline';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-const question = (query) => new Promise(resolve => readline.question(query, resolve));
+const question = (query) => new Promise(resolve => rl.question(query, resolve));
 
 async function createTarget() {
   try {
     // Get target information
     const targetData = {
-      name: await question('Target Name (e.g., "Dumbbell Nebula"): '),
-      urlName: await question('URL Name (e.g., "dumbbell-nebula"): '),
-      catalog: await question('Catalog Number (e.g., "Messier 27"): '),
-      discovered: await question('Discovery (e.g., "1764, Charles Messier"): '),
-      distance: await question('Distance (e.g., "1,360 light-years"): '),
-      diameter: await question('Diameter (e.g., "2.5 Lightyears"): '),
-      magnitude: await question('Magnitude (e.g., "7.5"): '),
-      season: await question('Best Visible Season: '),
-      description: await question('Description: '),
-      mainImage: await question('Main Image Filename (e.g., "DumbbellNebula.jpg"): '),
-      locationImage: await question('Location Image Filename (e.g., "DumbbellNebula.jpg"): '),
+      title: await question('Title (e.g., "The Dumbbell Nebula"): '),
       acquisitionDate: await question('Acquisition Date (e.g., "August, 2024"): '),
       acquisitionScope: await question('Acquisition Scope (e.g., "AT115EDT"): '),
+      // QuickFacts
+      catalog: await question('Catalog (e.g., "Messier 27"): '),
+      discovered: await question('Discovered (e.g., "1764, Charles Messier"): '),
+      distance: await question('Distance from Earth (e.g., "1,360 light-years"): '),
+      diameter: await question('Diameter (e.g., "2.5 Lightyears"): '),
+      magnitude: await question('Magnitude (e.g., "7.5"): '),
+      bestVisible: await question('Best Visible (e.g., "Summer"): '),
+      description: await question('Description: '),
     };
+
+    // Create URL-friendly name
+    const urlName = targetData.title
+      .toLowerCase()
+      .replace(/[^a-z0-9 ]/g, '')
+      .replace(/\s+/g, '-');
+
+    // Create component name
+    const componentName = targetData.title
+      .replace(/[^a-zA-Z0-9 ]/g, '')
+      .replace(/\s+/g, '')
+      .replace(/^[a-z]/, letter => letter.toUpperCase()) + 'Page';
 
     // Create target component file
     const componentContent = `import React from 'react';
 import TargetPage from './TargetPage';
 
-const ${targetData.name.replace(/\s+/g, '')}Page = () => {
+const ${componentName} = () => {
   return (
     <TargetPage 
-      title="${targetData.name}"
-      images={[{
-        title: "${targetData.name}",
-        image: "/pictures/${targetData.mainImage}",
-        acquisitionDate: "${targetData.acquisitionDate}",
-        acquisitionScope: "${targetData.acquisitionScope}",
-        downloadText: "Download ${targetData.name}"
-      }]}
-      locationImage="/Locations/${targetData.locationImage}"
+      title="${targetData.title}"
+      mainImage="/pictures/${urlName}.jpg"
+      locationImage="/Locations/${urlName}.jpg"
+      acquisitionDate="${targetData.acquisitionDate}"
+      acquisitionScope="${targetData.acquisitionScope}"
       quickFacts={[
         "Catalog: ${targetData.catalog}",
         "Discovered: ${targetData.discovered}",
         "Distance from Earth: ${targetData.distance}",
         "Diameter: ${targetData.diameter}",
         "Magnitude: ${targetData.magnitude}",
-        "Best Visible: ${targetData.season}"
+        "Best Visible: ${targetData.bestVisible}"
       ]}
       description="${targetData.description}"
     />
   );
 };
 
-export default ${targetData.name.replace(/\s+/g, '')}Page;`;
+export default ${componentName};`;
 
-    // Write component file
-    await fs.writeFile(
-      path.join(__dirname, '..', 'src', 'components', 'targets', `${targetData.name.replace(/\s+/g, '')}.jsx`),
-      componentContent
-    );
+    // Create the file
+    const filePath = join(__dirname, '..', 'src', 'components', 'targets', `${componentName}.jsx`);
+    await fs.writeFile(filePath, componentContent);
 
-    // Create gallery item
-    const galleryItem = `    {
-      image: "/pictures/${targetData.mainImage}",
-      title: "${targetData.name}",
-      link: "/targets/${targetData.urlName}"
-    },`;
+    // Output instructions
+    console.log('\n=== File Created Successfully ===');
+    console.log(`\nComponent created at: ${filePath}`);
+    
+    console.log('\n1. Add this route to App.jsx:');
+    console.log(`<Route path="/targets/${urlName}" element={<${componentName} />} />`);
 
-    console.log('\nAdd this route to App.jsx:');
-    console.log(`<Route path="/targets/${targetData.urlName}" element={<${targetData.name.replace(/\s+/g, '')}Page />} />`);
+    console.log('\n2. Add this import to App.jsx:');
+    console.log(`import ${componentName} from './components/targets/${componentName}';`);
 
-    console.log('\nAdd this import to App.jsx:');
-    console.log(`import ${targetData.name.replace(/\s+/g, '')}Page from './components/targets/${targetData.name.replace(/\s+/g, '')}.jsx';`);
+    console.log('\n3. Add this to galleryItems array in GalleryPage.jsx:');
+    console.log(`{
+  image: "/pictures/${urlName}.jpg",
+  title: "${targetData.title}",
+  link: "/targets/${urlName}"
+},`);
 
-    console.log('\nAdd this to galleryItems array in GalleryPage.jsx:');
-    console.log(galleryItem);
+    console.log('\n4. Make sure these images exist:');
+    console.log(`- /public/pictures/${urlName}.jpg`);
+    console.log(`- /public/Locations/${urlName}.jpg`);
 
-    console.log('\nDone! New target component created successfully.');
   } catch (error) {
     console.error('Error creating target:', error);
   } finally {
-    readline.close();
+    rl.close();
   }
 }
 

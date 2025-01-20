@@ -176,7 +176,12 @@ const GalleryPage = () => {
       image: "/jpgPictures/elephants_trunk.jpg",
       title: "The Elephant's Trunk",
       link: "/TargetPages/ElephantsTrunk.html"
-    }
+    },
+    {
+      image: "/pictures/test-nebula.jpg",
+      title: "Test Nebula",
+      link: "/targets/test-nebula"
+    },
   ];
 
   return (

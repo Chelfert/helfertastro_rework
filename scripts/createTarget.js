@@ -77,12 +77,12 @@ export default ${componentName};`;
     // Output instructions
     console.log('\n=== File Created Successfully ===');
     console.log(`\nComponent created at: ${filePath}`);
-    
-    console.log('\n1. Add this route to App.jsx:');
-    console.log(`<Route path="/targets/${urlName}" element={<${componentName} />} />`);
 
-    console.log('\n2. Add this import to App.jsx:');
+    console.log('\n1. Add this import to App.jsx:');
     console.log(`import ${componentName} from './components/targets/${componentName}';`);
+
+    console.log('\n2. Add this route to App.jsx:');
+    console.log(`<Route path="/targets/${urlName}" element={<${componentName} />} />`);
 
     console.log('\n3. Add this to galleryItems array in GalleryPage.jsx:');
     console.log(`{

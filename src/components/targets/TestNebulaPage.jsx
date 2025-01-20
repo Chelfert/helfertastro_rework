@@ -22,17 +22,17 @@ const TestnebulaPage = () => {
         title="test nebula"
         mainImage="/pictures/test-nebula.jpg"
         locationImage="/Locations/test-nebula.jpg"
-        acquisitionDate="rew"
-        acquisitionScope="rew"
+        acquisitionDate="fds"
+        acquisitionScope="fd"
         quickFacts={[
-          "Catalog: rew",
-          "Discovered: rew",
-          "Distance from Earth: re",
-          "Diameter: wrew",
-          "Magnitude: rew",
-          "Best Visible: fds"
+          "Catalog: sfds",
+          "Discovered: fds",
+          "Distance from Earth: fds",
+          "Diameter: fds",
+          "Magnitude: fds",
+          "Best Visible: ew"
         ]}
-        description={"no quotexz bnrudda"}
+        description={"gfd fdsfds"}
       />
     </div>
   );

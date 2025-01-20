@@ -34,14 +34,9 @@ async function updateCarousel(targetData, urlName) {
         throw new Error(`ModernAstroSite.jsx not found at: ${modernAstroSitePath}`);
       }
   
-      // Create backup
-      const backupPath = `${modernAstroSitePath}.backup`;
-      await fs.copyFile(modernAstroSitePath, backupPath);
-      console.log('Created backup file');
-  
       let content = await fs.readFile(modernAstroSitePath, 'utf8');
       
-      // Find slides array
+      // Find slides array with more precise regex
       const slidesRegex = /const\s+slides\s*=\s*\[([\s\S]*?)\];/;
       const slidesMatch = content.match(slidesRegex);
       
@@ -49,70 +44,65 @@ async function updateCarousel(targetData, urlName) {
         throw new Error('Could not find slides array in ModernAstroSite.jsx');
       }
   
-      console.log('Found slides array. Creating new slide...');
+      // Create new slide with consistent formatting
+      const newSlide = {
+        image: `/pictures/${urlName}.jpg`,
+        title: targetData.title,
+        link: `/targets/${urlName}`
+      };
   
-      // Create new slide with proper formatting
-      const newSlide = `    {
-        image: "/pictures/${urlName}.jpg",
-        title: "${targetData.title}",
-        link: "/targets/${urlName}"
-      }`;
+      // Get existing slides and clean them up
+      const slidesString = slidesMatch[1];
+      let slides = [];
+      
+      try {
+        // Extract all slide objects using regex
+        const slideObjectRegex = /{[^{}]*}/g;
+        const slideMatches = slidesString.match(slideObjectRegex) || [];
+        
+        // Parse each slide object
+        slides = slideMatches.map(slide => {
+          const cleanSlide = slide
+            .replace(/,\s*}/g, '}')  // Remove trailing commas
+            .replace(/}+/g, '}');    // Remove multiple closing braces
+          return JSON.parse(cleanSlide.replace(/'/g, '"')); // Convert to proper JSON
+        });
+      } catch (e) {
+        console.log('Error parsing existing slides, starting fresh');
+        slides = [];
+      }
   
-      // Parse existing slides
-      let slidesContent = slidesMatch[1].trim();
-      
-      // Split slides while preserving closing braces
-      let slides = slidesContent
-        .split('{')
-        .filter(s => s.trim())
-        .map(s => '{' + s)
-        .map(s => s.trim())
-        .map(s => s.endsWith('}') ? s : s + '}');
-      
-      console.log('Current number of slides:', slides.length);
-      
-      // Add new slide and maintain 3 maximum
+      // Add new slide and keep only first 3
       slides.unshift(newSlide);
       slides = slides.slice(0, 3);
-      
-      console.log('New number of slides:', slides.length);
   
-      // Join slides with proper formatting
-      const newSlidesContent = slides.join(',\n');
-      
-      // Replace slides in content
+      // Format slides array with consistent indentation
+      const formattedSlides = slides
+        .map(slide => `    {
+        image: "${slide.image}",
+        title: "${slide.title}",
+        link: "${slide.link}"
+      }`)
+        .join(',\n');
+  
+      // Replace old slides array with new one
       const newContent = content.replace(
         slidesRegex,
-        `const slides = [\n${newSlidesContent}\n  ];`
+        `const slides = [\n${formattedSlides}\n  ];`
       );
   
-      // Verify changes were made
-      if (newContent === content) {
-        throw new Error('Failed to update slides array - content unchanged');
-      }
-  
-      // Verify proper formatting
-      if (!newContent.includes('};')) {
-        throw new Error('Invalid slide format detected');
-      }
-  
+      // Write the changes
       await fs.writeFile(modernAstroSitePath, newContent, 'utf8');
       console.log('Successfully updated carousel');
   
     } catch (error) {
       console.error('\nError updating carousel:', error.message);
       console.error('Please manually add this slide to the carousel in ModernAstroSite.jsx:');
-      console.error(newSlide);
-  
-      // Restore from backup if it exists
-      try {
-        const backupPath = `${modernAstroSitePath}.backup`;
-        await fs.access(backupPath);
-        await fs.copyFile(backupPath, modernAstroSitePath);
-        console.log('Restored from backup file');
-      } catch (backupError) {
-        console.error('Failed to restore from backup:', backupError.message);
-      }
+      console.error(`{
+        image: "/pictures/${urlName}.jpg",
+        title: "${targetData.title}",
+        link: "/targets/${urlName}"
+      }`);
     }
   }
 

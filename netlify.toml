@@ -1,4 +1,3 @@
-# netlify.toml
 [build]
   command = "npm install && npm run build"
   publish = "dist"
@@ -7,13 +6,11 @@
   NODE_VERSION = "18"
   NPM_VERSION = "10"
 
-# This ensures routing works correctly for client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# These headers ensure proper caching and styling consistency
 [[headers]]
   for = "/*"
     [headers.values]

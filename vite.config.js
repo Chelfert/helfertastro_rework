@@ -6,5 +6,12 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  base: '/',  // Add this line
+  base: '/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  }
 });

@@ -86,32 +86,38 @@ const ModernAstroSite = () => {
 
       {/* Featured Images Carousel */}
       <div className="relative max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-8">Recent Captures</h2>
-        <div className="relative aspect-video overflow-hidden rounded-lg">
-          <a href={slides[currentSlide].link}>
-            <img 
-              src={slides[currentSlide].image}
-              alt={slides[currentSlide].title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-4">
-              <h3 className="text-xl font-semibold text-center">{slides[currentSlide].title}</h3>
-            </div>
-          </a>
-          <button 
-            onClick={() => setCurrentSlide((curr) => (curr === 0 ? slides.length - 1 : curr - 1))}
-            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button 
-            onClick={() => setCurrentSlide((curr) => (curr === slides.length - 1 ? 0 : curr + 1))}
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </div>
+  <h2 className="text-3xl font-bold text-center mb-8">Recent Captures</h2>
+  <div className="relative aspect-video overflow-hidden rounded-lg">
+    <Link to={slides[currentSlide].link}>
+      <img 
+        src={slides[currentSlide].image}
+        alt={slides[currentSlide].title}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-4">
+        <h3 className="text-xl font-semibold text-center">{slides[currentSlide].title}</h3>
       </div>
+    </Link>
+    <button 
+      onClick={(e) => {
+        e.preventDefault();
+        setCurrentSlide(curr => (curr === 0 ? slides.length - 1 : curr - 1));
+      }} 
+      className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
+    >
+      <ChevronLeft size={24} />
+    </button>
+    <button 
+      onClick={(e) => {
+        e.preventDefault();
+        setCurrentSlide(curr => (curr === slides.length - 1 ? 0 : curr + 1));
+      }}
+      className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
+    >
+      <ChevronRight size={24} />
+    </button>
+  </div>
+</div>
 
       {/* Equipment Section */}
       <div className="bg-gray-800 py-16">

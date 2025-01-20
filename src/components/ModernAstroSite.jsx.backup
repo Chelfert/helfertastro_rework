@@ -7,20 +7,21 @@ const ModernAstroSite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const slides = [
-    { 
+    {
+      image: "/pictures/test-nebula.jpg",
+      title: "test nebula",
+      link: "/targets/test-nebula"
+    },
+{ 
       image: "/Pictures/m33.jpg", 
       title: "The Triangulum Galaxy",
       link: "/TargetPages/m33.html"
-    },
+},
+
     { 
       image: "/pictures/NorthAmericanNebula.jpg", 
       title: "North America Nebula",
       link: "/TargetPages/NorthAmericanAndPelican.html"
-    },
-    { 
-      image: "/Pictures/EastVeil.jpg", 
-      title: "The Eastern Veil",
-      link: "/TargetPages/VeilNebula.html"
     }
   ];
 

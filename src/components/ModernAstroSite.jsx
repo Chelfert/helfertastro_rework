@@ -8,21 +8,20 @@ const ModernAstroSite = () => {
 
   const slides = [
     {
+        image: "/pictures/test-nebula.jpg",
+        title: "test nebula",
+        link: "/targets/test-nebula"
+      },
+{
       image: "/pictures/test-nebula.jpg",
       title: "test nebula",
       link: "/targets/test-nebula"
-    },
+    },},
 { 
       image: "/Pictures/m33.jpg", 
       title: "The Triangulum Galaxy",
       link: "/TargetPages/m33.html"
-},
-
-    { 
-      image: "/pictures/NorthAmericanNebula.jpg", 
-      title: "North America Nebula",
-      link: "/TargetPages/NorthAmericanAndPelican.html"
-    }
+},}
   ];
 
   return (

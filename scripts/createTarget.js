@@ -145,7 +145,9 @@ async function createTarget() {
       .replace(/^[a-z]/, letter => letter.toUpperCase()) + 'Page';
 
     // Component template with navigation
-    const componentContent = `import React from 'react';
+// In the createTarget function, update how we generate the component content:
+
+const componentContent = `import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import TargetPage from './TargetPage';
@@ -179,7 +181,7 @@ const ${componentName} = () => {
           "Magnitude: ${targetData.magnitude}",
           "Best Visible: ${targetData.bestVisible}"
         ]}
-        description=${escapeDescription(targetData.description)}
+        description={"${targetData.description.replace(/"/g, '\\"')}"}
       />
     </div>
   );

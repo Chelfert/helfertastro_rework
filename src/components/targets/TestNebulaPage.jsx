@@ -1,25 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import TargetPage from './TargetPage';
 
-const TestNebulaPage = () => {
+const TestnebulaPage = () => {
   return (
     <TargetPage 
-      title="Test Nebula"
+      title="test nebula"
       mainImage="/pictures/test-nebula.jpg"
       locationImage="/Locations/test-nebula.jpg"
-      acquisitionDate="October, 2025"
-      acquisitionScope="AT115EDT"
+      acquisitionDate="oct 2025"
+      acquisitionScope="at115edt"
       quickFacts={[
-        "Catalog: Messier 83",
-        "Discovered: 1833, Charlie Dickens",
-        "Distance from Earth: 1,500 light-years",
-        "Diameter: 43 light-years",
-        "Magnitude: 23",
-        "Best Visible: Fall"
+        "Catalog: m74",
+        "Discovered: 2843, meee",
+        "Distance from Earth: 140 light-years",
+        "Diameter: 4 light-years",
+        "Magnitude: 32",
+        "Best Visible: fall"
       ]}
-      description="The Eagle's nebula is an active star forming region in the Serpens constellation. This nebula spans 70 x 50 Lightyears and is about 5.5 Million years old. Inside a nebula like this, gravity pulls gas inwards towards the center and if enough is present, nuclear fusion ignites and the compacted cloud becomes a new star. The Eagle nebula is also home to the famous Pillars of Creation."
+      description="this is a test\"
     />
   );
 };
 
-export default TestNebulaPage;
+export default TestnebulaPage;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';  // Add useEffect to the import
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Camera, Star, Compass, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -6,32 +6,41 @@ const ModernAstroSite = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Inside your component, add this useEffect for auto-rotation
-useEffect(() => {
-  const timer = setInterval(() => {
-      setCurrentSlide(current => (current === slides.length - 1 ? 0 : current + 1));
-  }, 5000); // Changes slide every 5 seconds
-
-  return () => clearInterval(timer); // Cleanup on unmount
-}, []);
-
   const slides = [
     {
-        image: "/pictures/test-nebula.jpg",
-        title: "test nebula",
-        link: "/targets/test-nebula"
-      },
-      {
-        image: "/pictures/M33.jpg",
-        title: "M33",
-        link: "/targets/m33"
-      },
-      {
-        image: "/pictures/eastveil.jpg",
-        title: "Eastern Veil",
-        link: "/targets/veilnebula"
-      }
+      image: "/pictures/test-nebula.jpg",
+      title: "test nebula",
+      link: "/targets/test-nebula"
+    },
+    {
+      image: "/pictures/M33.jpg",
+      title: "M33",
+      link: "/targets/m33"
+    },
+    {
+      image: "/pictures/eastveil.jpg",
+      title: "Eastern Veil",
+      link: "/targets/veilnebula"
+    }
   ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide(current => (current === slides.length - 1 ? 0 : current + 1));
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const handlePrevSlide = (e) => {
+    e.preventDefault();
+    setCurrentSlide(curr => (curr === 0 ? slides.length - 1 : curr - 1));
+  };
+
+  const handleNextSlide = (e) => {
+    e.preventDefault();
+    setCurrentSlide(curr => (curr === slides.length - 1 ? 0 : curr + 1));
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -105,38 +114,32 @@ useEffect(() => {
 
       {/* Featured Images Carousel */}
       <div className="relative max-w-6xl mx-auto px-4 py-16">
-  <h2 className="text-3xl font-bold text-center mb-8">Recent Captures</h2>
-  <div className="relative aspect-video overflow-hidden rounded-lg">
-    <Link to={slides[currentSlide].link}>
-      <img 
-        src={slides[currentSlide].image}
-        alt={slides[currentSlide].title}
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-4">
-        <h3 className="text-xl font-semibold text-center">{slides[currentSlide].title}</h3>
+      <h2 className="text-3xl font-bold text-center mb-8">Recent Captures</h2>
+      <div className="relative aspect-video overflow-hidden rounded-lg">
+        <Link to={slides[currentSlide].link}>
+          <img 
+            src={slides[currentSlide].image}
+            alt={slides[currentSlide].title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-4">
+            <h3 className="text-xl font-semibold text-center">{slides[currentSlide].title}</h3>
+          </div>
+        </Link>
+        <button 
+          onClick={handlePrevSlide}
+          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button 
+          onClick={handleNextSlide}
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
+        >
+          <ChevronRight size={24} />
+        </button>
       </div>
-    </Link>
-    <button 
-      onClick={(e) => {
-        e.preventDefault();
-        setCurrentSlide(curr => (curr === 0 ? slides.length - 1 : curr - 1));
-      }} 
-      className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
-    >
-      <ChevronLeft size={24} />
-    </button>
-    <button 
-      onClick={(e) => {
-        e.preventDefault();
-        setCurrentSlide(curr => (curr === slides.length - 1 ? 0 : curr + 1));
-      }}
-      className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
-    >
-      <ChevronRight size={24} />
-    </button>
-  </div>
-</div>
+    </div>
 
       {/* Equipment Section */}
       <div className="bg-gray-800 py-16">
@@ -156,7 +159,7 @@ useEffect(() => {
               <Camera className="w-12 h-12 mb-4 mx-auto text-blue-400" />
               <h3 className="text-xl font-semibold mb-4 text-center">Camera</h3>
               <ul className="space-y-2">
-                <li>ZWO ASI1600MM Pro</li>
+                <li>ZWO ASI294MM Pro</li>
                 <li>ASI220MM Guide Camera</li>
                 <li>Antlia Filters</li>
               </ul>

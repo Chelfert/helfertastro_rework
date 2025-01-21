@@ -7,11 +7,15 @@ export default defineConfig({
     extensions: ['.js', '.jsx']
   },
   base: '/',
+  server: {
+    historyApiFallback: true
+  },
   build: {
     rollupOptions: {
       output: {
         manualChunks: undefined
       }
-    }
+    },
+    cssCodeSplit: false  // Add this line
   }
 });

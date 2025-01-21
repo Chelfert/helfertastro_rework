@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import React, { useState, useEffect } from 'react';  // Add useEffect to the import
 import { ChevronLeft, ChevronRight, Camera, Star, Compass, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';

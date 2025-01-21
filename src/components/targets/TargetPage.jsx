@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import Navigation from './Navigation';
+import { X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TargetPage = ({ 
   title,
-  mainImage,  // Changed from images array to single mainImage
+  mainImage,
   locationImage,
   acquisitionDate,
   acquisitionScope,
   quickFacts,
   description
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Image Modal component
@@ -37,11 +37,7 @@ const TargetPage = ({
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50">
-        {/* ... navigation code stays the same ... */}
-      </nav>
-
+      <Navigation />
       {/* Main Content */}
       <div className="pt-24 pb-12 container mx-auto px-4">
         {/* Title */}

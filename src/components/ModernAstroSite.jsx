@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';  // Add useEffect to the import
 import { ChevronLeft, ChevronRight, Camera, Star, Compass, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ModernAstroSite = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Inside your component, add this useEffect for auto-rotation
+useEffect(() => {
+  const timer = setInterval(() => {
+      setCurrentSlide(current => (current === slides.length - 1 ? 0 : current + 1));
+  }, 5000); // Changes slide every 5 seconds
+
+  return () => clearInterval(timer); // Cleanup on unmount
+}, []);
 
   const slides = [
     {

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const GalleryPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
   const galleryItems = [
     {
       image: "/jpgPictures/IC63.jpg",
@@ -25,7 +24,7 @@ const GalleryPage = () => {
     {
       image: "/jpgPictures/DumbbellNebula.jpg",
       title: "The Dumbbell Nebula",
-      link: "/targets/dumbbell-nebula"  // Updated from HTML path to React route
+      link: "/targets/dumbbell-nebula"
     },
     {
       image: "/jpgPictures/LagoonNebula.jpg",
@@ -181,7 +180,7 @@ const GalleryPage = () => {
       image: "/pictures/test-nebula.jpg",
       title: "Test Nebula",
       link: "/targets/test-nebula"
-    },
+    }
   ];
 
   return (
@@ -191,11 +190,11 @@ const GalleryPage = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <Link to="/">
+              <Link to="/" className="inline-block">
                 <img 
                   src="/Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" 
                   alt="Helfert Astrophotography"
-                  className="h-8"
+                  className="h-8 w-auto"
                 />
               </Link>
             </div>
@@ -204,7 +203,8 @@ const GalleryPage = () => {
             <div className="md:hidden">
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2"
+                className="inline-flex items-center justify-center p-2 text-white hover:text-blue-400 transition-colors"
+                aria-label="Toggle menu"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -212,10 +212,10 @@ const GalleryPage = () => {
 
             {/* Desktop menu */}
             <div className="hidden md:flex space-x-8">
-              <Link to="/" className="text-white hover:text-blue-400 transition-colors">Home</Link>
-              <Link to="/gallery" className="text-white hover:text-blue-400 transition-colors">Gallery</Link>
-              <Link to="/local-conditions" className="text-white hover:text-blue-400 transition-colors">Local Conditions</Link>
-              <Link to="/equipment" className="text-white hover:text-blue-400 transition-colors">Equipment</Link>
+              <Link to="/" className="text-white hover:text-blue-400 transition-colors duration-200">Home</Link>
+              <Link to="/gallery" className="text-white hover:text-blue-400 transition-colors duration-200">Gallery</Link>
+              <Link to="/local-conditions" className="text-white hover:text-blue-400 transition-colors duration-200">Local Conditions</Link>
+              <Link to="/equipment" className="text-white hover:text-blue-400 transition-colors duration-200">Equipment</Link>
             </div>
           </div>
 
@@ -223,10 +223,10 @@ const GalleryPage = () => {
           {isMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90">
-                <Link to="/" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Home</Link>
-                <Link to="/gallery" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Gallery</Link>
-                <Link to="/local-conditions" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Local Conditions</Link>
-                <Link to="/equipment" className="block text-white px-3 py-2 hover:bg-gray-800 rounded-md">Equipment</Link>
+                <Link to="/" className="block text-white px-3 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">Home</Link>
+                <Link to="/gallery" className="block text-white px-3 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">Gallery</Link>
+                <Link to="/local-conditions" className="block text-white px-3 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">Local Conditions</Link>
+                <Link to="/equipment" className="block text-white px-3 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">Equipment</Link>
               </div>
             </div>
           )}
@@ -234,38 +234,42 @@ const GalleryPage = () => {
       </nav>
 
       {/* Gallery Header */}
-      <div className="pt-24 pb-12">
+      <header className="pt-24 pb-12 px-4">
         <h1 className="text-4xl md:text-5xl text-white font-bold text-center">
           Astrophotography Gallery
         </h1>
-      </div>
+      </header>
 
       {/* Gallery Grid */}
-      <div className="container mx-auto px-4 pb-16">
+      <main className="container mx-auto px-4 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {galleryItems.map((item, index) => (
-  <div 
-    key={index} 
-    className="group relative aspect-square overflow-hidden rounded-lg bg-black/20"
-  >
-    <Link to={item.link} className="block w-full h-full">  {/* Change <a> to <Link> */}
-      <img
-        src={item.image}
-        alt={item.title}
-        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h3 className="text-white text-xl font-semibold text-center">
-            {item.title}
-          </h3>
+          {galleryItems.map((item, index) => (
+            <div 
+              key={index} 
+              className="group relative aspect-square overflow-hidden rounded-lg bg-black/20 transform transition-all duration-300 hover:scale-105"
+            >
+              <Link 
+                to={item.link} 
+                className="block w-full h-full"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white text-xl font-semibold text-center">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
-      </div>
-    </Link>  {/* Change </a> to </Link> */}
-  </div>
-))}
-        </div>
-      </div>
+      </main>
     </div>
   );
 };

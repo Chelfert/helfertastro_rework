@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const ModernAstroSite = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [lastManualRotation, setLastManualRotation] = useState(null);
 
   const slides = [
     {
@@ -26,20 +27,27 @@ const ModernAstroSite = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide(current => (current === slides.length - 1 ? 0 : current + 1));
+      // Get current time
+      const now = Date.now();
+      
+      // If never manually rotated, or if it's been more than 10 seconds since last manual rotation
+      if (!lastManualRotation || (now - lastManualRotation) > 10000) {
+        setCurrentSlide(current => (current === slides.length - 1 ? 0 : current + 1));
+      }
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [slides.length, lastManualRotation]);
 
-  const handlePrevSlide = (e) => {
+  const handleManualRotation = (direction) => (e) => {
     e.preventDefault();
-    setCurrentSlide(curr => (curr === 0 ? slides.length - 1 : curr - 1));
-  };
-
-  const handleNextSlide = (e) => {
-    e.preventDefault();
-    setCurrentSlide(curr => (curr === slides.length - 1 ? 0 : curr + 1));
+    setLastManualRotation(Date.now());
+    
+    if (direction === 'prev') {
+      setCurrentSlide(curr => (curr === 0 ? slides.length - 1 : curr - 1));
+    } else {
+      setCurrentSlide(curr => (curr === slides.length - 1 ? 0 : curr + 1));
+    }
   };
 
   return (
@@ -114,32 +122,32 @@ const ModernAstroSite = () => {
 
       {/* Featured Images Carousel */}
       <div className="relative max-w-6xl mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-center mb-8">Recent Captures</h2>
-      <div className="relative aspect-video overflow-hidden rounded-lg">
-        <Link to={slides[currentSlide].link}>
-          <img 
-            src={slides[currentSlide].image}
-            alt={slides[currentSlide].title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-4">
-            <h3 className="text-xl font-semibold text-center">{slides[currentSlide].title}</h3>
-          </div>
-        </Link>
-        <button 
-          onClick={handlePrevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button 
-          onClick={handleNextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
-        >
-          <ChevronRight size={24} />
-        </button>
+        <h2 className="text-3xl font-bold text-center mb-8">Recent Captures</h2>
+        <div className="relative aspect-video overflow-hidden rounded-lg">
+          <Link to={slides[currentSlide].link}>
+            <img 
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-4">
+              <h3 className="text-xl font-semibold text-center">{slides[currentSlide].title}</h3>
+            </div>
+          </Link>
+          <button 
+            onClick={handleManualRotation('prev')}
+            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button 
+            onClick={handleManualRotation('next')}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors z-10"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </div>
-    </div>
 
       {/* Equipment Section */}
       <div className="bg-gray-800 py-16">

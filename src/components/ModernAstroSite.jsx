@@ -11,6 +11,16 @@ const ModernAstroSite = () => {
         image: "/pictures/test-nebula.jpg",
         title: "test nebula",
         link: "/targets/test-nebula"
+      },
+      {
+        image: "/pictures/M33.jpg",
+        title: "M33",
+        link: "/targets/m33"
+      },
+      {
+        image: "/pictures/eastveil.jpg",
+        title: "Eastern Veil",
+        link: "/targets/veilnebula"
       }
   ];
 

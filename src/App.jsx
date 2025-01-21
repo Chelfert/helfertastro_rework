@@ -4,9 +4,9 @@ import ModernAstroSite from './components/ModernAstroSite';
 import GalleryPage from './components/GalleryPage';
 
 // Import all target pages
-import M31Page from './components/targets/M31Page';
-import M33Page from './components/targets/M33Page';
-import M13Page from './components/targets/M13Page';
+import M31Page from 'src\components\targets\M31Page';
+import M33Page from 'src\components\targets\M33Page';
+import M13Page from 'src\components\targets\M13Page.jsx';
 import VeilNebulaPage from './components/targets/VeilNebulaPage';
 import OrionNebulaPage from './components/targets/OrionNebulaPage';
 import PacmanNebulaPage from './components/targets/PacmanNebulaPage';

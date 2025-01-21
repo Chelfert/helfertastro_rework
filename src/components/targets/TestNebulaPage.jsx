@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import TargetPage from './TargetPage';
+import TargetPage from '../TargetPage';
 
 const TestnebulaPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

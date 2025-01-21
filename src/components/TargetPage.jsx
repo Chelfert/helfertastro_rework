@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navigation from './Navigation';
 import { X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -37,7 +36,6 @@ const TargetPage = ({
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <Navigation />
       {/* Main Content */}
       <div className="pt-24 pb-12 container mx-auto px-4">
         {/* Title */}
@@ -72,8 +70,11 @@ const TargetPage = ({
 
         {/* Acquisition Info */}
         <div className="text-center mb-12">
-          <p className="text-lg text-gray-300" id="acquisitionscope">
-            Acquisition: {acquisitionScope}, {acquisitionDate}
+          <p className="text-lg text-gray-300">
+            {acquisitionDate}
+          </p>
+          <p className="text-lg text-gray-300">
+            {acquisitionScope}
           </p>
           <a href={mainImage} download className="inline-block mt-4">
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
@@ -83,13 +84,13 @@ const TargetPage = ({
         </div>
 
         {/* Info Grid */}
-        <div className="blurbbox grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Quick Facts */}
           <div>
             <h3 className="text-2xl font-bold text-center mb-6">Quick Facts</h3>
-            <ul className="space-y-3 text-left">
+            <ul className="space-y-3">
               {quickFacts.map((fact, index) => (
-                <li key={index} id="quickfactli" className="text-gray-300">
+                <li key={index} className="text-gray-300">
                   {fact}
                 </li>
               ))}
@@ -99,9 +100,9 @@ const TargetPage = ({
           {/* Description */}
           <div>
             <h3 className="text-2xl font-bold text-center mb-6">Description</h3>
-            <p className="text-gray-300 leading-relaxed text-left">
+            <div className="text-gray-300 leading-relaxed whitespace-pre-wrap">
               {description}
-            </p>
+            </div>
           </div>
         </div>
       </div>

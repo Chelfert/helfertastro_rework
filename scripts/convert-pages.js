@@ -1,13 +1,18 @@
-const fs = require('fs').promises;
-const path = require('path');
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+import { promises as fs } from 'fs';
+import { join, basename } from 'path';
+import { JSDOM } from 'jsdom';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+// Get current file's directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 async function convertHtmlToReact() {
   try {
     // Update directories to match your structure
-    const htmlDir = './public/TargetPages';
-    const outputDir = './src/components/targets';
+    const htmlDir = join(__dirname, '../public/TargetPages');
+    const outputDir = join(__dirname, '../src/components/targets');
 
     // Create output directory if it doesn't exist
     await fs.mkdir(outputDir, { recursive: true });
@@ -15,16 +20,17 @@ async function convertHtmlToReact() {
     // Get all HTML files
     const files = await fs.readdir(htmlDir);
     const htmlFiles = files.filter(file => file.endsWith('.html'));
+    const routes = [];
 
     for (const htmlFile of htmlFiles) {
       console.log(`Processing ${htmlFile}...`);
-      const filePath = path.join(htmlDir, htmlFile);
+      const filePath = join(htmlDir, htmlFile);
       const html = await fs.readFile(filePath, 'utf8');
       const dom = new JSDOM(html);
       const document = dom.window.document;
 
       // Generate route path
-      const routePath = '/' + path.basename(htmlFile, '.html').toLowerCase();
+      const routePath = '/' + basename(htmlFile, '.html').toLowerCase();
 
       // Extract necessary information
       const title = document.querySelector('h1')?.textContent || 
@@ -67,7 +73,7 @@ async function convertHtmlToReact() {
       });
 
       // Create React component name
-      const componentName = path.basename(htmlFile, '.html')
+      const componentName = basename(htmlFile, '.html')
         .split(/[-_]/)
         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
         .join('') + 'Page';
@@ -96,19 +102,19 @@ const ${componentName} = () => {
 export default ${componentName};`;
 
       // Write React component to file
-      const outputFile = path.join(outputDir, `${componentName}.jsx`);
+      const outputFile = join(outputDir, `${componentName}.jsx`);
       await fs.writeFile(outputFile, reactComponent);
       console.log(`Created ${componentName}.jsx`);
 
-      // Generate route information for this component
-      return {
+      // Add route information
+      routes.push({
         path: routePath,
         componentName,
         originalFile: htmlFile
-      };
+      });
     }
 
-    // After processing all files, generate routes file
+    // Generate routes file
     const routesContent = `import React from 'react';
 import { Route } from 'react-router-dom';
 ${routes.map(r => `import { ${r.componentName} } from './components/targets/${r.componentName}';`).join('\n')}
@@ -121,7 +127,7 @@ export const targetRoutes = [
   }`).join(',\n  ')}
 ];`;
 
-    await fs.writeFile('./src/targetRoutes.js', routesContent);
+    await fs.writeFile(join(__dirname, '../src/targetRoutes.js'), routesContent);
     console.log('Generated targetRoutes.js');
 
   } catch (error) {

@@ -9,229 +9,183 @@ const GalleryPage = () => {
     {
       image: "/jpgPictures/IC63.jpg",
       title: "The Ghost of Cassiopeia",
-      link: "/TargetPages/IC63.html"
+      link: "/ic63"
     },
     {
       image: "/jpgPictures/NorthAmericanNebula.jpg",
       title: "The North America Nebula",
-      link: "/TargetPages/NorthAmericanAndPelican.html"
+      link: "/northamericanandpelican"
     },
     {
       image: "/jpgPictures/EastVeil.jpg",
       title: "The Eastern Veil",
-      link: "/TargetPages/VeilNebula.html"
+      link: "/veilnebula"
     },
     {
       image: "/jpgPictures/DumbbellNebula.jpg",
       title: "The Dumbbell Nebula",
-      link: "/targets/dumbbell-nebula"
+      link: "/dumbbell-nebula"
     },
     {
       image: "/jpgPictures/LagoonNebula.jpg",
       title: "The Lagoon Nebula",
-      link: "/TargetPages/Lagoontrifid.html"
+      link: "/lagoontrifid"
     },
     {
       image: "/jpgPictures/Bodesandcigar.jpg",
       title: "Bodes and the Cigar Galaxy",
-      link: "/TargetPages/Bodes.html"
+      link: "/bodes"
     },
     {
       image: "/jpgPictures/jellyfishNebula.jpg",
       title: "The Jellyfish Nebula",
-      link: "/TargetPages/JellyfishNebula.html"
+      link: "/jellyfishnebula"
     },
     {
       image: "/jpgPictures/RosetteNebula_comp.jpg",
       title: "The Rosette Nebula",
-      link: "/TargetPages/RosetteNebula.html"
+      link: "/rosettenebula"
     },
     {
       image: "/jpgPictures/IC342_LRGBHA.jpg",
       title: "IC 342",
-      link: "/TargetPages/IC342.html"
+      link: "/ic342"
     },
     {
       image: "/pictures/Waxing_Gibbous_12_2023.jpg",
       title: "Lunar",
-      link: "/TargetPages/Lunar.html"
+      link: "/lunar"
     },
     {
       image: "/jpgPictures/FlamingStar.jpg",
       title: "The Flaming Star Nebula",
-      link: "/TargetPages/FlamingStar.html"
+      link: "/flamingstar"
     },
     {
       image: "/jpgPictures/sho_soulnebula.jpg",
       title: "Soul Nebula",
-      link: "/TargetPages/SoulNebula.html"
+      link: "/soulnebula"
     },
     {
       image: "/jpgPictures/M45.jpg",
       title: "The Pleiades",
-      link: "/TargetPages/Pleiades.html"
+      link: "/pleiades"
     },
     {
       image: "/jpgPictures/PerseusCluster.jpg",
       title: "Double Cluster in Perseus",
-      link: "/TargetPages/PerseusCluster.html"
+      link: "/perseuscluster"
     },
     {
       image: "/jpgPictures/PickeringsTriangle.jpg",
       title: "Pickering's Triangle",
-      link: "/TargetPages/VeilNebula.html"
+      link: "/veilnebula"
     },
     {
       image: "/jpgPictures/Leo_triplet.jpg",
       title: "Leo Triplet",
-      link: "/TargetPages/LeoTriplet.html"
+      link: "/leotriplet"
     },
     {
       image: "/jpgPictures/PacmanNebula.jpg",
       title: "The Pacman Nebula",
-      link: "/TargetPages/PacmanNebula.html"
+      link: "/pacmannebula"
     },
     {
       image: "/jpgPictures/Whirlpool_Galaxy.jpg",
       title: "The Whirlpool Galaxy",
-      link: "/TargetPages/WhirlpoolGalaxy.html"
+      link: "/whirlpoolgalaxy"
     },
     {
       image: "/jpgPictures/HorseheadNebula.jpg",
       title: "The Horsehead Nebula",
-      link: "/TargetPages/HorseheadNebula.html"
+      link: "/horseheadnebula"
     },
     {
       image: "/jpgPictures/OrionNebula.jpg",
       title: "The Orion Nebula",
-      link: "/TargetPages/OrionNebula.html"
+      link: "/orionnebula"
     },
     {
       image: "/jpgPictures/NGC7822.jpg",
       title: "NGC 7822",
-      link: "/TargetPages/NGC7822.html"
+      link: "/ngc7822"
     },
     {
       image: "/jpgPictures/LobsterClawBubbleHB-clear.jpg",
       title: "The Lobster Claw and Bubble Nebula",
-      link: "/TargetPages/LobsterClawbubble.html"
+      link: "/lobsterclawbubble"
     },
     {
       image: "/jpgPictures/CaliforniaNebula.jpg",
       title: "The California Nebula",
-      link: "/TargetPages/CaliforniaNebula.html"
+      link: "/californianebula"
     },
     {
       image: "/jpgPictures/CygnusWallHubble-topaz.jpg",
       title: "The Cygnus Wall",
-      link: "/TargetPages/CygnusWall.html"
+      link: "/cygnuswall"
     },
     {
       image: "/jpgPictures/PelicanNebula.jpg",
       title: "The Pelican Nebula",
-      link: "/TargetPages/PelicanNebula.html"
+      link: "/pelicannebula"
     },
     {
       image: "/jpgPictures/Heart%20Nebula.jpg",
       title: "The Heart Nebula",
-      link: "/TargetPages/HeartNebula.html"
+      link: "/heartnebula"
     },
     {
       image: "/jpgPictures/crescentNebula.jpg",
       title: "Crescent Nebula",
-      link: "/TargetPages/CrescentNebula.html"
+      link: "/crescentnebula"
     },
     {
       image: "/jpgPictures/Pillars_core.jpg",
       title: "Eagle Nebula",
-      link: "/targets/eagle-nebula"
+      link: "/eagle-nebula"
     },
     {
       image: "/jpgPictures/Veil%20Nebula.jpg",
       title: "The Veil Nebula",
-      link: "/TargetPages/VeilNebula.html"
+      link: "/veilnebula"
     },
     {
       image: "/jpgPictures/M13_wtrmrk.jpg",
       title: "M13, Hercules Cluster",
-      link: "/TargetPages/M13.html"
+      link: "/m13"
     },
     {
       image: "/jpgPictures/M31-130pds.jpg",
       title: "Andromeda",
-      link: "/TargetPages/M31.html"
+      link: "/m31"
     },
     {
       image: "/jpgPictures/M33.jpg",
       title: "M33, The Triangulum Galaxy",
-      link: "/TargetPages/M33.html"
+      link: "/m33"
     },
     {
       image: "/jpgPictures/IrisNebula.jpg",
       title: "The Iris Nebula",
-      link: "/TargetPages/IrisNebula.html"
+      link: "/irisnebula"
     },
     {
       image: "/jpgPictures/elephants_trunk.jpg",
       title: "The Elephant's Trunk",
-      link: "/TargetPages/ElephantsTrunk.html"
+      link: "/elephantstrunk"
     },
     {
       image: "/pictures/test-nebula.jpg",
       title: "Test Nebula",
-      link: "/targets/test-nebula"
+      link: "/test-nebula"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex-shrink-0">
-              <Link to="/" className="inline-block">
-                <img 
-                  src="/Clayton_AstroPhotoLogo/Helfert_AstroLogoWhite.png" 
-                  alt="Helfert Astrophotography"
-                  className="h-8 w-auto"
-                />
-              </Link>
-            </div>
-            
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button 
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 text-white hover:text-blue-400 transition-colors"
-                aria-label="Toggle menu"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-
-            {/* Desktop menu */}
-            <div className="hidden md:flex space-x-8">
-              <Link to="/" className="text-white hover:text-blue-400 transition-colors duration-200">Home</Link>
-              <Link to="/gallery" className="text-white hover:text-blue-400 transition-colors duration-200">Gallery</Link>
-              <Link to="/local-conditions" className="text-white hover:text-blue-400 transition-colors duration-200">Local Conditions</Link>
-              <Link to="/equipment" className="text-white hover:text-blue-400 transition-colors duration-200">Equipment</Link>
-            </div>
-          </div>
-
-          {/* Mobile menu panel */}
-          {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90">
-                <Link to="/" className="block text-white px-3 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">Home</Link>
-                <Link to="/gallery" className="block text-white px-3 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">Gallery</Link>
-                <Link to="/local-conditions" className="block text-white px-3 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">Local Conditions</Link>
-                <Link to="/equipment" className="block text-white px-3 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">Equipment</Link>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Gallery Header */}
       <header className="pt-24 pb-12 px-4">

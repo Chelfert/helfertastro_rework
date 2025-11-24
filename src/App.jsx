@@ -4,6 +4,7 @@ import ModernAstroSite from './components/ModernAstroSite';
 import GalleryPage from './components/GalleryPage';
 
 // Import all target pages
+import NGC457Page  from './components/targets/NGC457Page';
 import M31Page from 'src\components\targets\M31Page';
 import M33Page from 'src\components\targets\M33Page';
 import M13Page from 'src\components\targets\M13Page.jsx';
@@ -35,7 +36,6 @@ import FlamingStarPage from './components/targets/FlamingStarPage';
 import ElephantsTrunkPage from './components/targets/ElephantsTrunkPage';
 import LunarPage from './components/targets/LunarPage';
 import TestNebulaPage from './components/targets/TestNebulaPage';
-import NGC457 from './components/targets/NGC457'
 
 function App() {
   return (
@@ -77,6 +77,7 @@ function App() {
         <Route path="/elephantstrunk" element={<ElephantsTrunkPage />} />
         <Route path="/lunar" element={<LunarPage />} />
         <Route path="/test-nebula" element={<TestNebulaPage />} />
+        <Route path="/NGC457" element={<NGC457Page />} />
 
         {/* Catch-all route for 404s */}
         <Route path="*" element={

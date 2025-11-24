@@ -180,11 +180,6 @@ const GalleryPage = () => {
       image: "/jpgPictures/elephants_trunk.jpg",
       title: "The Elephant's Trunk",
       link: "/elephantstrunk"
-    },
-    {
-      image: "/pictures/test-nebula.jpg",
-      title: "Test Nebula",
-      link: "/test-nebula"
     }
   ];
 

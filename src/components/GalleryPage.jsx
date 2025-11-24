@@ -7,6 +7,11 @@ const GalleryPage = () => {
 
   const galleryItems = [
     {
+      image: "/jpgPictures/NGC457.jpg",
+      title: "The Owl Cluster",
+      link: "/NGC457"
+    },
+    {
       image: "/jpgPictures/IC63.jpg",
       title: "The Ghost of Cassiopeia",
       link: "/ic63"

@@ -35,6 +35,7 @@ import FlamingStarPage from './components/targets/FlamingStarPage';
 import ElephantsTrunkPage from './components/targets/ElephantsTrunkPage';
 import LunarPage from './components/targets/LunarPage';
 import TestNebulaPage from './components/targets/TestNebulaPage';
+import NGC457 from './components/targets/NGC457'
 
 function App() {
   return (

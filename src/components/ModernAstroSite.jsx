@@ -9,9 +9,9 @@ const ModernAstroSite = () => {
 
   const slides = [
     {
-      image: "/pictures/test-nebula.jpg",
-      title: "test nebula",
-      link: "/targets/test-nebula"
+      image: "/pictures/NGC457.jpg",
+      title: "The Owl Cluster",
+      link: "/targets/NGC457"
     },
     {
       image: "/pictures/M33.jpg",

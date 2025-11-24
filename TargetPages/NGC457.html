@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helfert Astrophotography</title>
+    <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+
+    <link rel="stylesheet" href="../newMain.css">
+    <link rel="stylesheet" href="../newGallery.css">
+</head>
+
+
+<body>
+
+    <!--NAVBAR-->
+    <header style="max-height: 150px;">
+        <nav>
+            <ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Gallery.html">Gallery</a></li>
+                <li><a href="../localConditions.html">Local Conditions</a></li>
+                <li><a href="../equipment.html">Equipment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--target-->
+    <div class="target">
+        <h3 class="targetTitle">NGC 457 — The Owl Cluster</h3>
+
+        <!-- Main Image -->
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../pictures/NGC457.jpg'" 
+                     src="/pictures/NGC457.jpg"
+                     alt="NGC 457" 
+                     style="width: auto" 
+                     class="targetPicture" />
+            </picture>
+        </div>
+
+        <!-- Location in Sky -->
+        <h3 style="text-align: center;">Location in Sky</h3>
+        <div class="image-containerz">
+            <picture>
+                <img onclick="window.location.href='../Locations/OwlCluster.png'" 
+                     src="/Locations/OwlCluster.png"
+                     alt="NGC 457 Location" 
+                     style="width: auto" 
+                     class="targetPicture" />
+            </picture>
+        </div>
+
+        <!-- Download Button -->
+        <p style="text-align: center;" id="acquisitionscope">
+            Acquisition: AT115EDT. February, 2025
+            <a href="/pictures/NGC457.jpg" download="NGC457.jpg">
+                <br>
+                <button class="download">Download Owl Cluster</button>
+            </a>
+        </p>
+        <br>
+
+        <!-- Blurb Box -->
+        <div class="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+            <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+                <li id="quickfactli" style="text-align: left;">
+                    Catalog: NGC 457.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Discovered: 1787, William Herschel.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Distance from Earth: 7,900 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Diameter: ~30 light-years.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Magnitude: 6.4.
+                </li>
+                <li id="quickfactli" style="text-align: left;">
+                    Best Visible: Autumn.
+                </li>
+            </div>
+
+            <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 / 2;">
+                NGC 457, widely known as the Owl Cluster or the ET Cluster, is a bright and easily recognizable open 
+                star cluster located in the constellation Cassiopeia. Its distinctive shape—featuring two bright 
+                “eyes” and a spread of fainter stars resembling outstretched wings—has made it one of the most 
+                iconic visual deep-sky objects for amateur observers.
+                <br><br>
+                The cluster contains over 100 stars and is relatively young at around 20 million years old. 
+                Its two brightest members, Phi Cassiopeiae and HD 7902, form the “eyes” of the owl, with 
+                Phi Cassiopeiae being a luminous F-type supergiant thousands of times more luminous than the Sun.
+                <br><br>
+                Because of its brightness and unique shape, NGC 457 is a favorite target for beginner and advanced 
+                observers alike and is visible even in small telescopes under dark skies.
+            </p>
+        </div>
+
+</body>
+</html>

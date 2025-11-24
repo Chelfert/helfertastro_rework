@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+            <meta charset="utf-8">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+        
+        
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.0/firebase-performance-compat.js"></script>
+
+
+        
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Helfert Astrophotography</title>
+        <meta name="description" content="A list of Astrophotography targets brought to you by Clayton Helfert.">
+        <link rel="stylesheet" href="../newMain.css">
+        <link rel="stylesheet" href="../newGallery.css">
+    </head>
+    
+    
+    <!--START OF BODY-->
+    <body>
+ 
+        <!--NAVBAR-->
+    <header style="max-height: 150px;">
+      <nav>
+<ul class="navbar" style="padding-left: 0%;margin: auto;justify-content: space-around;">    
+        <li><a href="../index.html" >Home</a></li>
+          <li><a href="/gallery" >Gallery</a></li>
+          <li><a href="../localConditions.html">Local Conditions</a></li>
+          <li><a href="../equipment.html">Equipment</a></li>
+        </ul>
+      </nav>
+    </header>      
+
+<!--target-->
+<div class="target">
+    <h3 class="targetTitle">NGC 457 — The Owl Cluster</h3>
+        <div class="image-container">
+    <picture>
+        <img onclick="window.location.href='../pictures/NGC457.jpg'"   src="/pictures/NGC457.jpg" alt="NGC 457 Owl Cluster" style="width: auto" class="targetPicture"/>
+    </picture>
+
+    <!--Location in Sky-->
+    <h3 style="text-align: center;">Location in Sky</h3>
+    <div class="image-containerz">
+        <picture>
+            <img onclick="window.location.href='../Locations/NGC457.png'" src="/Locations/NGC457.png"
+                alt="NGC 457 Location" style="width: auto" class="targetPicture" />
+        </picture>
+    </div>
+
+    <!-- Button Below the image -->
+    <a href="/pictures/NGC457.jpg" download="NGC457.jpg">
+        <button class="download">Download</button>
+    </a>    
+
+    <p style="text-align: center;" id="acquisitionscope">
+                Acquisition: AT115EDT. November, 2025.
+            </p>
+        </picture>
+        <div class ="blurbbox">
+            <h3 style="text-align: center;">Quick Facts</h3>
+
+        <div class="quickfacts" style="grid-column: 1 / span 1;text-align: left;">
+
+        <li id="quickfactli" style="text-align: left;">
+            Catalog: NGC 457 (also Caldwell 13).
+        </li>
+        <li id="quickfactli" style="text-align: left;">
+            Discovered: 1787, William Herschel.
+        </li>
+        <li id="quickfactli" style="text-align: left;">
+            Distance from Earth: ~7,900 light-years.
+        </li>
+        <li id="quickfactli" style="text-align: left;">
+            Solar-Masses: Estimated 5,000–6,000 total for the cluster.
+        </li>
+        <li id="quickfactli" style="text-align: left;">
+            Magnitude: 6.4.
+        </li>
+        <li id="quickfactli" style="text-align: left;">
+            Best Visible: Fall.
+        </li>
+        </div>
+
+        <h3 style="text-align: center;">Description</h3>
+
+            <p class="description" style="text-align: left;grid-column: 2 /2;">
+            NGC 457 is a young open cluster located in the constellation Cassiopeia, situated along 
+            the dense star fields of the Milky Way’s Perseus Arm. Commonly known as the “Owl Cluster” 
+            or “ET Cluster,” it is instantly recognizable thanks to the two bright stars — 
+            Phi Cassiopeiae and HD 7902 — which form the “eyes” of an owl-like asterism. Surrounding 
+            these bright foreground stars lie roughly 80–100 cluster members, with many more faint 
+            stars contributing to the cluster’s overall mass.
+            <br><br>
+            Estimated at 20–25 million years old, NGC 457 is relatively young. Phi Cassiopeiae, the 
+            brightest “eye,” is an extremely luminous F-type supergiant whose brilliance enhances the 
+            cluster’s iconic shape despite not being a physical member.
+            <br><br>
+            If NGC 457 were located as close as the Pleiades, its owl-shaped pattern would span a much 
+            larger portion of the sky, and several of its stars would be as bright as the brightest 
+            naked-eye objects. Its distinctive appearance and rich star field make it a favorite 
+            target for astrophotographers and observers alike.
+            </p>
+        </div>
+    <!--end of target-->
+       
+    </body>
+</html>
